@@ -1,23 +1,19 @@
 language: python
-python:
-  - "2.7"
-  - "3.5"
 
-addons:
-  apt:
-    packages:
-      - libatlas3gf-base
-      - libatlas-dev
-      - python-scipy
+cache:
+  apt: true
+  # We use three different cache directory
+  # to work around a Travis bug with multi-platform cache
+  directories:
+  - $HOME/.cache/pip
+  - $HOME/download
+env:
 
-install:
-  - python setup.py develop
-    # deactivate travis' virtual env
-  - deactivate
-    # Create a new virtualenv using system site packages for numpy and scipy
-  - virtualenv --system-site-packages testvenv
-  - source testvenv/bin/activate
-  - pip install -r requirements.txt
-  - python setup.py develop
-# command to run tests
+  matrix:
+    - DISTRIB="conda" PYTHON_VERSION="2.7"
+      NUMPY_VERSION="1.6.2" SCIPY_VERSION="0.11.0" CYTHON_VERSION="0.21"
+    - DISTRIB="conda" PYTHON_VERSION="3.5"
+      NUMPY_VERSION="1.10.1" SCIPY_VERSION="0.16.0" CYTHON_VERSION="0.23.4"
+
+install: source scripts/install.sh
 script: nosetests
