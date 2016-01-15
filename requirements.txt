@@ -1,4 +1,4 @@
 matplotlib>=1.1.1
-node>=1.1.2
+nose>=1.1.2
 scikit-learn>=0.17
 cython>=0.23
