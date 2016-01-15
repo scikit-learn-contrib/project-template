@@ -1,0 +1,16 @@
+language: python
+python:
+  - "2.7"
+  - "3.5"
+
+addons:
+  apt:
+    packages:
+      - libatlas3gf-base
+      - libatlas-dev
+      - python-scipy
+
+install:
+  - python setup.py develop
+# command to run tests
+script: nosetests
