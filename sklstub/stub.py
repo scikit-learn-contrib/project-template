@@ -1,7 +1,7 @@
 from sklearn.base import BaseEstimator
 from sklearn.utils import check_X_y, check_array
 
-class DemoEstimator(BaseEstimator):
+class StubEstimator(BaseEstimator):
     def __init__(self, demo_param='demo_param'):
         self.demo_param = 'demo_param'
 
