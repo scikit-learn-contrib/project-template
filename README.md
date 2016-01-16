@@ -1,4 +1,4 @@
-# sklearn-stub
+.. -*- mode: rst -*-
 
 |Travis|_  |Coveralls|_ 
 
@@ -7,7 +7,7 @@
 
 .. |Coveralls| image:: https://coveralls.io/repos/scikit-learn/scikit-learn/badge.svg?branch=master&service=github
 .. _Coveralls: https://coveralls.io/r/scikit-learn/scikit-learn
-A template for scikit-learn extensions
 
+# sklearn-stub
 
 A template for scikit-learn extensions
