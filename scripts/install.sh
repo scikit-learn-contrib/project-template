@@ -29,6 +29,11 @@ conda create -n testenv --yes python=$PYTHON_VERSION pip nose \
    matplotlib
 source activate testenv
 
+
+if [[ "$COVERAGE" == "true" ]]; then
+    pip install coverage coveralls
+fi
+
 python --version
 python -c "import numpy; print('numpy %s' % numpy.__version__)"
 python -c "import scipy; print('scipy %s' % scipy.__version__)"
