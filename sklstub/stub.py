@@ -1,3 +1,6 @@
+"""
+This is a module to be used as a reference for building other modules
+"""
 from sklearn.base import BaseEstimator
 from sklearn.utils import check_X_y, check_array
 
@@ -41,7 +44,7 @@ class StubEstimator(BaseEstimator):
         Returns
         -------
         y : array of shape = [n_samples]
-            The predicted values. In this case the first column of `X`.
+            Returns :math:`x^2` where :math:`x` is the first column of `X`.
         """
         X = check_array(X)
-        return X[:, 0]
+        return X[:, 0]**2
