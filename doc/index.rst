@@ -15,6 +15,7 @@ See
        :maxdepth: 2
        
        api
+       auto_examples/index
        ...
 
 

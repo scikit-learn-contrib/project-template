@@ -1,3 +1,10 @@
+"""
+=======================
+Plotting Stub Estimator
+=======================
+
+An example plot of StubEstimator
+"""
 import numpy as np
 from sklstub.stub import StubEstimator
 from matplotlib import pyplot as plt

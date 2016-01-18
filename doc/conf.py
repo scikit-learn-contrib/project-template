@@ -19,8 +19,15 @@ import os
 # add these directories to sys.path here. If the directory is relative to the
 # documentation root, use os.path.abspath to make it absolute, like shown here.
 #sys.path.insert(0, os.path.abspath('.'))
-#sys.path.append(os.path.abspath('sphinxext'))
+sys.path.insert(0, os.path.abspath('sphinxext'))
 
+# -- General configuration ---------------------------------------------------
+
+# Try to override the matplotlib configuration as early as possible
+try:
+    import gen_rst
+except:
+    pass
 # -- General configuration ------------------------------------------------
 
 # If your documentation needs a minimal Sphinx version, state it here.
@@ -38,6 +45,8 @@ extensions = [
     'sphinx.ext.pngmath',
     'sphinx.ext.ifconfig',
     'sphinx.ext.viewcode',
+    'gen_rst'
+
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -48,6 +57,9 @@ source_suffix = '.rst'
 
 # The encoding of source files.
 #source_encoding = 'utf-8-sig'
+
+# Generate the plots for the gallery
+plot_gallery = True
 
 # The master toctree document.
 master_doc = 'index'
@@ -254,6 +266,19 @@ texinfo_documents = [
    u'Vighnesh Birodkar', 'sklearn-stub', 'One line description of project.',
    'Miscellaneous'),
 ]
+
+def generate_example_rst(app, what, name, obj, options, lines):
+    # generate empty examples files, so that we don't get
+    # inclusion errors if there are no examples for a class / module
+    examples_path = os.path.join(app.srcdir, "modules", "generated",
+                                 "%s.examples" % name)
+    if not os.path.exists(examples_path):
+        # touch file
+        open(examples_path, 'w').close()
+
+
+def setup(app):
+    app.connect('autodoc-process-docstring', generate_example_rst)
 
 # Documents to append as an appendix to all manuals.
 #texinfo_appendices = []
