@@ -30,7 +30,7 @@ test:
     - cat ~/log.txt && if grep -q "Traceback (most recent call last):" ~/log.txt; then false; else true; fi
 deployment:
   push:
-    branch: latex
+    branch: master
     commands:
       - bash continuous_integration/push_doc.sh
 general:
@@ -41,4 +41,4 @@ general:
   # Restric the build to the branch master only
   branches:
     only:
-       - latex
+       - master
