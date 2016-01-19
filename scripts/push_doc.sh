@@ -36,8 +36,8 @@ if [ ! -d $DOC_REPO ];
     then git clone "git@github.com:$USERNAME/"$DOC_REPO".git";
 fi
 
-
 cd $DOC_REPO
+git branch gh-pages
 git checkout -f gh-pages
 git reset --hard origin/gh-pages
 git clean -f
