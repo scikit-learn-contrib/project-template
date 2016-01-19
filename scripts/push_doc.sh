@@ -25,7 +25,6 @@ git rm -rf .
 cp -R $HOME/sklearn-stub/doc/_build/html/ .
 git config --global user.email "vnb222+ci@nyu.edu"
 git config --global user.name $USERNAME
-git config --global push.default matching
 git add -f .
 git commit -m "$MSG"
 git push origin gh-pages
