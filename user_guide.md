@@ -29,3 +29,36 @@ If the installation is successful you should be able to execute the following in
 how other Estimators should be written. It also comes with its own unit
 tests under `sklstub/tests`.
 
+## Creating your own library
+### 1. Forking
+Fork the project from its [Github Source Page](https://github.com/vighneshbirodkar/sklearn-stub). You
+might also want to rename from the project settings page.
+
+### 2. Modifying the Source
+You are free to modify the source as you want, but at the very least, all your estimators 
+pass the `check_estimator` test to be scikit-learn compatible. Rename the project to 
+
+### 3. Modifying the Documentation
+The documentation is located under the `doc/` folder and is built using [sphinx](http://www.sphinx-doc.org/en/stable/).
+To build the documentation locally, ensure that you have `sphinx` by executing
+```shell
+$ pip install sphinx
+```
+The documentation contains a home page (`doc/index.rst`) and an API documentation page (`api.rst`).
+Sphinx allows you to automcatically document your modules and classes by using the `autodoc`
+directive. You can either document all your modules in `api.rst` or document them in seperate
+pages and link them. For more information visit the [Sphinx Documentation](http://www.sphinx-doc.org/en/stable/contents.html)
+
+to build the documentation locally execute
+```shell
+cd doc
+make html
+```
+
+### 4. Setting up Travis CI
+[TravisCI](https://travis-ci.org/) allows you to continuously build and test your code from Github
+to ensure that no code-breaking changes are pushed. After you sign up and authourize TravisCI, 
+add your new repository to TravisCI so that it can start building it. The `travis.yml` file
+already contains the configuration required for Travis to build the project.
+
+
