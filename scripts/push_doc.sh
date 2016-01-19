@@ -33,7 +33,7 @@ mkdir docs/
 cp -R $HOME/tmp/* ./docs/
 git config --global user.email "vnb222+ci@nyu.edu"
 git config --global user.name $USERNAME
-git add -f .
+git add -f /docs/
 git commit -m "$MSG"
 git push origin gh-pages
 
