@@ -51,14 +51,15 @@ The documentation contains a home page (`doc/index.rst`) and an API
 documentation page (`api.rst`).
 Sphinx allows you to automcatically document your modules and classes by using
 the `autodoc` directive. You can either document all your modules in `api.rst`
-or document them in seperate pages and link them. For more information visit 
-the [Sphinx Documentation](http://www.sphinx-doc.org/en/stable/contents.html)
+or document them in seperate pages and link them. To change the asthetics of
+the docs and other paramteres, edit the `doc/conf.py` file. For more information
+visit the [Sphinx Documentation](http://www.sphinx-doc.org/en/stable/contents.html)
 
 You can also add code examples in the `examples` folder. All files inside
 the folder of the form `plot_*.py` will be executed and their generated
 plots will be available for viewing in the `/auto_examples` URL.
 
-to build the documentation locally execute
+To build the documentation locally execute
 ```shell
 cd doc
 make html
