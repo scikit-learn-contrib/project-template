@@ -1,5 +1,9 @@
 machine:
   environment:
+    # The github organization or username of the repository which hosts the
+    # documentation.
+    USERNAME: "vighneshbirodkar"
+
     # The repository where the documentation will be hosted
     DOC_REPO: "sklearn-stub"
 
@@ -8,10 +12,6 @@ machine:
 
     # The email is to be used for commits in the Github Page
     EMAIL: "vnb222+ci@nyu.edu"
-
-    # The github organization or username of the repository which hosts the
-    # documentation.
-    USERNAME: "vighneshbirodkar"
 
 dependencies:
 

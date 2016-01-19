@@ -42,9 +42,10 @@ Rename the project to
 
 ### 3. Modifying the Documentation
 The documentation is located under the `doc/` folder and is built using [sphinx](http://www.sphinx-doc.org/en/stable/).
-To build the documentation locally, ensure that you have `sphinx` by executing
+To build the documentation locally, ensure that you have `sphinx` and
+`matplotlib` by executing
 ```shell
-$ pip install sphinx
+$ pip install sphinx matplotlib
 ```
 The documentation contains a home page (`doc/index.rst`) and an API
 documentation page (`api.rst`).
@@ -52,6 +53,10 @@ Sphinx allows you to automcatically document your modules and classes by using
 the `autodoc` directive. You can either document all your modules in `api.rst`
 or document them in seperate pages and link them. For more information visit 
 the [Sphinx Documentation](http://www.sphinx-doc.org/en/stable/contents.html)
+
+You can also add code examples in the `examples` folder. All files inside
+the folder of the form `plot_*.py` will be executed and their generated
+plots will be available for viewing in the `/auto_examples` URL.
 
 to build the documentation locally execute
 ```shell
@@ -82,4 +87,21 @@ are
 
 | Variable | Value|
 |----------|------|
-| `"abc"`  | xyz  |
+| `USERNAME`  | The name of the user or organization of the repository where the documentation will be hosted  |
+| `DOC_REPO` | The repository where the documentation will be hosted. This can be the same as the project repository |
+| `DOC_URL` | The relative URL where the documentation will be hosted |
+| `EMAIL` | The email id to use while pushing the documentation, this can be any valid email address |
+
+In addition to this, you will need to grant access to the CircleCI computers
+to push to your documentation repository. To do this, visit the Project Settings
+page of your project in CircleCI. Select `Checkout SSH keys` option and then
+choose `Create and add user key` option. This grants CircleCI privileges to push
+to the repository `https://github.com/USERNAME/DOC_REPO/`
+
+If all goes well, you should be able to visit the documentation of your project
+on 
+```
+https://github.com/USERNAME/DOC_REPO/DOC_URL
+```
+
+
