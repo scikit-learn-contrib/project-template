@@ -76,5 +76,10 @@ configuration for Coveralls to work.
 The project uses [CircleCI](https://circleci.com/) to build its documentation
 from the `master` branch and host it using [Github Pages](https://pages.github.com/).
 Again,  you will need to Sign Up and authorize CircleCI. The configuration
-of CircleCI is governed by the `circle.yml` file. The process of pushing the
-build documentation takes place in the file 
+of CircleCI is governed by the `circle.yml` file, which needs to be mofified
+if you want to setup the docs on your own website. The values to be changed
+are
+
+| Variable | Value|
+|----------|------|
+| `"abc"`  | xyz  |
