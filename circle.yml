@@ -1,3 +1,18 @@
+machine:
+  environment:
+    # The repository where the documentation will be hosted
+    DOC_REPO: "sklearn-stub"
+
+    # The base URL for the Github page where the documentation will be hosted
+    DOC_URL: "docs/"
+
+    # The email is to be used for commits in the Github Page
+    EMAIL: "vnb222+ci@nyu.edu"
+
+    # The github organization or username of the repository which hosts the
+    # documentation.
+    USERNAME: "vighneshbirodkar"
+
 dependencies:
 
   # Various dependencies

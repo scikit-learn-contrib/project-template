@@ -4,25 +4,6 @@
 # The behavior of the script is controlled by environment variable defined
 # in the circle.yml in the top level folder of the project.
 
-
-if [ -z $CIRCLE_PROJECT_USERNAME ];
-then USERNAME="sklearn-ci";
-else USERNAME=$CIRCLE_PROJECT_USERNAME;
-fi
-
-# The repository where the documentation will be hosted
-DOC_REPO="sklearn-stub"
-
-# The base URL for the Github page where the documentation will be hosted
-DOC_URL="docs/"
-
-# The email is to be used for commits in the Github Page
-EMAIL="vnb222+ci@nyu.edu"
-
-# The github organization or username of the repository which hosts the
-# documentation.
-USERNAME="vighneshbirodkar"
-
 MSG="Pushing the docs for revision for branch: $CIRCLE_BRANCH, commit $CIRCLE_SHA1"
 
 cd $HOME
