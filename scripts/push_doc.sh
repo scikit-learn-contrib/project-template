@@ -15,6 +15,9 @@ DOC_REPO="sklearn-stub"
 MSG="Pushing the docs for revision for branch: $CIRCLE_BRANCH, commit $CIRCLE_SHA1"
 
 cd $HOME
+rm -rf tmp
+mkdir tmp
+cp -R $HOME/sklearn-stub/doc/_build/html/* ./tmp/ 
 #rm -rf $DOC_REPO
 if [ ! -d $DOC_REPO ];
 then git clone "git@github.com:vighneshbirodkar/"$DOC_REPO".git";
@@ -23,11 +26,11 @@ cd $DOC_REPO
 git checkout -f gh-pages
 git reset --hard origin/gh-pages
 git rm -rf * docs/ && rm -rf docs/
-mkdir ./docs/
-cp -R $HOME/sklearn-stub/doc/_build/html/* ./docs/
+mkdir docs/
+cp -R $HOME/tmp* ./docs/
 git config --global user.email "vnb222+ci@nyu.edu"
 git config --global user.name $USERNAME
-git add -f --all .
+git add -f .
 git commit -m "$MSG"
 git push origin gh-pages
 
