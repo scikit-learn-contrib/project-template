@@ -21,11 +21,11 @@ fi
 cd $DOC_REPO
 git checkout gh-pages
 git reset --hard origin/gh-pages
-git rm -rf .
-cp -R $HOME/sklearn-stub/doc/_build/html/ .
+git rm -rf ./
+cp -R $HOME/sklearn-stub/doc/_build/html/ ./
 git config --global user.email "vnb222+ci@nyu.edu"
 git config --global user.name $USERNAME
-git add -f .
+git add -f --all .
 git commit -m "$MSG"
 git push origin gh-pages
 
