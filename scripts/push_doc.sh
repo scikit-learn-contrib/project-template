@@ -25,7 +25,7 @@ fi
 cd $DOC_REPO
 git checkout -f gh-pages
 git reset --hard origin/gh-pages
-git clean
+git -f clean
 echo 'Echoing dir structure'
 find 
 git rm -rf * docs/ && rm -rf docs/
