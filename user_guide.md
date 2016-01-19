@@ -61,4 +61,12 @@ to ensure that no code-breaking changes are pushed. After you sign up and authou
 add your new repository to TravisCI so that it can start building it. The `travis.yml` file
 already contains the configuration required for Travis to build the project.
 
+### 5. Setting up Coveralls
+[Coveralls](https://coveralls.io/) reports code coverage statistics of your tests on each push. Sign up
+on Coveralls and add your repository so that Coveralls can start monitoring it. The project
+already contains the required configuration for Coveralls to work.
 
+### 6. Setting up Circle CI
+The project uses [CircleCI](https://circleci.com/) to build its documentation from
+the `master` branch and host it using [Github Pages](https://pages.github.com/). Again, 
+you will need to Sign Up and authorize CircleCI. You will also need to modify
