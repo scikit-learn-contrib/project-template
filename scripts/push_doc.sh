@@ -25,7 +25,7 @@ git checkout -f gh-pages
 git reset --hard origin/gh-pages
 git rm -rf * docs/ && rm -rf docs/
 mkdir ./docs/
-cp -R $HOME/sklearn-stub/doc/_build/html/ ./docs/
+cp -R $HOME/sklearn-stub/doc/_build/html/* ./docs/
 find ./docs/
 #git config --global user.email "vnb222+ci@nyu.edu"
 #git config --global user.name $USERNAME
