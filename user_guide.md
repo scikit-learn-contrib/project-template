@@ -27,7 +27,7 @@ If the installation is successful you should be able to execute the following in
 
 `StubEstimator` by itself does nothing useful, but it serves as an example of
 how other Estimators should be written. It also comes with its own unit
-tests under `sklstub/tests`.
+tests under `sklstub/tests` which can be run using `nosetests`.
 
 ## Creating your own library
 ### 1. Forking
