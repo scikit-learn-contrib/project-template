@@ -6,7 +6,7 @@ dependencies:
     - sudo apt-get update
     - sudo apt-get install libatlas-dev libatlas3gf-base
     - sudo apt-get install build-essential python-dev python-setuptools
-    - pip install numpy scipy matplotlib setuptools nose coverage sphinx
+    - pip install numpy scipy matplotlib setuptools nose coverage sphinx pillow
     # Installing required packages for `make -C doc check command` to work.
     - sudo -E apt-get -yq update
     - sudo -E apt-get -yq --no-install-suggests --no-install-recommends --force-yes install dvipng texlive-latex-base texlive-latex-extra
