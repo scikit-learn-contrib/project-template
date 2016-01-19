@@ -19,11 +19,11 @@ if [ ! -d $DOC_REPO ];
 then git clone "git@github.com:vighneshbirodkar/"$DOC_REPO".git";
 fi
 cd $DOC_REPO
-git checkout gh-pages
+git checkout -f gh-pages
 git reset --hard origin/gh-pages
 git rm -rf *
 cp -R $HOME/sklearn-stub/doc/_build/html/ ./
-find .
+find ./
 #git config --global user.email "vnb222+ci@nyu.edu"
 #git config --global user.name $USERNAME
 #git add -f --all .
