@@ -9,7 +9,7 @@ Welcome to sklearn-stub's documentation!
 This project is a reference implementation to anyone who wishes to develop
 scikit-learn compatible classes. It comes with a `stub` module which contains a
 single estimator with unit tests.
-See
+
 
     .. toctree::
        :maxdepth: 2
