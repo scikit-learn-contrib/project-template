@@ -10,29 +10,44 @@ then USERNAME="sklearn-ci";
 else USERNAME=$CIRCLE_PROJECT_USERNAME;
 fi
 
+# The repository where the documentation will be hosted
 DOC_REPO="sklearn-stub"
+
+# The base URL for the Github page where the documentation will be hosted
 DOC_URL="docs/"
+
+# The email is to be used for commits in the Github Page
+EMAIL="vnb222+ci@nyu.edu"
+
+# The github organization or username of the repository which hosts the
+# documentation.
+USERNAME="vighneshbirodkar"
 
 MSG="Pushing the docs for revision for branch: $CIRCLE_BRANCH, commit $CIRCLE_SHA1"
 
 cd $HOME
+# Copy the build docs to a temporary folder
 rm -rf tmp
 mkdir tmp
 cp -R $HOME/sklearn-stub/doc/_build/html/* ./tmp/ 
-find tmp/
+
+# Clone the docs repo if it isnt already there
 if [ ! -d $DOC_REPO ];
-    then git clone "git@github.com:vighneshbirodkar/"$DOC_REPO".git";
+    then git clone "git@github.com:$USERNAME/"$DOC_REPO".git";
 fi
+
+
 cd $DOC_REPO
 git checkout -f gh-pages
 git reset --hard origin/gh-pages
 git clean -f
-echo 'Echoing dir structure'
-find 
+
+# Copy the new build docs
 git rm -rf * $DOC_URL && rm -rf $DOC_URL
 mkdir $DOC_URL
 cp -R $HOME/tmp/* ./$DOC_URL/
-git config --global user.email "vnb222+ci@nyu.edu"
+
+git config --global user.email $EMAIL
 git config --global user.name $USERNAME
 git add -f ./$DOC_URL/
 git commit -m "$MSG"
