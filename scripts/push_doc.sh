@@ -15,10 +15,12 @@ DOC_REPO="sklearn-stub"
 MSG="Pushing the docs for revision for branch: $CIRCLE_BRANCH, commit $CIRCLE_SHA1"
 
 cd $HOME
+rm -rf $DOC_REPO
 if [ ! -d $DOC_REPO ];
 then git clone "git@github.com:vighneshbirodkar/"$DOC_REPO".git";
 fi
 cd $DOC_REPO
+echo "Current Dir = $(pwd)"
 git checkout -f gh-pages
 git reset --hard origin/gh-pages
 git rm -rf *
