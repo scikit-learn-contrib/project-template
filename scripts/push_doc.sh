@@ -18,13 +18,15 @@ cd $HOME
 rm -rf tmp
 mkdir tmp
 cp -R $HOME/sklearn-stub/doc/_build/html/* ./tmp/ 
-#rm -rf $DOC_REPO
+find tmp/
 if [ ! -d $DOC_REPO ];
-then git clone "git@github.com:vighneshbirodkar/"$DOC_REPO".git";
+    then git clone "git@github.com:vighneshbirodkar/"$DOC_REPO".git";
 fi
 cd $DOC_REPO
-git checkout -f gh-pages
+git checkout gh-pages
 git reset --hard origin/gh-pages
+echo 'Echoing dir structure'
+find 
 git rm -rf * docs/ && rm -rf docs/
 mkdir docs/
 cp -R $HOME/tmp/* ./docs/
