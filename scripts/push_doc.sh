@@ -22,7 +22,7 @@ cd $DOC_REPO
 git checkout gh-pages
 git reset --hard origin/gh-pages
 git rm -rf .
-cp -R $HOME/searn-stub/doc/_build/html/ dev
+cp -R $HOME/skearn-stub/doc/_build/html/ dev
 git config --global user.email "vnb222+ci@nyu.edu"
 git config --global user.name $USERNAME
 git config --global push.default matching
