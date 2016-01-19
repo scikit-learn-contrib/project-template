@@ -11,6 +11,7 @@ else USERNAME=$CIRCLE_PROJECT_USERNAME;
 fi
 
 DOC_REPO="sklearn-stub"
+DOC_URL="docs/"
 
 MSG="Pushing the docs for revision for branch: $CIRCLE_BRANCH, commit $CIRCLE_SHA1"
 
@@ -28,12 +29,12 @@ git reset --hard origin/gh-pages
 git clean -f
 echo 'Echoing dir structure'
 find 
-git rm -rf * docs/ && rm -rf docs/
-mkdir docs/
-cp -R $HOME/tmp/* ./docs/
+git rm -rf * $DOC_URL && rm -rf $DOC_URL
+mkdir $DOC_URL
+cp -R $HOME/tmp/* ./$DOC_URL/
 git config --global user.email "vnb222+ci@nyu.edu"
 git config --global user.name $USERNAME
-git add -f ./docs/
+git add -f ./$DOC_URL/
 git commit -m "$MSG"
 git push origin gh-pages
 
