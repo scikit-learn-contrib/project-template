@@ -15,4 +15,8 @@
 sklearn-stub
 ============
 
-A template for scikit-learn extensions
+A template for scikit-learn extensions. 
+
+Important Links
+===============
+HTML Documentation : http://vighneshbirodkar.github.io/sklearn-stub/docs/
