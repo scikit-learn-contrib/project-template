@@ -47,4 +47,4 @@ class StubEstimator(BaseEstimator):
             Returns :math:`x^2` where :math:`x` is the first column of `X`.
         """
         X = check_array(X)
-        return X[:, 0]**2
+        return X[:, 0]**3
