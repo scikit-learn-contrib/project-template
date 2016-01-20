@@ -70,13 +70,16 @@ make html
 your code from Github to ensure that no code-breaking changes are pushed. After
 you sign up and authourize TravisCI, add your new repository to TravisCI so that
 it can start building it. The `travis.yml` file already contains the
-configuration required for Travis to build the project.
+configuration required for Travis to build the project. Once you add the
+project on TravisCI, all subsequent pushes on the master branch will trigger
+a Travis build. By default, the project is tested on Python 2.7 and Python 3.5
 
 ### 5. Setting up Coveralls
 [Coveralls](https://coveralls.io/) reports code coverage statistics of your
 tests on each push. Sign up on Coveralls and add your repository so that
 Coveralls can start monitoring it. The project already contains the required
-configuration for Coveralls to work.
+configuration for Coveralls to work. All subsequent build after adding your
+project will generate a coverage report.
 
 ### 6. Setting up Circle CI
 The project uses [CircleCI](https://circleci.com/) to build its documentation
