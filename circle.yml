@@ -1,7 +1,7 @@
 machine:
   environment:
     # The github organization or username of the repository which hosts the
-    # documentation.
+    # project and documentation.
     USERNAME: "vighneshbirodkar"
 
     # The repository where the documentation will be hosted
