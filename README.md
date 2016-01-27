@@ -46,10 +46,10 @@ estimators pass the `check_estimator` test to be scikit-learn compatible.
 
 ### 3. Modifying the Documentation
 The documentation is located under the `doc/` folder and is built using [sphinx](http://www.sphinx-doc.org/en/stable/).
-To build the documentation locally, ensure that you have `sphinx` and
-`matplotlib` by executing
+To build the documentation locally, ensure that you have `sphinx`,
+`sphinx-gallery` and `matplotlib` by executing.s
 ```shell
-$ pip install sphinx matplotlib
+$ pip install sphinx matplotlib sphinx-gallery
 ```
 The documentation contains a home page (`doc/index.rst`), an API
 documentation page (`api.rst`) and a page documenting the `stub` module 
