@@ -47,9 +47,16 @@ help:
 	@echo "  doctest    to run all doctests embedded in the documentation (if enabled)"
 
 clean:
-	rm -rf $(BUILDDIR)/*
+	-rm -rf $(BUILDDIR)/*
+	-rm -rf auto_examples/
+	-rm -rf generated/*
+	-rm -rf modules/generated/*
 
 html:
+	# These two lines make the build a bit more lengthy, and the
+	# the embedding of images more robust
+	rm -rf $(BUILDDIR)/html/_images
+	#rm -rf _build/doctrees/
 	$(SPHINXBUILD) -b html $(ALLSPHINXOPTS) $(BUILDDIR)/html
 	@echo
 	@echo "Build finished. The HTML pages are in $(BUILDDIR)/html."
