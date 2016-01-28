@@ -209,7 +209,7 @@ python setup.py sdist upload -r pypi
 ```
 To install your package, execute:
 ```
-pip install -i <package-name>
+pip install <package-name>
 ```
 
 *Thank you for cleanly contributing to the scikit-learn ecosystem!*
