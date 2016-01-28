@@ -18,7 +18,7 @@ single estimator with unit tests.
        auto_examples/index
        ...
 
-See the `User Guide <https://github.com/vighneshbirodkar/sklearn-stub/blob/master/user_guide.md>`_
+See the `README <https://github.com/vighneshbirodkar/sklearn-stub/blob/master/README.md>`_
 for more information.
 
 
