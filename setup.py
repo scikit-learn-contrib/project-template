@@ -18,7 +18,7 @@ except ImportError:
     print('scipy is required during installation')
     sys.exit(1)
 
-setup(name='scikit-learn stub',
+setup(name='sklearn-stub',
       version='0.1.0_dev',
       description='A template for scikit-learn compatible packages',
       author='Vighnesh Birodkar',
