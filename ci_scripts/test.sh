@@ -9,5 +9,5 @@ cd $TEST_DIR
 if [[ "$COVERAGE" == "true" ]]; then
     nosetests -s --with-coverage --cover-package=$MODULE $MODULE
 else
-    nosetests -s sklstub
+    nosetests -s $MODULE
 fi
