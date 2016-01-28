@@ -7,7 +7,7 @@ mkdir -p $TEST_DIR
 cd $TEST_DIR
 
 if [[ "$COVERAGE" == "true" ]]; then
-    nosetests -s --with-coverage --cover-package=sklstub sklstub
+    nosetests -s --with-coverage --cover-package=$MODULE $MODULE
 else
     nosetests -s sklstub
 fi
