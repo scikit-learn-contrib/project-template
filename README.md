@@ -24,7 +24,7 @@ $ python setup.py install
 ```
 or 
 ```
-pip install sklearn-stub
+$ pip install sklearn-stub
 ```
 
 If the installation is successful, and `scikit-learn` is correctly installed,
@@ -40,9 +40,18 @@ how other Estimators should be written. It also comes with its own unit
 tests under `sklstub/tests` which can be run using `nosetests`.
 
 ## Creating your own library
-### 1. Forking
-Fork the project from its [Github Source Page](https://github.com/vighneshbirodkar/sklearn-stub).
-You should rename the project from the settings page.
+### 1. Cloning
+Clone the project into your computer by executing
+```shell
+$ git clone https://github.com/vighneshbirodkar/sklearn-stub.git
+```
+You should rename the `sklearn-stub` folder to the name name of your project.
+To host the project on Github, visit https://github.com/new and create a new
+repository. To upload your project on Github execute
+```shell
+$ git remote add origin https://github.com/username/project-name.git
+$ git push origin master
+```
 
 ### 2. Modifying the Source
 You are free to modify the source as you want, but at the very least, all your
