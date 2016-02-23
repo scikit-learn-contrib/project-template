@@ -122,7 +122,7 @@ build. By default, the project is tested on Python 2.7 and Python 3.5.
 [Coveralls](https://coveralls.io/) reports code coverage statistics of your
 tests on each push. Sign up on Coveralls and add your repository so that
 Coveralls can start monitoring it. The project already contains the required
-configuration for Coveralls to work. All subsequent build after adding your
+configuration for Coveralls to work. All subsequent builds after adding your
 project will generate a coverage report.
 
 ### 6. Setting up Circle CI
@@ -143,8 +143,8 @@ are
 In addition to this, you will need to grant access to the CircleCI computers
 to push to your documentation repository. To do this, visit the Project Settings
 page of your project in CircleCI. Select `Checkout SSH keys` option and then
-choose `Create and add user key` option. This grants CircleCI privileges to push
-to the repository `https://github.com/USERNAME/DOC_REPO/`
+choose `Create and add user key` option. This should grant CircleCI privileges
+to push to the repository `https://github.com/USERNAME/DOC_REPO/`.
 
 If all goes well, you should be able to visit the documentation of your project
 on 
