@@ -57,6 +57,9 @@ $ git push origin master
 You are free to modify the source as you want, but at the very least, all your
 estimators should pass the [`check_estimator`](http://scikit-learn.org/stable/modules/generated/sklearn.utils.estimator_checks.check_estimator.html#sklearn.utils.estimator_checks.check_estimator)
 test to be scikit-learn compatible.
+(If there are valid reasons your estimator cannot pass `check_estimator`, please
+[raise an issue](https://github.com/scikit-learn/scikit-learn/issues/new) at
+scikit-learn so we can make `check_estimator` more flexible.)
 
 This template is particularly useful for publishing open-source versions of
 algorithms that do not meet the criteria for inclusion in the core scikit-learn
@@ -204,7 +207,7 @@ to the Test server, execute:
 python setup.py register -r pypitest
 python setup.py sdist upload -r pypitest
 ```
-Your package should now be visible on:https://testpypi.python.org/pypi
+Your package should now be visible on: https://testpypi.python.org/pypi
 
 To install a package from the test server, execute:
 ```
