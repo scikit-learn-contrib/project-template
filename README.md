@@ -43,13 +43,13 @@ tests under `sklstub/tests` which can be run using `nosetests`.
 ### 1. Cloning
 Clone the project into your computer by executing
 ```shell
-$ git clone https://github.com/vighneshbirodkar/sklearn-stub.git
+$ git clone https://github.com/vighneshbirodkar/sklearn-stub.git <PROJECT-NAME>
 ```
-You should rename the `sklearn-stub` folder to the name name of your project.
+replacing `<PROJECT-NAME>`.
 To host the project on Github, visit https://github.com/new and create a new
 repository. To upload your project on Github execute
 ```shell
-$ git remote add origin https://github.com/username/project-name.git
+$ git remote add origin https://github.com/username/<PROJECT-NAME>.git
 $ git push origin master
 ```
 
