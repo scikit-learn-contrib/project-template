@@ -1,0 +1,30 @@
+.. _general_examples:
+
+General examples
+================
+
+Introductory examples.
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="An example plot of TemplateEstimator ">
+
+.. only:: html
+
+    .. figure:: /auto_examples/images/thumb/sphx_glr_plot_template_thumb.png
+
+        :ref:`sphx_glr_auto_examples_plot_template.py`
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /auto_examples/plot_template
+.. raw:: html
+
+    <div style='clear:both'></div>
+
