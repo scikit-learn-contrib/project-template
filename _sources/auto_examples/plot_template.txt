@@ -31,7 +31,7 @@ An example plot of TemplateEstimator
     plt.plot(estimator.predict(X))
     plt.show()
 **Total running time of the script:**
-(0 minutes 0.106 seconds)
+(0 minutes 0.104 seconds)
 
 
 
