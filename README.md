@@ -150,7 +150,9 @@ to push to your documentation repository. To do this, visit the Project Settings
 page of your project in CircleCI. Select `Checkout SSH keys` option and then
 choose `Create and add user key` option. This should grant CircleCI privileges
 to push to the repository `https://github.com/USERNAME/DOC_REPO/`
-(see: https://circleci.com/docs/adding-read-write-deployment-key/).
+(see: https://circleci.com/docs/adding-read-write-deployment-key/; make sure
+that you create an SSH key that is not password protected! CircleCI will not
+accept password-protected SSH keys).
 
 If all goes well, you should be able to visit the documentation of your project
 on
