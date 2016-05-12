@@ -145,14 +145,14 @@ are
 | `DOC_URL` | The relative URL where the documentation will be hosted |
 | `EMAIL` | The email id to use while pushing the documentation, this can be any valid email address |
 
-In addition to this, you will need to grant access to the CircleCI computers
-to push to your documentation repository. To do this, visit the Project Settings
+In addition to this, you will need to grant access to the CircleCI computers to
+push to your documentation repository. To do this, visit the Project Settings
 page of your project in CircleCI. Select `Checkout SSH keys` option and then
 choose `Create and add user key` option. This should grant CircleCI privileges
-to push to the repository `https://github.com/USERNAME/DOC_REPO/`
-(see: https://circleci.com/docs/adding-read-write-deployment-key/; make sure
-that you create an SSH key that is not password protected! CircleCI will not
-accept password-protected SSH keys).
+to push to the repository `https://github.com/USERNAME/DOC_REPO/` (see
+[CircleCI documentation]( https://circleci.com/docs/adding-read-write-deployment-key/) for
+more details; in particular, make sure that you create an SSH key that is not
+password protected! CircleCI will not accept password-protected SSH keys).
 
 If all goes well, you should be able to visit the documentation of your project
 on
