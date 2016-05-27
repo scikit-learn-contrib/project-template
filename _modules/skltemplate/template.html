@@ -133,12 +133,16 @@
 <span></span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">This is a module to be used as a reference for building other modules</span>
 <span class="sd">&quot;&quot;&quot;</span>
-<span class="kn">from</span> <span class="nn">sklearn.base</span> <span class="kn">import</span> <span class="n">BaseEstimator</span>
-<span class="kn">from</span> <span class="nn">sklearn.utils</span> <span class="kn">import</span> <span class="n">check_X_y</span><span class="p">,</span> <span class="n">check_array</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">sklearn.base</span> <span class="kn">import</span> <span class="n">BaseEstimator</span><span class="p">,</span> <span class="n">ClassifierMixin</span><span class="p">,</span> <span class="n">TransformerMixin</span>
+<span class="kn">from</span> <span class="nn">sklearn.utils.validation</span> <span class="kn">import</span> <span class="n">check_X_y</span><span class="p">,</span> <span class="n">check_array</span><span class="p">,</span> <span class="n">check_is_fitted</span>
+<span class="kn">from</span> <span class="nn">sklearn.utils.multiclass</span> <span class="kn">import</span> <span class="n">unique_labels</span>
+<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">euclidean_distances</span>
+
 
 <div class="viewcode-block" id="TemplateEstimator"><a class="viewcode-back" href="../../template.html#skltemplate.template.TemplateEstimator">[docs]</a><span class="k">class</span> <span class="nc">TemplateEstimator</span><span class="p">(</span><span class="n">BaseEstimator</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot; A template estimator to be used as a reference implementation .</span>
-<span class="sd">    </span>
+
 <span class="sd">    Parameters</span>
 <span class="sd">    ----------</span>
 <span class="sd">    demo_param : str, optional</span>
@@ -153,7 +157,7 @@
 <span class="sd">        Parameters</span>
 <span class="sd">        ----------</span>
 <span class="sd">        X : array-like or sparse matrix of shape = [n_samples, n_features]</span>
-<span class="sd">            The training input samples. </span>
+<span class="sd">            The training input samples.</span>
 <span class="sd">        y : array-like, shape = [n_samples] or [n_samples, n_outputs]</span>
 <span class="sd">            The target values (class labels in classification, real numbers in</span>
 <span class="sd">            regression).</span>
@@ -180,6 +184,137 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">X</span> <span class="o">=</span> <span class="n">check_array</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">X</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span><span class="o">**</span><span class="mi">2</span></div></div>
+
+
+<div class="viewcode-block" id="TemplateClassifier"><a class="viewcode-back" href="../../template.html#skltemplate.template.TemplateClassifier">[docs]</a><span class="k">class</span> <span class="nc">TemplateClassifier</span><span class="p">(</span><span class="n">BaseEstimator</span><span class="p">,</span> <span class="n">ClassifierMixin</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; An example classifier which implements a 1-NN algorithm.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    demo_param : str, optional</span>
+<span class="sd">        A parameter used for demonstation of how to pass and store paramters.</span>
+
+<span class="sd">    Attributes</span>
+<span class="sd">    ----------</span>
+<span class="sd">    X_ : array, shape = [n_samples, n_features]</span>
+<span class="sd">        The input passed during :meth:`fit`</span>
+<span class="sd">    y_ : array, shape = [n_samples]</span>
+<span class="sd">        The labels passed during :meth:`fit`</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">demo_param</span><span class="o">=</span><span class="s1">&#39;demo&#39;</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">demo_param</span> <span class="o">=</span> <span class="n">demo_param</span>
+
+<div class="viewcode-block" id="TemplateClassifier.fit"><a class="viewcode-back" href="../../template.html#skltemplate.template.TemplateClassifier.fit">[docs]</a>    <span class="k">def</span> <span class="nf">fit</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;A reference implementation of a fitting function for a classifier.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        X : array-like, shape = [n_samples, n_features]</span>
+<span class="sd">            The training input samples.</span>
+<span class="sd">        y : array-like, shape = [n_samples]</span>
+<span class="sd">            The target values. An array of int.</span>
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        self : object</span>
+<span class="sd">            Returns self.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># Check that X and y have correct shape</span>
+        <span class="n">X</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">check_X_y</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+        <span class="c1"># Store the classes seen durind fit</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">classes_</span> <span class="o">=</span> <span class="n">unique_labels</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">X_</span> <span class="o">=</span> <span class="n">X</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">y_</span> <span class="o">=</span> <span class="n">y</span>
+        <span class="c1"># Return the classifier</span>
+        <span class="k">return</span> <span class="bp">self</span></div>
+
+<div class="viewcode-block" id="TemplateClassifier.predict"><a class="viewcode-back" href="../../template.html#skltemplate.template.TemplateClassifier.predict">[docs]</a>    <span class="k">def</span> <span class="nf">predict</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">X</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; A reference implementation of a prediction for a classifier.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        X : array-like of shape = [n_samples, n_features]</span>
+<span class="sd">            The input samples.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        y : array of int of shape = [n_samples]</span>
+<span class="sd">            The label for each sample is the label of the closest sample</span>
+<span class="sd">            seen udring fit.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># Check is fit had been called</span>
+        <span class="n">check_is_fitted</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;X_&#39;</span><span class="p">,</span> <span class="s1">&#39;y_&#39;</span><span class="p">])</span>
+
+        <span class="c1"># Input validation</span>
+        <span class="n">X</span> <span class="o">=</span> <span class="n">check_array</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+
+        <span class="n">closest</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argmin</span><span class="p">(</span><span class="n">euclidean_distances</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">X_</span><span class="p">),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">y_</span><span class="p">[</span><span class="n">closest</span><span class="p">]</span></div></div>
+
+
+<div class="viewcode-block" id="TemplateTransformer"><a class="viewcode-back" href="../../template.html#skltemplate.template.TemplateTransformer">[docs]</a><span class="k">class</span> <span class="nc">TemplateTransformer</span><span class="p">(</span><span class="n">BaseEstimator</span><span class="p">,</span> <span class="n">TransformerMixin</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; An example transformer that returns the element-wise square root..</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    demo_param : str, optional</span>
+<span class="sd">        A parameter used for demonstation of how to pass and store paramters.</span>
+
+<span class="sd">    Attributes</span>
+<span class="sd">    ----------</span>
+<span class="sd">    input_shape : tuple</span>
+<span class="sd">        The shape the data passed to :meth:`fit`</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">demo_param</span><span class="o">=</span><span class="s1">&#39;demo&#39;</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">demo_param</span> <span class="o">=</span> <span class="n">demo_param</span>
+
+<div class="viewcode-block" id="TemplateTransformer.fit"><a class="viewcode-back" href="../../template.html#skltemplate.template.TemplateTransformer.fit">[docs]</a>    <span class="k">def</span> <span class="nf">fit</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;A reference implementation of a fitting function for a transformer.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        X : array-like or sparse matrix of shape = [n_samples, n_features]</span>
+<span class="sd">            The training input samples.</span>
+<span class="sd">        y : array-like, shape = [n_samples]</span>
+<span class="sd">            The target values. An array of int.</span>
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        self : object</span>
+<span class="sd">            Returns self.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">X</span> <span class="o">=</span> <span class="n">check_array</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">input_shape_</span> <span class="o">=</span> <span class="n">X</span><span class="o">.</span><span class="n">shape</span>
+
+        <span class="c1"># Return the classifier</span>
+        <span class="k">return</span> <span class="bp">self</span></div>
+
+<div class="viewcode-block" id="TemplateTransformer.transform"><a class="viewcode-back" href="../../template.html#skltemplate.template.TemplateTransformer.transform">[docs]</a>    <span class="k">def</span> <span class="nf">transform</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">X</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; A reference implementation of a transform function.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        X : array-like of shape = [n_samples, n_features]</span>
+<span class="sd">            The input samples.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        X_transformed : array of int of shape = [n_samples, n_features]</span>
+<span class="sd">            The array containing the element-wise square roots of the values</span>
+<span class="sd">            in `X`</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># Check is fit had been called</span>
+        <span class="n">check_is_fitted</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;input_shape_&#39;</span><span class="p">])</span>
+
+        <span class="c1"># Input validation</span>
+        <span class="n">X</span> <span class="o">=</span> <span class="n">check_array</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+
+        <span class="c1"># Check that the input is of the same shape as the one passed</span>
+        <span class="c1"># during fit.</span>
+        <span class="k">if</span> <span class="n">X</span><span class="o">.</span><span class="n">shape</span> <span class="o">!=</span> <span class="bp">self</span><span class="o">.</span><span class="n">input_shape_</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;Shape of input is different from what was seen&#39;</span>
+                             <span class="s1">&#39;in `fit`&#39;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">X</span><span class="p">)</span></div></div>
 </pre></div>
 
            </div>

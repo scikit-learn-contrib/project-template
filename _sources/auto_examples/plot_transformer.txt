@@ -1,0 +1,55 @@
+
+
+.. _sphx_glr_auto_examples_plot_transformer.py:
+
+
+=============================
+Plotting Template Transformer
+=============================
+
+An example plot of :class:`skltemplate.template.TemplateTransformer`
+
+
+
+.. image:: /auto_examples/images/sphx_glr_plot_transformer_001.png
+    :align: center
+
+
+
+
+
+.. code-block:: python
+
+    import numpy as np
+    from skltemplate import TemplateTransformer
+    from matplotlib import pyplot as plt
+
+    X = np.arange(50, dtype=np.float).reshape(-1, 1)
+    X /= 50
+    estimator = TemplateTransformer()
+    X_transformed = estimator.fit_transform(X)
+
+    plt.plot(X.flatten(), label='Original Data')
+    plt.plot(X_transformed.flatten(), label='Transformed Data')
+    plt.title('Plots of original and transformed data')
+
+    plt.legend(loc='best')
+    plt.grid(True)
+    plt.xlabel('Index')
+    plt.ylabel('Value of Data')
+
+    plt.show()
+
+**Total running time of the script:**
+(0 minutes 0.051 seconds)
+
+
+
+.. container:: sphx-glr-download
+
+    **Download Python source code:** :download:`plot_transformer.py <plot_transformer.py>`
+
+
+.. container:: sphx-glr-download
+
+    **Download IPython notebook:** :download:`plot_transformer.ipynb <plot_transformer.ipynb>`

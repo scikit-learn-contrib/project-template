@@ -133,6 +133,93 @@
 <p>The documentation of the template module.</p>
 <span class="target" id="module-skltemplate.template"></span><p>This is a module to be used as a reference for building other modules</p>
 <dl class="class">
+<dt id="skltemplate.template.TemplateClassifier">
+<em class="property">class </em><code class="descclassname">skltemplate.template.</code><code class="descname">TemplateClassifier</code><span class="sig-paren">(</span><em>demo_param='demo'</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/skltemplate/template.html#TemplateClassifier"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#skltemplate.template.TemplateClassifier" title="Permalink to this definition">¶</a></dt>
+<dd><p>An example classifier which implements a 1-NN algorithm.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>demo_param</strong> : str, optional</p>
+<blockquote class="last">
+<div><p>A parameter used for demonstation of how to pass and store paramters.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Attributes</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="4%" />
+<col width="96%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a href="#id1"><span class="problematic" id="id2">X_</span></a></td>
+<td>(array, shape = [n_samples, n_features]) The input passed during <a class="reference internal" href="#skltemplate.template.TemplateClassifier.fit" title="skltemplate.template.TemplateClassifier.fit"><code class="xref py py-meth docutils literal"><span class="pre">fit()</span></code></a></td>
+</tr>
+<tr class="row-even"><td><a href="#id3"><span class="problematic" id="id4">y_</span></a></td>
+<td>(array, shape = [n_samples]) The labels passed during <a class="reference internal" href="#skltemplate.template.TemplateClassifier.fit" title="skltemplate.template.TemplateClassifier.fit"><code class="xref py py-meth docutils literal"><span class="pre">fit()</span></code></a></td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Methods</p>
+<dl class="method">
+<dt id="skltemplate.template.TemplateClassifier.fit">
+<code class="descname">fit</code><span class="sig-paren">(</span><em>X</em>, <em>y</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/skltemplate/template.html#TemplateClassifier.fit"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#skltemplate.template.TemplateClassifier.fit" title="Permalink to this definition">¶</a></dt>
+<dd><p>A reference implementation of a fitting function for a classifier.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>X</strong> : array-like, shape = [n_samples, n_features]</p>
+<blockquote>
+<div><p>The training input samples.</p>
+</div></blockquote>
+<p><strong>y</strong> : array-like, shape = [n_samples]</p>
+<blockquote>
+<div><p>The target values. An array of int.</p>
+</div></blockquote>
+<p><strong>Returns</strong></p>
+<p><strong>&#8212;&#8212;-</strong></p>
+<p><strong>self</strong> : object</p>
+<blockquote class="last">
+<div><p>Returns self.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="skltemplate.template.TemplateClassifier.predict">
+<code class="descname">predict</code><span class="sig-paren">(</span><em>X</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/skltemplate/template.html#TemplateClassifier.predict"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#skltemplate.template.TemplateClassifier.predict" title="Permalink to this definition">¶</a></dt>
+<dd><p>A reference implementation of a prediction for a classifier.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>X</strong> : array-like of shape = [n_samples, n_features]</p>
+<blockquote>
+<div><p>The input samples.</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>y</strong> : array of int of shape = [n_samples]</p>
+<blockquote class="last">
+<div><p>The label for each sample is the label of the closest sample
+seen udring fit.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
 <dt id="skltemplate.template.TemplateEstimator">
 <em class="property">class </em><code class="descclassname">skltemplate.template.</code><code class="descname">TemplateEstimator</code><span class="sig-paren">(</span><em>demo_param='demo_param'</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/skltemplate/template.html#TemplateEstimator"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#skltemplate.template.TemplateEstimator" title="Permalink to this definition">¶</a></dt>
 <dd><p>A template estimator to be used as a reference implementation .</p>
@@ -195,6 +282,90 @@ regression).</p>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>y</strong> : array of shape = [n_samples]</p>
 <blockquote class="last">
 <div><p>Returns <img class="math" src="_images/math/86b052cccbf93634555694d1fc200c90aaf2199d.png" alt="x^2"/> where <img class="math" src="_images/math/188c175aac0a8a9c22499336711b5d7256407254.png" alt="x"/> is the first column of <cite>X</cite>.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="skltemplate.template.TemplateTransformer">
+<em class="property">class </em><code class="descclassname">skltemplate.template.</code><code class="descname">TemplateTransformer</code><span class="sig-paren">(</span><em>demo_param='demo'</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/skltemplate/template.html#TemplateTransformer"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#skltemplate.template.TemplateTransformer" title="Permalink to this definition">¶</a></dt>
+<dd><p>An example transformer that returns the element-wise square root..</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>demo_param</strong> : str, optional</p>
+<blockquote class="last">
+<div><p>A parameter used for demonstation of how to pass and store paramters.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Attributes</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="19%" />
+<col width="81%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>input_shape</td>
+<td>(tuple) The shape the data passed to <a class="reference internal" href="#skltemplate.template.TemplateTransformer.fit" title="skltemplate.template.TemplateTransformer.fit"><code class="xref py py-meth docutils literal"><span class="pre">fit()</span></code></a></td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Methods</p>
+<dl class="method">
+<dt id="skltemplate.template.TemplateTransformer.fit">
+<code class="descname">fit</code><span class="sig-paren">(</span><em>X</em>, <em>y=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/skltemplate/template.html#TemplateTransformer.fit"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#skltemplate.template.TemplateTransformer.fit" title="Permalink to this definition">¶</a></dt>
+<dd><p>A reference implementation of a fitting function for a transformer.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>X</strong> : array-like or sparse matrix of shape = [n_samples, n_features]</p>
+<blockquote>
+<div><p>The training input samples.</p>
+</div></blockquote>
+<p><strong>y</strong> : array-like, shape = [n_samples]</p>
+<blockquote>
+<div><p>The target values. An array of int.</p>
+</div></blockquote>
+<p><strong>Returns</strong></p>
+<p><strong>&#8212;&#8212;-</strong></p>
+<p><strong>self</strong> : object</p>
+<blockquote class="last">
+<div><p>Returns self.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="skltemplate.template.TemplateTransformer.transform">
+<code class="descname">transform</code><span class="sig-paren">(</span><em>X</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/skltemplate/template.html#TemplateTransformer.transform"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#skltemplate.template.TemplateTransformer.transform" title="Permalink to this definition">¶</a></dt>
+<dd><p>A reference implementation of a transform function.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>X</strong> : array-like of shape = [n_samples, n_features]</p>
+<blockquote>
+<div><p>The input samples.</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>X_transformed</strong> : array of int of shape = [n_samples, n_features]</p>
+<blockquote class="last">
+<div><p>The array containing the element-wise square roots of the values
+in <cite>X</cite></p>
 </div></blockquote>
 </td>
 </tr>

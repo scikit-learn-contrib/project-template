@@ -7,7 +7,7 @@
 Plotting Template Estimator
 ===========================
 
-An example plot of TemplateEstimator
+An example plot of :class:`skltemplate.template.TemplateEstimator`
 
 
 
@@ -30,8 +30,9 @@ An example plot of TemplateEstimator
     estimator.fit(X, y)
     plt.plot(estimator.predict(X))
     plt.show()
+
 **Total running time of the script:**
-(0 minutes 0.128 seconds)
+(0 minutes 0.047 seconds)
 
 
 
