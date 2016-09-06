@@ -3,6 +3,7 @@
 [![Travis Status](https://travis-ci.org/scikit-learn-contrib/project-template.svg?branch=master)](https://travis-ci.org/scikit-learn-contrib/project-template)
 [![Coveralls Status](https://coveralls.io/repos/scikit-learn-contrib/project-template/badge.svg?branch=master&service=github)](https://coveralls.io/r/scikit-learn-contrib/project-template)
 [![CircleCI Status](https://circleci.com/gh/scikit-learn-contrib/project-template.svg?style=shield&circle-token=:circle-token)](https://circleci.com/gh/scikit-learn-contrib/project-template/tree/master)
+[![Build status](https://ci.appveyor.com/api/projects/status/ryr6uy1il96i6hvb/branch/master?svg=true)](https://ci.appveyor.com/project/vighneshbirodkar/project-template-9rjmk/branch/master)
 
 **project-template** is a template project for 
 [scikit-learn](http://scikit-learn.org/) 
