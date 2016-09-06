@@ -33,7 +33,7 @@ An example plot of :class:`skltemplate.template.TemplateEstimator`
     plt.show()
 
 **Total running time of the script:**
-(0 minutes 0.044 seconds)
+(0 minutes 0.045 seconds)
 
 
 
