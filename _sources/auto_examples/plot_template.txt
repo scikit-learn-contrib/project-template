@@ -32,19 +32,19 @@ An example plot of :class:`skltemplate.template.TemplateEstimator`
     plt.plot(estimator.predict(X))
     plt.show()
 
-**Total running time of the script:**
-(0 minutes 0.045 seconds)
+**Total running time of the script:** ( 0 minutes  0.045 seconds)
 
 
 
 .. container:: sphx-glr-download
 
-    **Download Python source code:** :download:`plot_template.py <plot_template.py>`
+    :download:`Download Python source code: plot_template.py <plot_template.py>`
+
 
 
 .. container:: sphx-glr-download
 
-    **Download IPython notebook:** :download:`plot_template.ipynb <plot_template.ipynb>`
+    :download:`Download Jupyter notebook: plot_template.ipynb <plot_template.ipynb>`
 
 .. rst-class:: sphx-glr-signature
 

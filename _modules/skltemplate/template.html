@@ -149,7 +149,7 @@
 <span class="sd">        A parameter used for demonstation of how to pass and store paramters.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">demo_param</span><span class="o">=</span><span class="s1">&#39;demo_param&#39;</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">demo_param</span> <span class="o">=</span> <span class="s1">&#39;demo_param&#39;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">demo_param</span> <span class="o">=</span> <span class="n">demo_param</span>
 
 <div class="viewcode-block" id="TemplateEstimator.fit"><a class="viewcode-back" href="../../template.html#skltemplate.template.TemplateEstimator.fit">[docs]</a>    <span class="k">def</span> <span class="nf">fit</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;A reference implementation of a fitting function</span>
@@ -161,12 +161,14 @@
 <span class="sd">        y : array-like, shape = [n_samples] or [n_samples, n_outputs]</span>
 <span class="sd">            The target values (class labels in classification, real numbers in</span>
 <span class="sd">            regression).</span>
+
 <span class="sd">        Returns</span>
 <span class="sd">        -------</span>
 <span class="sd">        self : object</span>
 <span class="sd">            Returns self.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">X</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">check_X_y</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+        <span class="c1"># Return the estimator</span>
         <span class="k">return</span> <span class="bp">self</span></div>
 
 <div class="viewcode-block" id="TemplateEstimator.predict"><a class="viewcode-back" href="../../template.html#skltemplate.template.TemplateEstimator.predict">[docs]</a>    <span class="k">def</span> <span class="nf">predict</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">X</span><span class="p">):</span>
@@ -213,6 +215,7 @@
 <span class="sd">            The training input samples.</span>
 <span class="sd">        y : array-like, shape = [n_samples]</span>
 <span class="sd">            The target values. An array of int.</span>
+
 <span class="sd">        Returns</span>
 <span class="sd">        -------</span>
 <span class="sd">        self : object</span>
@@ -275,8 +278,10 @@
 <span class="sd">        ----------</span>
 <span class="sd">        X : array-like or sparse matrix of shape = [n_samples, n_features]</span>
 <span class="sd">            The training input samples.</span>
-<span class="sd">        y : array-like, shape = [n_samples]</span>
-<span class="sd">            The target values. An array of int.</span>
+<span class="sd">        y : None</span>
+<span class="sd">            There is no need of a target in a transformer, yet the pipeline API</span>
+<span class="sd">            requires this parameter.</span>
+
 <span class="sd">        Returns</span>
 <span class="sd">        -------</span>
 <span class="sd">        self : object</span>
@@ -286,7 +291,7 @@
 
         <span class="bp">self</span><span class="o">.</span><span class="n">input_shape_</span> <span class="o">=</span> <span class="n">X</span><span class="o">.</span><span class="n">shape</span>
 
-        <span class="c1"># Return the classifier</span>
+        <span class="c1"># Return the transformer</span>
         <span class="k">return</span> <span class="bp">self</span></div>
 
 <div class="viewcode-block" id="TemplateTransformer.transform"><a class="viewcode-back" href="../../template.html#skltemplate.template.TemplateTransformer.transform">[docs]</a>    <span class="k">def</span> <span class="nf">transform</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">X</span><span class="p">):</span>
