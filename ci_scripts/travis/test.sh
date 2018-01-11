@@ -7,9 +7,8 @@ mkdir -p $TEST_DIR
 cd $TEST_DIR
 
 if [[ "$COVERAGE" == "true" ]]; then
-    py.test -v -x --doctest-modules --ignore=setup.py --pyargs=$MODULE \
+    py.test -v -x --doctest-modules --ignore=setup.py --pyargs $MODULE \
         --cov=$MODULE
 else
-    py.test -v -x --doctest-modules --ignore=setup.py --pyargs=$MODULE \
-        --cov=$MODULE
+    py.test -v -x --doctest-modules --ignore=setup.py --pyargs $MODULE
 fi
