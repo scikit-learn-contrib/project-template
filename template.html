@@ -13,6 +13,8 @@
 
   
   
+  
+  
 
   
 
@@ -32,6 +34,9 @@
   
 
   
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
     <link rel="top" title="sklearn-template 0.1.0 documentation" href="index.html"/> 
 
   
@@ -41,6 +46,7 @@
 
 <body class="wy-body-for-nav" role="document">
 
+   
   <div class="wy-grid-for-nav">
 
     
@@ -81,7 +87,10 @@
           
             
             
-                <ul>
+              
+            
+            
+              <ul>
 <li class="toctree-l1"><a class="reference internal" href="api.html">API Documentation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="auto_examples/index.html">General examples</a></li>
 </ul>
@@ -96,8 +105,10 @@
 
       
       <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
-        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-        <a href="index.html">sklearn-template</a>
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">sklearn-template</a>
+        
       </nav>
 
 
@@ -106,23 +117,40 @@
         <div class="rst-content">
           
 
- 
+
+
+
+
+
+
+
+
+
+
+
 
 
 
 <div role="navigation" aria-label="breadcrumbs navigation">
+
   <ul class="wy-breadcrumbs">
-    <li><a href="index.html">Docs</a> &raquo;</li>
-      
-    <li>Template</li>
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Template</li>
+    
+    
       <li class="wy-breadcrumbs-aside">
         
-          
-            <a href="_sources/template.txt" rel="nofollow"> View page source</a>
+            
+            <a href="_sources/template.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
+    
   </ul>
+
+  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
@@ -151,14 +179,14 @@
 <p class="rubric">Attributes</p>
 <table border="1" class="docutils">
 <colgroup>
-<col width="4%" />
-<col width="96%" />
+<col width="7%" />
+<col width="93%" />
 </colgroup>
 <tbody valign="top">
-<tr class="row-odd"><td><a href="#id1"><span class="problematic" id="id2">X_</span></a></td>
+<tr class="row-odd"><td><strong>X_</strong></td>
 <td>(array, shape = [n_samples, n_features]) The input passed during <a class="reference internal" href="#skltemplate.template.TemplateClassifier.fit" title="skltemplate.template.TemplateClassifier.fit"><code class="xref py py-meth docutils literal"><span class="pre">fit()</span></code></a></td>
 </tr>
-<tr class="row-even"><td><a href="#id3"><span class="problematic" id="id4">y_</span></a></td>
+<tr class="row-even"><td><strong>y_</strong></td>
 <td>(array, shape = [n_samples]) The labels passed during <a class="reference internal" href="#skltemplate.template.TemplateClassifier.fit" title="skltemplate.template.TemplateClassifier.fit"><code class="xref py py-meth docutils literal"><span class="pre">fit()</span></code></a></td>
 </tr>
 </tbody>
@@ -310,11 +338,11 @@ regression).</p>
 <p class="rubric">Attributes</p>
 <table border="1" class="docutils">
 <colgroup>
-<col width="19%" />
-<col width="81%" />
+<col width="24%" />
+<col width="76%" />
 </colgroup>
 <tbody valign="top">
-<tr class="row-odd"><td>input_shape</td>
+<tr class="row-odd"><td><strong>input_shape</strong></td>
 <td>(tuple) The shape the data passed to <a class="reference internal" href="#skltemplate.template.TemplateTransformer.fit" title="skltemplate.template.TemplateTransformer.fit"><code class="xref py py-meth docutils literal"><span class="pre">fit()</span></code></a></td>
 </tr>
 </tbody>
@@ -380,6 +408,9 @@ in <cite>X</cite></p>
 
 
            </div>
+           <div class="articleComments">
+            
+           </div>
           </div>
           <footer>
   
@@ -413,7 +444,8 @@ in <cite>X</cite></p>
             VERSION:'0.1.0',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
         };
     </script>
       <script type="text/javascript" src="_static/jquery.js"></script>
