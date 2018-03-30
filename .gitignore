@@ -47,7 +47,6 @@ htmlcov/
 .coverage
 .coverage.*
 .cache
-.test.sh.swp
 nosetests.xml
 coverage.xml
 *,cover
