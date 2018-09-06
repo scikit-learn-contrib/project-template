@@ -124,7 +124,7 @@ class TemplateClassifier(BaseEstimator, ClassifierMixin):
 
 
 class TemplateTransformer(BaseEstimator, TransformerMixin):
-    """ An example transformer that returns the element-wise square root..
+    """ An example transformer that returns the element-wise square root.
 
     Parameters
     ----------
