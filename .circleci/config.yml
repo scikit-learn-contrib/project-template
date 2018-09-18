@@ -12,7 +12,7 @@ jobs:
       - export PATH="~/miniconda/bin:$PATH"
       - conda update --yes --quiet conda
       - conda create -n testenv --yes --quiet python=3.6
-      - conda activate testenv
+      - source activate testenv
       # install the dependencies to build the documentation
       - conda install --yes pip numpy scipy scikit-learn matplotlib sphinx \
             sphinx_rtd_theme numpydoc
