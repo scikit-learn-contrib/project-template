@@ -7,12 +7,12 @@ cache:
   directories:
   - $HOME/.cache/pip
 
-  matrix:
-    include:
-      - env: PYTHON_VERSION="2.7"
-      - env: PYTHON_VERSION="3.5"
-      - env: PYTHON_VERSION="3.6"
-      - env: PYTHON_VERSION="3.7"
+matrix:
+  include:
+    - env: PYTHON_VERSION="2.7"
+    - env: PYTHON_VERSION="3.5"
+    - env: PYTHON_VERSION="3.6"
+    - env: PYTHON_VERSION="3.7"
 
 install:
   # install miniconda
