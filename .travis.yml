@@ -25,7 +25,8 @@ install:
   # create the testing environment
   - conda create -n testenv --yes python=$PYTHON_VERSION pip
   - source activate testenv
-  - conda install --yes numpy scipy scikit-learn pytest pytest-cov
+  - conda install --yes numpy scipy pytest pytest-cov
+  - pip install --pre scikit-learn
   - pip install codecov
   # install the contribution
   - pip install .

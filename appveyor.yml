@@ -20,7 +20,8 @@ install:
   # https://github.com/conda/conda/issues/1753
   - "SET PATH=%PYTHON%;%PYTHON%\\Scripts;%PYTHON%\\Library\\bin;%PATH%"
   # install the dependencies
-  - conda install pip numpy scipy scikit-learn pytest pytest-cov -y -q
+  - conda install pip numpy scipy pytest pytest-cov -y -q
+  - pip install --pre scikit-learn
   - pip install codecov
   # install the contribution
   - pip install .
