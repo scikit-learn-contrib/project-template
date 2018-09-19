@@ -10,19 +10,25 @@ Estimator
 =========
 
 .. autosummary::
-   :toctree: TemplateEstimator
+   :toctree: generated/
    :template: class.rst
+
+   TemplateEstimator
 
 Transformer
 ===========
 
 .. autosummary::
-   :toctree: TemplateTransformer
+   :toctree: generated/
    :template: class.rst
+
+   TemplateTransformer
 
 Predictor
 =========
 
 .. autosummary::
-   :toctree: TemplateClassifier
+   :toctree: generated/
    :template: class.rst
+
+    TemplateClassifier

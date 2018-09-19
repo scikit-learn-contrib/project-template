@@ -23,13 +23,6 @@ import sphinx_rtd_theme
 # documentation root, use os.path.abspath to make it absolute, like shown here.
 #sys.path.insert(0, os.path.abspath('.'))
 
-# -- General configuration ---------------------------------------------------
-
-# Try to override the matplotlib configuration as early as possible
-try:
-    import gen_rst
-except:
-    pass
 # -- General configuration ------------------------------------------------
 
 # If your documentation needs a minimal Sphinx version, state it here.
@@ -43,10 +36,8 @@ extensions = [
     'sphinx.ext.autosummary',
     'sphinx.ext.doctest',
     'sphinx.ext.intersphinx',
-    'sphinx.ext.linkcode',
     'sphinx.ext.viewcode',
     'numpydoc',
-    'sphinx_issues',
     'sphinx_gallery.gen_gallery',
 ]
 
@@ -66,6 +57,9 @@ autodoc_default_flags = ['members', 'inherited-members']
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
+
+# generate autosummary even if no references
+autosummary_generate = True
 
 # The suffix of source filenames.
 source_suffix = '.rst'

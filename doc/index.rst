@@ -32,7 +32,7 @@ scikit-learn compatible classes.
    auto_examples/index
 
 `Getting started <quick_start.html>`_
----------------------------------
+-------------------------------------
 
 Information regarding this template and how to modify it for your own project.
 

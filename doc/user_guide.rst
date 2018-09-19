@@ -6,4 +6,11 @@
 User guide: create your own scikit-learn estimator
 ==================================================
 
-xxx
+Estimator
+---------
+
+Transformer
+-----------
+
+Predictor
+---------

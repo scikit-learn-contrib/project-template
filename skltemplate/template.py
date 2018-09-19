@@ -9,7 +9,10 @@ from sklearn.metrics import euclidean_distances
 
 
 class TemplateEstimator(BaseEstimator):
-    """ A template estimator to be used as a reference implementation .
+    """ A template estimator to be used as a reference implementation.
+
+    For more information regarding how to build your own estimator, read more
+    in the :ref:`User Guide <user_guide>`.
 
     Parameters
     ----------
@@ -60,6 +63,9 @@ class TemplateEstimator(BaseEstimator):
 
 class TemplateClassifier(BaseEstimator, ClassifierMixin):
     """ An example classifier which implements a 1-NN algorithm.
+
+    For more information regarding how to build your own classifier, read more
+    in the :ref:`User Guide <user_guide>`.
 
     Parameters
     ----------
@@ -129,6 +135,9 @@ class TemplateClassifier(BaseEstimator, ClassifierMixin):
 
 class TemplateTransformer(BaseEstimator, TransformerMixin):
     """ An example transformer that returns the element-wise square root.
+
+    For more information regarding how to build your own transformer, read more
+    in the :ref:`User Guide <user_guide>`.
 
     Parameters
     ----------
