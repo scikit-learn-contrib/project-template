@@ -9,10 +9,14 @@ cache:
 
 matrix:
   include:
-    - env: PYTHON_VERSION="2.7"
-    - env: PYTHON_VERSION="3.5"
-    - env: PYTHON_VERSION="3.6"
-    - env: PYTHON_VERSION="3.7"
+    - env: PYTHON_VERSION="2.7" NUMPY_VERSION="1.13.1" SCIPY_VERSION="0.19.1"
+           SKLEARN_VERSION="0.19.2"
+    - env: PYTHON_VERSION="3.5" NUMPY_VERSION="1.13.1" SCIPY_VERSION="0.19.1"
+           SKLEARN_VERSION="0.19.2"
+    - env: PYTHON_VERSION="3.6" NUMPY_VERSION="1.13.1" SCIPY_VERSION="0.19.1"
+           SKLEARN_VERSION="0.19.2"
+    - env: PYTHON_VERSION="3.7" NUMPY_VERSION="*" SCIPY_VERSION="*"
+           SKLEARN_VERSION="*"
 
 install:
   # install miniconda
@@ -23,16 +27,16 @@ install:
   - export PATH=$MINICONDA_PATH/bin:$PATH
   - conda update --yes conda
   # create the testing environment
-  - conda create -n testenv --yes python=$PYTHON_VERSION pip
+  - conda create -n testenv --yes python=$PYTHON_VERSION pip \
+        numpy==$NUMPY_VERSION scipy==$SCIPY_VERSION scikit-learn==$SKLEARN_VERSION \
+        pytest pytest-cov
   - source activate testenv
-  - conda install --yes numpy scipy pytest pytest-cov
-  - pip install --pre scikit-learn
   - pip install codecov
-  # install the contribution
+  # install the package
   - pip install .
 
 script:
-  - pytest -lv --cov-report term-missing skltemplate --cov=skltemplate
+  - pytest -v --cov=skltemplate --pyargs skltemplate
 
 after_success:
   - codecov
