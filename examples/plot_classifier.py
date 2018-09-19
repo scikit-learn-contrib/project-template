@@ -6,9 +6,8 @@ Plotting Template Classifier
 An example plot of :class:`skltemplate.template.TemplateClassifier`
 """
 import numpy as np
-from skltemplate import TemplateClassifier
 from matplotlib import pyplot as plt
-
+from skltemplate import TemplateClassifier
 
 X = [[0, 0], [1, 1]]
 y = [0, 1]
