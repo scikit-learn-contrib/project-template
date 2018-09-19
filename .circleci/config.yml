@@ -6,22 +6,17 @@ jobs:
       - image: circleci/python:3.6.1
     steps:
       - checkout
-      - run:
-        command: |
-          # install conda
-          wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh -O miniconda.sh
-          chmod +x miniconda.sh && ./miniconda.sh -b -p ~/miniconda
-          export PATH="~/miniconda/bin:$PATH"
-          conda update --yes --quiet conda
-          conda create -n testenv --yes --quiet python=3.6
-          source activate testenv
-          # install the dependencies to build the documentation
-          conda install --yes pip numpy scipy scikit-learn matplotlib sphinx sphinx_rtd_theme numpydoc
-          pip install sphinx-gallery
-          pip install .
-          # build the documentation
-          cd doc
-          make html
+      - run: wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh -O miniconda.sh
+      - run: chmod +x miniconda.sh && ./miniconda.sh -b -p ~/miniconda
+      - run: export PATH="~/miniconda/bin:$PATH"
+      - run: conda update --yes --quiet conda
+      - run: conda create -n testenv --yes --quiet python=3.6
+      - run: source activate testenv
+      - run: conda install --yes pip numpy scipy scikit-learn matplotlib sphinx sphinx_rtd_theme numpydoc
+      - run: pip install sphinx-gallery
+      - run: pip install .
+      - run: cd doc
+      - run: make html
       - store_artifacts:
           path: doc/_build/html
           destination: doc
