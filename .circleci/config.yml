@@ -7,18 +7,18 @@ jobs:
     steps:
       - checkout
       - run:
-        command: |
-          wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh -O miniconda.sh
-          chmod +x miniconda.sh && ./miniconda.sh -b -p ~/miniconda
-          export PATH="~/miniconda/bin:$PATH"
-          conda update --yes --quiet conda
-          conda create -n testenv --yes --quiet python=3.6
-          source activate testenv
-          conda install --yes pip numpy scipy scikit-learn matplotlib sphinx sphinx_rtd_theme numpydoc
-          pip install sphinx-gallery
-          pip install .
-          cd doc
-          make html
+          command: |
+            wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh -O miniconda.sh
+            chmod +x miniconda.sh && ./miniconda.sh -b -p ~/miniconda
+            export PATH="~/miniconda/bin:$PATH"
+            conda update --yes --quiet conda
+            conda create -n testenv --yes --quiet python=3.6
+            source activate testenv
+            conda install --yes pip numpy scipy scikit-learn matplotlib sphinx sphinx_rtd_theme numpydoc
+            pip install sphinx-gallery
+            pip install .
+            cd doc
+            make html
       - store_artifacts:
           path: doc/_build/html
           destination: doc
