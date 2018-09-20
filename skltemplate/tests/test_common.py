@@ -1,15 +1,14 @@
+import pytest
+
 from sklearn.utils.estimator_checks import check_estimator
-from skltemplate import (TemplateEstimator, TemplateClassifier,
-                         TemplateTransformer)
+
+from skltemplate import TemplateEstimator
+from skltemplate import TemplateClassifier
+from skltemplate import TemplateTransformer
 
 
-def test_estimator():
-    return check_estimator(TemplateEstimator)
-
-
-def test_classifier():
-    return check_estimator(TemplateClassifier)
-
-
-def test_transformer():
-    return check_estimator(TemplateTransformer)
+@pytest.mark.parametrize(
+    "Estimator", [TemplateEstimator, TemplateTransformer, TemplateClassifier]
+)
+def test_all_estimators(Estimator):
+    return check_estimator(Estimator)
