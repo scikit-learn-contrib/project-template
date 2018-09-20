@@ -1,6 +1,6 @@
 .. -*- mode: rst -*-
 
-|Travis|_ |AppVeyor|_ |Codecov|_ |CircleCI|_
+|Travis|_ |AppVeyor|_ |Codecov|_ |CircleCI|_ |ReadTheDocs|_
 
 .. |Travis| image:: https://travis-ci.org/scikit-learn-contrib/project-template.svg?branch=master
 .. _Travis: https://travis-ci.org/scikit-learn-contrib/project-template
@@ -17,12 +17,13 @@
 .. |ReadTheDocs| .. image:: https://readthedocs.org/projects/sklearn-template/badge/?version=latest
 .. _ReadTheDocs: https://sklearn-template.readthedocs.io/en/latest/?badge=latest
 
-
 project-template - A template for scikit-learn contributions
 ============================================================
 
-**project-template** is a template project for
-[scikit-learn](http://scikit-learn.org/) compatible extensions.
+.. _scikit-learn: https://scikit-learn.org
+
+**project-template** is a template project for scikit-learn_ compatible
+extensions.
 
 It aids development of estimators that can be used in scikit-learn pipelines
 and (hyper)parameter search, while facilitating testing (including some API
