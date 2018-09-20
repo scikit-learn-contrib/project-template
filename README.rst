@@ -14,7 +14,7 @@
 .. |CircleCI| image:: https://circleci.com/gh/scikit-learn-contrib/project-template.svg?style=shield&circle-token=:circle-token
 .. _CircleCI: https://circleci.com/gh/scikit-learn-contrib/project-template/tree/master
 
-.. |ReadTheDocs| .. image:: https://readthedocs.org/projects/sklearn-template/badge/?version=latest
+.. |ReadTheDocs| image:: https://readthedocs.org/projects/sklearn-template/badge/?version=latest
 .. _ReadTheDocs: https://sklearn-template.readthedocs.io/en/latest/?badge=latest
 
 project-template - A template for scikit-learn contributions
