@@ -121,7 +121,7 @@ class TemplateClassifier(BaseEstimator, ClassifierMixin):
         -------
         y : ndarray, shape (n_samples,)
             The label for each sample is the label of the closest sample
-            seen udring fit.
+            seen during fit.
         """
         # Check is fit had been called
         check_is_fitted(self, ['X_', 'y_'])
