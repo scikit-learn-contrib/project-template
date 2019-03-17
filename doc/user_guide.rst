@@ -24,7 +24,7 @@ Once imported, you can create a class which inherate from this base class::
 Transformer
 -----------
 
-Transformers are scikit-lean estimators which implement a ``transform`` method.
+Transformers are scikit-learn estimators which implement a ``transform`` method.
 The use case is the following:
 
 * at ``fit``, some parameters can be learned from ``X`` and ``y``;
@@ -42,12 +42,12 @@ One can import the mixin class as::
     >>> from sklearn.base import TransformerMixin
 
 Therefore, when creating a transformer, you need to create a class which
-inherates from both :class:`sklearn.base.BaseEstimator` and
+inherits from both :class:`sklearn.base.BaseEstimator` and
 :class:`sklearn.base.TransformerMixin`. The scikit-learn API imposed ``fit`` to
 **return ``self``**. The reason is that it allows to pipeline ``fit`` and
 ``transform`` imposed by the :class:`sklearn.base.TransformerMixin`. The
 ``fit`` method is expected to have ``X`` and ``y`` as inputs. Note that
-``transform`` take only ``X`` as input and is expected to return the
+``transform`` takes only ``X`` as input and is expected to return the
 transformed version of ``X``::
 
     >>> class MyOwnTransformer(BaseEstimator, TransformerMixin):
@@ -78,7 +78,7 @@ Predictor
 Regressor
 ~~~~~~~~~
 
-Similarly, regressors are scikit-lean estimators which implement a ``predict``
+Similarly, regressors are scikit-learn estimators which implement a ``predict``
 method. The use case is the following:
 
 * at ``fit``, some parameters can be learned from ``X`` and ``y``;
@@ -86,14 +86,14 @@ method. The use case is the following:
   learned during ``fit``.
 
 In addition, scikit-learn provides a mixin_, i.e.
-:class:`sklearn.base.RegressorMixin`, which implement the ``score`` method
-which compute the :math:`R^2` score of the predictions.
+:class:`sklearn.base.RegressorMixin`, which implements the ``score`` method
+which computes the :math:`R^2` score of the predictions.
 
 One can import the mixin as::
 
     >>> from sklearn.base import RegressorMixin
 
-Therefore, we create a regressor, :class:`MyOwnRegressor` which inherates from
+Therefore, we create a regressor, :class:`MyOwnRegressor` which inherits from
 both :class:`sklearn.base.BaseEstimator` and
 :class:`sklearn.base.RegressorMixin`. The method ``fit`` gets ``X`` and ``y``
 as input and should return ``self``. It should implement the ``predict``
@@ -116,7 +116,7 @@ We illustrate that this regressor is working within a scikit-learn pipeline::
     >>> pipe.predict(X)  # doctest: +ELLIPSIS
     array([...])
 
-Since we inherite from the :class:`sklearn.base.RegressorMixin`, we can call
+Since we inherit from the :class:`sklearn.base.RegressorMixin`, we can call
 the ``score`` method which will return the :math:`R^2` score::
 
     >>> pipe.score(X, y)  # doctest: +ELLIPSIS
@@ -126,27 +126,27 @@ Classifier
 ~~~~~~~~~~
 
 Similarly to regressors, classifiers implement ``predict``. In addition, they
-output the probabilities of the prediction using the ``predict_proba``:
+output the probabilities of the prediction using the ``predict_proba`` method:
 
 * at ``fit``, some parameters can be learned from ``X`` and ``y``;
 * at ``predict``, predictions will be computed using ``X`` using the parameters
-  learned during ``fit``. It corresponds to the class for each sample;
+  learned during ``fit``. The output corresponds to the predicted class for each sample;
 * ``predict_proba`` will give a 2D matrix where each column corresponds to the
-  class and each entry will be the probability to be the associated class.
+  class and each entry will be the probability of the associated class.
 
 In addition, scikit-learn provides a mixin, i.e.
-:class:`sklearn.base.ClassifierMixin`, which implement the ``score`` method
-which compute the accuracy score of the predictions.
+:class:`sklearn.base.ClassifierMixin`, which implements the ``score`` method
+which computes the accuracy score of the predictions.
 
 One can import this mixin as::
 
     >>> from sklearn.base import ClassifierMixin
 
-Therefore, we create a classifier, :class:`MyOwnClassifier` which inherates
+Therefore, we create a classifier, :class:`MyOwnClassifier` which inherits
 from both :class:`slearn.base.BaseEstimator` and
 :class:`sklearn.base.ClassifierMixin`. The method ``fit`` gets ``X`` and ``y``
 as input and should return ``self``. It should implement the ``predict``
-function which should output the class infered by the classifier.
+function which should output the class inferred by the classifier.
 ``predict_proba`` will output some probabilities instead::
 
     >>> class MyOwnClassifier(BaseEstimator, ClassifierMixin):
@@ -174,7 +174,7 @@ Then, you can call ``predict`` and ``predict_proba``::
     >>> pipe.predict_proba(X)  # doctest: +ELLIPSIS
     array([...])
 
-Since our classifier inherites from :class:`sklearn.base.ClassifierMixin`, we
+Since our classifier inherits from :class:`sklearn.base.ClassifierMixin`, we
 can compute the accuracy by calling the ``score`` method::
 
     >>> pipe.score(X, y)  # doctest: +ELLIPSIS
