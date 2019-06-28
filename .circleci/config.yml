@@ -18,7 +18,7 @@ jobs:
             pip install sphinx-gallery
             pip install .
             cd doc
-            make html
+            make doctest
       - store_artifacts:
           path: doc/_build/html
           destination: doc
