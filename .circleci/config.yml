@@ -19,9 +19,6 @@ jobs:
             conda install --yes pip numpy scipy scikit-learn matplotlib sphinx sphinx_rtd_theme numpydoc pillow
             pip install sphinx-gallery
             pip install .
-      - run:
-          name: run tests
-          command: |
             cd doc
             make doctest
       - store_artifacts:
