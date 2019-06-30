@@ -21,6 +21,7 @@ jobs:
             pip install .
       - run:
           name: run tests
+          command: |
             cd doc
             make doctest
       - store_artifacts:
