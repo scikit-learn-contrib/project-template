@@ -52,6 +52,18 @@ extensions = ['sphinx.ext.autodoc',
               'sphinx.ext.todo',
               'sphinx_gallery.gen_gallery']
 
+# this is needed for some reason...
+# see https://github.com/numpy/numpydoc/issues/69
+numpydoc_show_class_members = False
+
+# pngmath / imgmath compatibility layer for different sphinx versions
+import sphinx
+from distutils.version import LooseVersion
+if LooseVersion(sphinx.__version__) < LooseVersion('1.4'):
+    extensions.append('sphinx.ext.pngmath')
+else:
+    extensions.append('sphinx.ext.imgmath')
+
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
 
