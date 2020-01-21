@@ -1,0 +1,367 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>API Documentation &mdash; Helstrom Quantum Centroid Classifier 0.0.3 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/gallery.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="General example" href="auto_examples/index.html" />
+    <link rel="prev" title="User Guide" href="user_guide.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Helstrom Quantum Centroid Classifier
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">User Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="user_guide.html">User Guide</a></li>
+</ul>
+<p class="caption"><span class="caption-text">API Reference</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">API Documentation</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Example</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="auto_examples/index.html">General example</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Helstrom Quantum Centroid Classifier</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>API Documentation</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/api.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="api-documentation">
+<h1>API Documentation<a class="headerlink" href="#api-documentation" title="Permalink to this headline">¶</a></h1>
+<p>This section shows the documentation of the Helstrom Quantum Centroid (HQC) classifier’s API. Click on the [source] links to see the source code for the API.</p>
+<span class="target" id="module-HQC.HQC"></span><dl class="class">
+<dt id="HQC.HQC.HQC">
+<em class="property">class </em><code class="sig-prename descclassname">HQC.HQC.</code><code class="sig-name descname">HQC</code><span class="sig-paren">(</span><em class="sig-param">rescale=1</em>, <em class="sig-param">n_copies=1</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/HQC/HQC.html#HQC"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#HQC.HQC.HQC" title="Permalink to this definition">¶</a></dt>
+<dd><p>The Helstrom Quantum Centroid (HQC) classifier is a quantum-inspired supervised classification
+approach for data with binary classes (ie. data with 2 classes only).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>rescale</strong> (<em>int</em><em>, </em><em>default = 1</em>) – The dataset rescaling factor. A parameter used for rescaling the dataset.</p></li>
+<li><p><strong>n_copies</strong> (<em>int</em><em>, </em><em>default = 1</em>) – The number of copies to take for each quantum density. This is equivalent to taking the
+n-fold Kronecker tensor product for each quantum density.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="attribute">
+<dt id="HQC.HQC.HQC.classes_">
+<code class="sig-name descname">classes_</code><a class="headerlink" href="#HQC.HQC.HQC.classes_" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sorted binary classes.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>ndarray, shape (2,)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="HQC.HQC.HQC.centroid_class_0_">
+<code class="sig-name descname">centroid_class_0_</code><a class="headerlink" href="#HQC.HQC.HQC.centroid_class_0_" title="Permalink to this definition">¶</a></dt>
+<dd><p>Quantum Centroid for class with index 0.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>ndarray, shape (n_features + 1, n_features + 1)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="HQC.HQC.HQC.centroid_class_1_">
+<code class="sig-name descname">centroid_class_1_</code><a class="headerlink" href="#HQC.HQC.HQC.centroid_class_1_" title="Permalink to this definition">¶</a></dt>
+<dd><p>Quantum Centroid for class with index 1.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>ndarray, shape (n_features + 1, n_features + 1)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="HQC.HQC.HQC.q_Hels_obs_">
+<code class="sig-name descname">q_Hels_obs_</code><a class="headerlink" href="#HQC.HQC.HQC.q_Hels_obs_" title="Permalink to this definition">¶</a></dt>
+<dd><p>Quantum Helstrom observable.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>ndarray, shape (n_features + 1, n_features + 1)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="HQC.HQC.HQC.proj_pos_">
+<code class="sig-name descname">proj_pos_</code><a class="headerlink" href="#HQC.HQC.HQC.proj_pos_" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sum of the projectors of the Quantum Helstrom observable’s eigenvectors, which has
+corresponding positive eigenvalues.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>ndarray, shape (n_features + 1, n_features + 1)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="HQC.HQC.HQC.proj_neg_">
+<code class="sig-name descname">proj_neg_</code><a class="headerlink" href="#HQC.HQC.HQC.proj_neg_" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sum of the projectors of the Quantum Helstrom observable’s eigenvectors, which has
+corresponding negative eigenvalues.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>ndarray, shape (n_features + 1, n_features + 1)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="HQC.HQC.HQC.Hels_bound_">
+<code class="sig-name descname">Hels_bound_</code><a class="headerlink" href="#HQC.HQC.HQC.Hels_bound_" title="Permalink to this definition">¶</a></dt>
+<dd><p>Helstrom bound is the upper bound of the probability that one can correctly discriminate
+whether a quantum density is of which of the two binary quantum density pattern.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="HQC.HQC.HQC.fit">
+<code class="sig-name descname">fit</code><span class="sig-paren">(</span><em class="sig-param">X</em>, <em class="sig-param">y</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/HQC/HQC.html#HQC.fit"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#HQC.HQC.HQC.fit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Perform HQC classification with the inverse of the standard stereographic projection encoding,
+with the option to rescale the dataset prior to encoding.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>X</strong> (<em>array-like</em><em>, </em><em>shape</em><em> (</em><em>n_samples</em><em>, </em><em>n_features</em><em>)</em>) – The training input samples. An array of int or float.</p></li>
+<li><p><strong>y</strong> (<em>array-like</em><em>, </em><em>shape</em><em> (</em><em>n_samples</em><em>,</em><em>)</em>) – The training input binary target values. An array of str, int or float.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>self</strong> – Returns self.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>object</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="HQC.HQC.HQC.predict">
+<code class="sig-name descname">predict</code><span class="sig-paren">(</span><em class="sig-param">X</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/HQC/HQC.html#HQC.predict"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#HQC.HQC.HQC.predict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Performs HQC classification on X and returns the binary classes.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>X</strong> (<em>array-like</em><em>, </em><em>shape</em><em> (</em><em>n_samples</em><em>, </em><em>n_features</em><em>)</em>) – The input samples. An array of int or float.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>self.classes_[predict_trace_index]</strong> – The predicted binary classes. An array of str, int or float.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>array-like, shape (n_samples,)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="HQC.HQC.HQC.predict_proba">
+<code class="sig-name descname">predict_proba</code><span class="sig-paren">(</span><em class="sig-param">X</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/HQC/HQC.html#HQC.predict_proba"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#HQC.HQC.HQC.predict_proba" title="Permalink to this definition">¶</a></dt>
+<dd><p>Performs HQC classification on X and returns the trace of the dot product of the densities and the
+sum of the projectors with corresponding positive and negative eigenvalues, respectively.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>X</strong> (<em>array-like</em><em>, </em><em>shape</em><em> (</em><em>n_samples</em><em>, </em><em>n_features</em><em>)</em>) – The input samples. An array of int or float.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>trace_matrix</strong> – Column index 0 corresponds to the trace of the dot product of the densities and the sum of
+projectors with positive eigenvalues. Column index 1 corresponds to the trace of the dot
+product of the densities and the sum of projectors with negative eigenvalues. An array of float.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>array-like, shape (n_samples, 2)</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="auto_examples/index.html" class="btn btn-neutral float-right" title="General example" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="user_guide.html" class="btn btn-neutral float-left" title="User Guide" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Leo Chow
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

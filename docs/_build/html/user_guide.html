@@ -1,0 +1,349 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>User Guide &mdash; Helstrom Quantum Centroid Classifier 0.0.3 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/gallery.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="API Documentation" href="api.html" />
+    <link rel="prev" title="Welcome to the Helstrom Quantum Centroid Classifier’s Documentation!" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Helstrom Quantum Centroid Classifier
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">User Guide</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">User Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#how-to-install-the-api">How to install the API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#how-to-use-the-api">How to use the API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#how-does-the-hqc-classifier-works">How does the HQC classifier works</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">API Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="api.html">API Documentation</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Example</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="auto_examples/index.html">General example</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Helstrom Quantum Centroid Classifier</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>User Guide</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/user_guide.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="user-guide">
+<h1>User Guide<a class="headerlink" href="#user-guide" title="Permalink to this headline">¶</a></h1>
+<p>This user guide will show you a step-by-step guide on how to install the Helstrom Quantum Centroid (HQC) classifier’s API, how to use the HQC classifier’s API and how the algorithm behind the HQC classifier works.</p>
+<div class="section" id="how-to-install-the-api">
+<h2>How to install the API<a class="headerlink" href="#how-to-install-the-api" title="Permalink to this headline">¶</a></h2>
+<p>To install the HQC classifier’s Python package, you will first need to install a Python-based package manager called Pip. See instructions <a class="reference external" href="https://github.com/BurntSushi/nfldb/wiki/Python-&amp;-pip-Windows-installation">in this link</a> (under ‘Pip install’) on how to install Pip.</p>
+<p>Once you have Pip installed, open the command prompt (or cmd) window on your computer. Change directories to the folder that contains the Python file <code class="docutils literal notranslate"><span class="pre">get-pip.py</span></code> that you have just downloaded. Then run the following command in the command prompt:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip install hqc
+</pre></div>
+</div>
+<p>You have now installed the HQC classifier’s Python package in your computer and you are now able to use it in Python Interpreter.</p>
+<p>You can also install the HQC classifier’s Python package in Anaconda. Pip is already pre-installed in Anaconda so you do not need to install Pip if you are using Anaconda. To install the HQC classifier’s Python package in Anaconda, open the Anaconda Prompt window and run the following command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip install hqc
+</pre></div>
+</div>
+<p>You have now installed the HQC classifier’s Python package in Anaconda and you are now able to use it in Anaconda.</p>
+<p>Tip: If there is a never version of the HQC classifier’s Python package released, you can run the following command in the command prompt or Anaconda Prompt window to upgrade to a newer version:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip install hqc --upgrade
+</pre></div>
+</div>
+</div>
+<div class="section" id="how-to-use-the-api">
+<h2>How to use the API<a class="headerlink" href="#how-to-use-the-api" title="Permalink to this headline">¶</a></h2>
+<p>First, import the HQC classifier’s Python package into Python Interpreter or Anaconda:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">hqc</span>
+</pre></div>
+</div>
+<p>Then specify the two parameters required by the HQC classifier, the rescaling factor, <em>rescale</em> and the number of copies to take for each quantum density, <em>n_copies</em>. Say, <em>rescale</em> = 1.5 and <em>n_copies</em> = 2, the HQC classifier would look like:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">hqc</span><span class="o">.</span><span class="n">HQC</span><span class="p">(</span><span class="n">rescale</span><span class="o">=</span><span class="mf">1.5</span><span class="p">,</span> <span class="n">n_copies</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>If either <em>rescale</em> and/or <em>n_copies</em> are not specified, they would both default to 1. The HQC classifier would look like:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">hqc</span><span class="o">.</span><span class="n">HQC</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>where <em>rescale</em> = 1, <em>n_copies</em> = 1</p>
+<p>or</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">hqc</span><span class="o">.</span><span class="n">HQC</span><span class="p">(</span><span class="n">rescale</span><span class="o">=</span><span class="mf">1.5</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>where <em>n_copies</em> = 1</p>
+<p>or</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">hqc</span><span class="o">.</span><span class="n">HQC</span><span class="p">(</span><span class="n">n_copies</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>where <em>rescale</em> = 1</p>
+<p>From here on, we will be using <em>rescale</em> = 1.5 and <em>n_copies</em> = 2 as an example. To get your HQC classification model, fit the features matrix X and binary target vector y, as below:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">model</span> <span class="o">=</span> <span class="n">hqc</span><span class="o">.</span><span class="n">HQC</span><span class="p">(</span><span class="n">rescale</span><span class="o">=</span><span class="mf">1.5</span><span class="p">,</span> <span class="n">n_copies</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The fitted attributes of your model can be obtained by calling the following methods:</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 15%" />
+<col style="width: 85%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Method</p></th>
+<th class="head"><p>Fitted Attribute</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a href="#id1"><span class="problematic" id="id2">model.classes_</span></a></p></td>
+<td><p>Gives the sorted binary classes.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a href="#id3"><span class="problematic" id="id4">model.centroid_class_0_</span></a></p></td>
+<td><p>Gives the Quantum Centroid for <a href="#id5"><span class="problematic" id="id6">classes_</span></a> with index 0.</p></td>
+</tr>
+<tr class="row-even"><td><p><a href="#id7"><span class="problematic" id="id8">model.centroid_class_1_</span></a></p></td>
+<td><p>Gives the Quantum Centroid for <a href="#id9"><span class="problematic" id="id10">classes_</span></a> with index 1.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a href="#id11"><span class="problematic" id="id12">model.q_Hels_obs_</span></a></p></td>
+<td><p>Gives the Quantum Helstrom observable.</p></td>
+</tr>
+<tr class="row-even"><td><p><a href="#id13"><span class="problematic" id="id14">model.proj_pos_</span></a></p></td>
+<td><p>Gives the sum of the projectors of the Quantum Helstrom observable’s eigenvectors, which has corresponding positive eigenvalues.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a href="#id15"><span class="problematic" id="id16">model.proj_neg_</span></a></p></td>
+<td><p>Gives the sum of the projectors of the Quantum Helstrom observable’s eigenvectors, which has corresponding negative eigenvalues.</p></td>
+</tr>
+<tr class="row-even"><td><p><a href="#id17"><span class="problematic" id="id18">model.Hels_bound_</span></a></p></td>
+<td><p>Gives the Helstrom bound.</p></td>
+</tr>
+</tbody>
+</table>
+<p>For prediction, you can obtain the trace matrix where column index 0 corresponds to the trace values for class 0 and column index 1 corresponds to the trace values for class 1, by using:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">model</span><span class="o">.</span><span class="n">predict_proba</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>You can then obtain the class predictions by using:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>You can obtain the accuracy score or the Jaccard similarity score using:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">model</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>You can use scikit-learn’s GridSearchCV tool to do an exhaustive search to find the optimal values for the parameters <em>rescale</em> and <em>n_copies</em>. For eg.:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">GridSearchCV</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="n">param_grid</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;rescale&#39;</span><span class="p">:[</span><span class="mf">0.5</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">],</span> <span class="s1">&#39;n_copies&#39;</span><span class="p">:[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]}</span>
+<span class="n">models</span> <span class="o">=</span> <span class="n">GridSearchCV</span><span class="p">(</span><span class="n">hqc</span><span class="o">.</span><span class="n">HQC</span><span class="p">(),</span> <span class="n">param_grid</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
+
+<span class="c1"># To ouput a dataframe table of all the models specified in param_grid</span>
+<span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">cv_results_</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>More information about scikit-learn’s GridSearchCV tool can be found <a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.GridSearchCV.html">here</a>.</p>
+</div>
+<div class="section" id="how-does-the-hqc-classifier-works">
+<h2>How does the HQC classifier works<a class="headerlink" href="#how-does-the-hqc-classifier-works" title="Permalink to this headline">¶</a></h2>
+<p>Below is a step-by-step guide to the algorithm behind the HQC classifier. The source code can be found in this <a class="reference external" href="https://github.com/leockl/helstrom-quantum-centroid-classifier/blob/master/HQC/HQC.py">link</a>.</p>
+<ol class="arabic simple">
+<li><p>First the algorithm perform checks on the features matrix X and binary target vector y, such as checking if X and y have the same number of rows (samples/observations) and y is of a categorical type variable.</p></li>
+<li><p>Then it encodes y into binary classes 0 and 1.</p></li>
+<li><p>Because the following calculations from here on would involve decimal places, X is converted to float to allow for floating point calculations.</p></li>
+<li><p>X is then multiplied by the rescaling factor, <em>rescale</em> (chosen by the user).</p></li>
+<li><p>The algorithm then calculates the sum of squares for each row (sample/observation) in X.</p></li>
+<li><p>Next the algorithm determines the number of rows and columns in X.</p></li>
+<li><p>X’ is then calculated and seperated into two groups, one with binary class 0 and the other with binary class 1.</p></li>
+<li><p>After this, the algorithm determines the number of rows (samples/observations) in X’, X’ with binary class 0 and X’ with binary class 1.</p></li>
+<li><p>For X’ with binary class 0, the algorithm calculates the quantum centroid for binary class 0 by combining these steps: first calculate the quantum densities for each row (sample/observation) in X’, then calculate the <em>n_copies</em> or the n-fold Kronecker product (chosen by the user) for each quantum density and then summing the n-fold quantum densities and deviding by the number of rows (samples/observations) in X’ with binary class 0 to get the quantum centroid for binary class 0.</p></li>
+<li><p>Step 9 is repeated for X’ in the group with binary class 1.</p></li>
+<li><p>Next, the algorithm calculates the <em>quantum Helstrom observable</em> matrix.</p></li>
+<li><p>This is followed by determining the eigenvalues and eigenvectors of the <em>quantum Helstrom observable</em> matrix as well as determining the number of eigenvalues.</p></li>
+<li><p>The algorithm then calculates sum of all the projectors of the eigenvectors with corresponding positive and negative eigenvalues, respectively. The projector of an eigenvector is defined as the dot product between the unit eigenvector and its transpose, ie. <code class="docutils literal notranslate"><span class="pre">np.dot(v,</span> <span class="pre">np.transpose(v))</span></code> where v is a column vector of the unit eigenvector. The projector of an eigenvector is a matrix.</p></li>
+<li><p>Now, the algorithm calculates the Helstrom bound.</p></li>
+<li><p>Moving into prediction, the algorithm first perform checks such as to see if a model have already been fitted and the matrix X we are predicting on has the same number of columns as the features matrix X.</p></li>
+<li><p>The algorithm then repeats Steps 3, 4, 5, 6 and 7 (with no seperation into the two groups, binary class 0 and binary class 1).</p></li>
+<li><p>Next, the algorithm calculates the trace matrix which contains the trace values corresponding to binary class 0 in the first column and the trace values corresponding to binary class 1 in the second column of the trace matrix. This is done by combining these steps: first calculate the quantum densities for each row (sample/observation) in X’ that we want to predict, then calculate the <em>n_copies</em> or the n-fold Kronecker product (chosen by the user) for each quantum density and then calculate the trace of the dot product between the n-fold quantum densities and the sum of projectors with corresponding positive and negative eigenvalues, respectively.</p></li>
+<li><p>Finally, the algorithm determines the predicted binary class 0 or 1 by comparing the trace values in the trace matrix. If the trace values in the first column of the trace matrix is higher than (or the same as) the trace values in the second column, the predicted binary class is 0, otherwise the predicted binary class is 1.</p></li>
+</ol>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="api.html" class="btn btn-neutral float-right" title="API Documentation" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral float-left" title="Welcome to the Helstrom Quantum Centroid Classifier’s Documentation!" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Leo Chow
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
