@@ -2,4 +2,5 @@ scikit-learn
 matplotlib
 numpy
 pandas
+HQC
 -e .[docs]
