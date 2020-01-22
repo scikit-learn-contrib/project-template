@@ -2,3 +2,4 @@ scikit-learn
 matplotlib
 numpy
 pandas
+-e .[docs]
