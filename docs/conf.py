@@ -57,28 +57,28 @@ extensions = ['sphinx.ext.autodoc',
 # numpydoc_show_class_members = False
 
 # pngmath / imgmath compatibility layer for different sphinx versions
-import sphinx
-from distutils.version import LooseVersion
-if LooseVersion(sphinx.__version__) < LooseVersion('1.4'):
-    extensions.append('sphinx.ext.pngmath')
-else:
-    extensions.append('sphinx.ext.imgmath')
+# import sphinx
+# from distutils.version import LooseVersion
+# if LooseVersion(sphinx.__version__) < LooseVersion('1.4'):
+#     extensions.append('sphinx.ext.pngmath')
+# else:
+#     extensions.append('sphinx.ext.imgmath')
     
-autodoc_default_flags = ['members', 'inherited-members']
+# autodoc_default_flags = ['members', 'inherited-members']
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
 
 # generate autosummary even if no references
-autosummary_generate = True
+# autosummary_generate = True
 
 # The suffix of source filenames.
-source_suffix = '.rst'
+# source_suffix = '.rst'
 
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
 # This pattern also affects html_static_path and html_extra_path.
-exclude_patterns = ['_build', '_templates']
+exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
 
 # The name of the Pygments (syntax highlighting) style to use.
 pygments_style = 'sphinx'
@@ -88,9 +88,6 @@ todo_include_todos = True
 
 # Generate the plots for the gallery
 plot_gallery = True
-
-# The master toctree document.
-master_doc = 'index'
 
 
 # -- Options for HTML output -------------------------------------------------
