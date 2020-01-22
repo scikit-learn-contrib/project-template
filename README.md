@@ -10,9 +10,9 @@ The HQC classifier is based on research undertaken by Giuseppe Sergioli, Roberto
 
 In this Python package, the classical dataset is encoded into quantum densities using the *inverse of the standard stereographic projection* encoding method. 
 
-This Python package includes the option of varying two parameters that are used to optimize the performance of the HQC classifier. First, there is an option to rescale the dataset. Second, there is an option to choose the number of copies to take for the quantum densities. These two parameters are used in combination together to fine tune and optimize the accuracy of the HQC classifier to a given dataset.
+This Python package includes the option to vary two parameters that are used to optimize the performance of the HQC classifier. First, there is an option to rescale the dataset. Second, there is an option to choose the number of copies to take for the quantum densities. These two parameters are used in combination together to fine tune and optimize the accuracy of the HQC classifier to a given dataset.
 
-It is shown in [the paper by Sergioli G, Giuntini R and Freytes H](https://doi.org/10.1371/journal.pone.0216224) that the HQC classifier, on average, **outperforms** a variety of commonly used classifiers over 14 real-world and artificial datasets. A summary of the performances of the different classifiers examined are shown in the table below:
+It is shown in [the paper by Sergioli G, Giuntini R and Freytes H](https://doi.org/10.1371/journal.pone.0216224) that the HQC classifier, on average, **_outperforms_** a variety of commonly used classifiers over 14 real-world and artificial datasets. A summary of the performances of the different classifiers examined are shown in the table below:
 
 | Rank | Classifier                    | Average Success Rate (%) |
 |:----:| ----------------------------- |:------------------------:|
