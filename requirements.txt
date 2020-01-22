@@ -3,4 +3,3 @@ matplotlib
 numpy
 pandas
 HQC
--e .[docs]
