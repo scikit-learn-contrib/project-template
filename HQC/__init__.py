@@ -1,1 +1,1 @@
-from .HQC import HQC
+from HQC import HQC
