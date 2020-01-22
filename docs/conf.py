@@ -109,17 +109,6 @@ html_static_path = ['_static']
 # Output file base name for HTML help builder.
 htmlhelp_basename = 'HQCdoc'
 
-# Example configuration for intersphinx: refer to the Python standard library.
-# intersphinx configuration
-intersphinx_mapping = {
-    'python': ('https://docs.python.org/{.major}'.format(
-        sys.version_info), None),
-    'numpy': ('https://docs.scipy.org/doc/numpy/', None),
-    'scipy': ('https://docs.scipy.org/doc/scipy/reference', None),
-    'matplotlib': ('https://matplotlib.org/', None),
-    'sklearn': ('http://scikit-learn.org/stable', None)
-}
-
 # sphinx-gallery configuration
 sphinx_gallery_conf = {
      'examples_dirs': '../examples',   # path to your example scripts
