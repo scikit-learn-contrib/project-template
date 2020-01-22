@@ -1,5 +1,1 @@
-scikit-learn
-matplotlib
-numpy
-pandas
-hqc
+-e .[docs]
