@@ -6,7 +6,7 @@ Plotting HQC
 This section shows a scatterplot of the Helstrom Quantum Centroid (HQC) classifier and the Python code to generate the scatterplot.
 """
 # Example plot
-import hqc
+import HQC
 import numpy as np
 from matplotlib import pyplot as plt
 
