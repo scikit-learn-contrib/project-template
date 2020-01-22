@@ -60,9 +60,7 @@ The Python package's source code for the HQC classifier is available here:
 https://github.com/leockl/helstrom-quantum-centroid-classifier/blob/master/HQC/HQC.py
 
 ## Documentation
-The documentation, including how to install the Python package, how to use the Python package and how the HQC classifier algorithm 
-
-works, are available here: 
+The documentation, including how to install the Python package, how to use the Python package and how the HQC classifier algorithm works, are available here: 
 
 
 ## License
