@@ -5,3 +5,4 @@ pandas
 HQC
 scipy
 sphinx
+sphinx_gallery
