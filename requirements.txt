@@ -4,8 +4,9 @@ numpy
 pandas
 HQC
 scipy
-Sphinx
+sphinx
 sphinx-gallery
 cython
 six
 numpydoc
+sphinx_rtd_them
