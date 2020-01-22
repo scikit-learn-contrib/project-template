@@ -4,3 +4,4 @@ numpy
 pandas
 HQC
 scipy
+sphinx
