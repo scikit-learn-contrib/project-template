@@ -1,34 +1,38 @@
 # Helstrom Quantum Centroid Classifier
-The Helstrom Quantum Centroid (HQC) classifier is a quantum-inspired supervised classification approach for data with binary classes 
+The Helstrom Quantum Centroid (HQC) classifier is a quantum-inspired supervised classification approach for data with 
 
-(ie. data with 2 classes only). By quantum-inspired, we mean a classification process which employs and exploits Quantum Theory.
+binary classes (ie. data with 2 classes only). By quantum-inspired, we mean a classification process which employs and 
 
-It is inspired by the *quantum Helstrom observable* which acts on the distinguishability between quantum patterns rather than 
+exploits Quantum Theory.
 
-classical patterns of a dataset.
+It is inspired by the *quantum Helstrom observable* which acts on the distinguishability between quantum patterns rather 
 
-The HQC classifier is based on research undertaken by Giuseppe Sergioli, Roberto Giuntini and Hector Freytes, in their paper:
+than classical patterns of a dataset.
+
+The HQC classifier is based on research undertaken by Giuseppe Sergioli, Roberto Giuntini and Hector Freytes, in their 
+
+paper:
 
     Sergioli G, Giuntini R, Freytes H (2019) A new quantum approach to binary classification. PLoS ONE 14(5): e0216224.
     https://doi.org/10.1371/journal.pone.0216224
 
-In this Python package, the classical dataset is encoded into quantum densities using the *inverse of the standard stereographic 
+In this Python package, the classical dataset is encoded into quantum densities using the *inverse of the standard 
 
-projection* encoding method. 
+stereographic projection* encoding method. 
 
-This Python package includes the option of varying two parameters that are used to optimize the performance of the HQC classifier. 
+This Python package includes the option of varying two parameters that are used to optimize the performance of the HQC 
 
-First, there is an option to rescale the dataset. Second, there is an option to choose the number of copies to take for the quantum 
+classifier. First, there is an option to rescale the dataset. Second, there is an option to choose the number of copies 
 
-densities. These two parameters are used in combination together to fine tune and optimize the accuracy of the HQC classifier to a 
+to take for the quantum densities. These two parameters are used in combination together to fine tune and optimize the 
 
-given dataset.
+accuracy of the HQC classifier to a given dataset.
 
-It is shown in [the paper by Sergioli G, Giuntini R and Freytes H](https://doi.org/10.1371/journal.pone.0216224) that the HQC 
+It is shown in [the paper by Sergioli G, Giuntini R and Freytes H](https://doi.org/10.1371/journal.pone.0216224) that 
 
-classifier, on average, **outperforms** a variety of commonly used classifiers over 14 real-world and artificial datasets. A summary 
+the HQC classifier, on average, **outperforms** a variety of commonly used classifiers over 14 real-world and artificial 
 
-of the performances of the different classifiers examined are shown in the table below:
+datasets. A summary of the performances of the different classifiers examined are shown in the table below:
 
 | Rank | Classifier                    | Average Success Rate (%) |
 |:----:| ----------------------------- |:------------------------:|
@@ -49,18 +53,22 @@ of the performances of the different classifiers examined are shown in the table
 | 14   | LogisticRegression            | 36.4                     |
 | 15   | BernoulliNB                   | 17.4                     |
 
-Average success rate is the average of the number of datasets where the specified classifier outperforms the other classifiers over 14 
+Average success rate is the average of the number of datasets where the specified classifier outperforms the other 
 
-real-world and artificial datasets.
+classifiers over 14 real-world and artificial datasets.
 
-HelstromQuantumCentroidn is the HQC classifier corresponding to the n number of copies to take for the quantum densities.
+HelstromQuantumCentroidn is the HQC classifier corresponding to the n number of copies to take for the quantum 
+
+densities.
 
 ## Source Code
 The Python package's source code for the HQC classifier is available here: 
 https://github.com/leockl/helstrom-quantum-centroid-classifier/blob/master/HQC/HQC.py
 
 ## Documentation
-The documentation, including how to install the Python package, how to use the Python package and how the HQC classifier algorithm works, are available here: 
+The documentation, including how to install the Python package, how to use the Python package and how the HQC classifier 
+
+algorithm works, are available here: 
 
 
 ## License
