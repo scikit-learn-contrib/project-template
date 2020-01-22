@@ -5,6 +5,7 @@ pandas
 HQC
 scipy
 sphinx
-sphinx_gallery
+sphinx-gallery
 cython
 six
+numpydoc
