@@ -1,6 +1,0 @@
-name: project-template
-dependencies:
-  - scikit-learn
-  - matplotlib
-  - numpy
-  - pandas
