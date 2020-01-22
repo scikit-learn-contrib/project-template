@@ -6,3 +6,5 @@ HQC
 scipy
 sphinx
 sphinx_gallery
+cython
+six
