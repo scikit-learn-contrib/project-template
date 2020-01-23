@@ -43,8 +43,12 @@ https://github.com/leockl/helstrom-quantum-centroid-classifier/blob/master/HQC/H
 
 ## Documentation
 The documentation, including how to install the Python package, how to use the Python package and how the HQC classifier algorithm works, are available here: 
-
+https://helstrom-quantum-centroid-classifier.readthedocs.io/en/latest/
 
 ## License
 This Python package is licensed under the BSD 3-Clause License, available here: 
 https://github.com/leockl/helstrom-quantum-centroid-classifier/blob/master/LICENSE
+
+## References
+Sergioli G, Giuntini R, Freytes H (2019) A new quantum approach to binary classification. PLoS ONE 14(5): e0216224.
+https://doi.org/10.1371/journal.pone.0216224
