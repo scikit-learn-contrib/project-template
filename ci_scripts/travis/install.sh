@@ -19,7 +19,7 @@ if [[ ! -f miniconda.sh ]]
 chmod +x miniconda.sh && ./miniconda.sh -b
 cd ..
 export PATH=/home/travis/miniconda/bin:$PATH
-conda update --yes conda=4.3.25
+conda update --yes conda
 popd
 
 # Configure the conda environment and put it in the path using the
