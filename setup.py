@@ -8,7 +8,7 @@ setuptools.setup(
     version="0.1.1",
     author="Leo Chow",
     author_email="leo_ckl@hotmail.com",
-    description="A package for the Helstrom Quantum Centroid Classifier",
+    description="A package for the Helstrom Quantum Centroid classifier",
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/leockl/helstrom-quantum-centroid-classifier",
