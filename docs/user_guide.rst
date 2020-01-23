@@ -14,7 +14,7 @@ Once you have Pip installed, open the command prompt (or cmd) window on your com
 
     
 
-    pip install hqc
+    pip install HQC
 
 You have now installed the HQC classifier's Python package in your computer and you are now able to use it in Python Interpreter.
 
@@ -24,17 +24,17 @@ You can also install the HQC classifier's Python package in Anaconda. Pip is alr
 
     
 
-    pip install hqc
+    pip install HQC
 
 You have now installed the HQC classifier's Python package in Anaconda and you are now able to use it in Anaconda.
 
-Tip: If there is a never version of the HQC classifier's Python package released, you can run the following command in the command prompt or Anaconda Prompt window to upgrade to a newer version:
+Tip: If there is a newer version of the HQC classifier's Python package released, you can run the following command in the command prompt or Anaconda Prompt window to upgrade to a newer version:
 
 .. code:: bash
 
     
 
-    pip install hqc --upgrade
+    pip install HQC --upgrade
 
 How to use the API
 ------------------
@@ -43,19 +43,19 @@ First, import the HQC classifier's Python package into Python Interpreter or Ana
 
 .. code:: python
 
-    import hqc
+    import HQC
 
 Then specify the two parameters required by the HQC classifier, the rescaling factor, *rescale* and the number of copies to take for each quantum density, *n_copies*. Say, *rescale* = 1.5 and *n_copies* = 2, the HQC classifier would look like:
 
 .. code:: python
 
-    hqc.HQC(rescale=1.5, n_copies=2)
+    HQC.HQC(rescale=1.5, n_copies=2)
 
 If either *rescale* and/or *n_copies* are not specified, they would both default to 1. The HQC classifier would look like:
 
 .. code:: python
 
-    hqc.HQC()
+    HQC.HQC()
 
 where *rescale* = 1, *n_copies* = 1
 
@@ -63,7 +63,7 @@ or
 
 .. code:: python
 
-    hqc.HQC(rescale=1.5)
+    HQC.HQC(rescale=1.5)
 
 where *n_copies* = 1
 
@@ -71,7 +71,7 @@ or
 
 .. code:: python
 
-    hqc.HQC(n_copies=2)
+    HQC.HQC(n_copies=2)
 
 where *rescale* = 1
 
@@ -79,7 +79,7 @@ From here on, we will be using *rescale* = 1.5 and *n_copies* = 2 as an example.
 
 .. code:: python
 
-    model = hqc.HQC(rescale=1.5, n_copies=2).fit(X, y)
+    model = HQC.HQC(rescale=1.5, n_copies=2).fit(X, y)
 
 The fitted attributes of your model can be obtained by calling the following methods:
 
@@ -107,11 +107,11 @@ You can then obtain the class predictions by using:
 
     model.predict(X)
 
-You can obtain the accuracy score or the Jaccard similarity score using:
+You can obtain the accuracy score or Jaccard similarity score using:
 
 .. code:: python
 
-    model.score(X,y)
+    model.score(X, y)
 
 You can use scikit-learn's GridSearchCV tool to do an exhaustive search to find the optimal values for the parameters *rescale* and *n_copies*. For eg.:
 
@@ -121,7 +121,7 @@ You can use scikit-learn's GridSearchCV tool to do an exhaustive search to find 
     import pandas as pd
 
     param_grid = {'rescale':[0.5, 1, 1.5], 'n_copies':[1, 2]}
-    models = GridSearchCV(hqc.HQC(), param_grid).fit(X,y)
+    models = GridSearchCV(HQC.HQC(), param_grid).fit(X, y)
 
     # To ouput a dataframe table of all the models specified in param_grid
     pd.DataFrame(models.cv_results_)
