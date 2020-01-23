@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="HQC", # Replace with your own username
-    version="0.1.0",
+    version="0.1.1",
     author="Leo Chow",
     author_email="leo_ckl@hotmail.com",
     description="A package for the Helstrom Quantum Centroid Classifier",
