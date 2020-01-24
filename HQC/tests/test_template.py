@@ -15,7 +15,8 @@ def data():
 def test_template_classifier(data):
     X, y = data
     clf = HQC()
-    assert clf.demo_param == 'demo'
+    assert clf.rescale == 1
+    assert clf.n_copies == 1
 
     clf.fit(X, y)
     assert hasattr(clf, 'classes_')
