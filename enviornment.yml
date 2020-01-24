@@ -1,0 +1,5 @@
+name: helstrom-quantum-centroid-classifier
+dependencies:
+  - numpy
+  - scipy
+  - scikit-learn
