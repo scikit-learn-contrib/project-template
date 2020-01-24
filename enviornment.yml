@@ -1,5 +1,16 @@
 name: helstrom-quantum-centroid-classifier
 dependencies:
-  - numpy
-  - scipy
-  - scikit-learn
+  - scikit-learn>=0.20.0
+  - matplotlib>=3.0.0
+  - numpy>=1.15.2
+  - pandas>=0.23.4
+  - HQC
+  - scipy>=1.1.0
+  - sphinx>=1.8.1
+  - sphinx-gallery
+  - cython>=0.28.5
+  - six
+  - numpydoc>=0.8.0
+  - sphinx_rtd_theme>=0.4.1
+  - nose>=1.3.7
+  - sklearn
