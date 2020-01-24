@@ -29,7 +29,7 @@ install:
 test_script:
   - mkdir for_test
   - cd for_test
-  - pytest -v --cov=skltemplate --pyargs skltemplate
+  - pytest -v --cov=HQC --pyargs HQC
 
 after_test:
   - cp .coverage %APPVEYOR_BUILD_FOLDER%
