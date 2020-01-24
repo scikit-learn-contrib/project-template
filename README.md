@@ -2,6 +2,7 @@
 [![Build status](https://ci.appveyor.com/api/projects/status/7lmgxf21o6atqs25?svg=true)](https://ci.appveyor.com/project/leockl/helstrom-quantum-centroid-classifier)
 [![CircleCI](https://circleci.com/gh/leockl/helstrom-quantum-centroid-classifier.svg?style=svg)](https://circleci.com/gh/leockl/helstrom-quantum-centroid-classifier)
 [![Documentation Status](https://readthedocs.org/projects/helstrom-quantum-centroid-classifier/badge/?version=latest)](https://helstrom-quantum-centroid-classifier.readthedocs.io/en/latest/?badge=latest)
+[![codecov](https://codecov.io/gh/leockl/helstrom-quantum-centroid-classifier/branch/master/graph/badge.svg)](https://codecov.io/gh/leockl/helstrom-quantum-centroid-classifier)
 
 # Helstrom Quantum Centroid Classifier
 The Helstrom Quantum Centroid (HQC) classifier is a quantum-inspired supervised classification approach for data with binary classes (ie. data with 2 classes only). By quantum-inspired, we mean a classification process which employs and exploits Quantum Theory.
