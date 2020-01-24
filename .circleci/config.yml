@@ -17,19 +17,19 @@ jobs:
             conda install --yes pip numpy scipy scikit-learn matplotlib sphinx sphinx_rtd_theme numpydoc pillow
             pip install sphinx-gallery
             pip install .
-            cd doc
+            cd docs
             make html
       - store_artifacts:
-          path: doc/_build/html
-          destination: doc
+          path: docs/_build/html
+          destination: docs
       - store_artifacts:
           path: ~/log.txt
       - persist_to_workspace:
-          root: doc/_build/html
+          root: docs/_build/html
           paths: .
       - attach_workspace:
-          at: doc/_build/html
-      - run: ls -ltrh doc/_build/html
+          at: docs/_build/html
+      - run: ls -ltrh docs/_build/html
     filters:
       branches:
         ignore: gh-pages
