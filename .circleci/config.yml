@@ -20,12 +20,16 @@ jobs:
             pip install sphinx-gallery
             pip install .
             cd doc
-            make doctest
+            make html
       - store_artifacts:
-          path: doc/_build/doctest/output.txt
-          destination: doctest
+          path: doc/_build/html/
+          destination: doc
       - store_artifacts:
           path: ~/log.txt
+      - run: ls -ltrh doc/_build/html
+    filters:
+      branches:
+        ignore: gh-pages
 
 workflows:
   version: 2
