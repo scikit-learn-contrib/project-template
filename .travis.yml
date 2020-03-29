@@ -31,16 +31,17 @@ install:
   - source activate testenv
   - |
       if [ $SKLEARN_VERSION = "nightly" ]; then
-          conda install --yes numpy==$NUMPY_VERSION scipy==$SCIPY_VERSION cython nose pytest pytest-cov
+          conda install --yes -c conda-forge numpy==$NUMPY_VERSION scipy==$SCIPY_VERSION
           # install nightly wheels
           pip install --pre -f https://sklearn-nightly.scdn8.secure.raxcdn.com scikit-learn
       else
-          conda install --yes numpy==$NUMPY_VERSION scipy==$SCIPY_VERSION scikit-learn==$SKLEARN_VERSION cython nose pytest pytest-cov
+          conda install --yes -c conda-forge numpy==$NUMPY_VERSION scipy==$SCIPY_VERSION scikit-learn==$SKLEARN_VERSION
       fi
-  - pip install codecov
+  - pip install codecov cython nose pytest pytest-cov
   - pip install .
 
 script:
+  - pytest -v doc/*rst
   - mkdir for_test
   - cd for_test
   - pytest -v --cov=skltemplate --pyargs skltemplate

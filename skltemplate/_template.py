@@ -18,6 +18,16 @@ class TemplateEstimator(BaseEstimator):
     ----------
     demo_param : str, default='demo_param'
         A parameter used for demonstation of how to pass and store paramters.
+
+    Examples
+    --------
+    >>> from skltemplate import TemplateEstimator
+    >>> import numpy as np
+    >>> X = np.arange(100).reshape(100, 1)
+    >>> y = np.zeros((100, ))
+    >>> estimator = TemplateEstimator()
+    >>> estimator.fit(X, y)
+    TemplateEstimator(demo_param='demo_param')
     """
     def __init__(self, demo_param='demo_param'):
         self.demo_param = demo_param

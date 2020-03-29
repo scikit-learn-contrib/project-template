@@ -1,12 +1,14 @@
 version: 2
 
 jobs:
-  python3:
+  build:
     docker:
       - image: circleci/python:3.6.1
+    working_directory: ~/repo
     steps:
       - checkout
       - run:
+          name: install dependencies
           command: |
             wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh -O miniconda.sh
             chmod +x miniconda.sh && ./miniconda.sh -b -p ~/miniconda
@@ -20,15 +22,10 @@ jobs:
             cd doc
             make html
       - store_artifacts:
-          path: doc/_build/html
+          path: doc/_build/html/
           destination: doc
       - store_artifacts:
           path: ~/log.txt
-      - persist_to_workspace:
-          root: doc/_build/html
-          paths: .
-      - attach_workspace:
-          at: doc/_build/html
       - run: ls -ltrh doc/_build/html
     filters:
       branches:
@@ -36,6 +33,6 @@ jobs:
 
 workflows:
   version: 2
-  build-doc-and-deploy:
+  workflow:
     jobs:
-      - python3
+      - build
