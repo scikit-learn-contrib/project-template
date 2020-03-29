@@ -71,7 +71,7 @@ class TemplateEstimator(BaseEstimator):
         return np.ones(X.shape[0], dtype=np.int64)
 
 
-class TemplateClassifier(BaseEstimator, ClassifierMixin):
+class TemplateClassifier(ClassifierMixin, BaseEstimator):
     """ An example classifier which implements a 1-NN algorithm.
 
     For more information regarding how to build your own classifier, read more
@@ -143,7 +143,7 @@ class TemplateClassifier(BaseEstimator, ClassifierMixin):
         return self.y_[closest]
 
 
-class TemplateTransformer(BaseEstimator, TransformerMixin):
+class TemplateTransformer(TransformerMixin, BaseEstimator):
     """ An example transformer that returns the element-wise square root.
 
     For more information regarding how to build your own transformer, read more
