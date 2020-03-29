@@ -43,7 +43,7 @@ install:
 script:
   - mkdir for_test
   - cd for_test
-  - pytest -v --cov=skltemplate --pyargs skltemplate
+  - pytest -v --cov=skltemplate --pyargs skltemplate doc/*rst
 
 after_success:
   - codecov
