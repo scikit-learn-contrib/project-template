@@ -37,7 +37,7 @@ install:
       else
           conda install --yes numpy==$NUMPY_VERSION scipy==$SCIPY_VERSION scikit-learn==$SKLEARN_VERSION
       fi
-  - pip install codecov cython pytest pytest-cov
+  - pip install codecov cython nose pytest pytest-cov
   - pip install .
 
 script:
