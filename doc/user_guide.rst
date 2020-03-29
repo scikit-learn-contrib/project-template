@@ -65,8 +65,7 @@ within a scikit-learn ``pipeline``::
     >>> X, y = load_iris(return_X_y=True)
     >>> pipe = make_pipeline(MyOwnTransformer(),
     ...                      LogisticRegression(random_state=10,
-    ...                                         solver='lbfgs',
-    ...                                         multi_class='auto'))
+    ...                                         solver='lbfgs'))
     >>> pipe.fit(X, y)  # doctest: +ELLIPSIS
     Pipeline(...)
     >>> pipe.predict(X)  # doctest: +ELLIPSIS
