@@ -4,5 +4,9 @@ from ._template import TemplateTransformer
 
 from ._version import __version__
 
-__all__ = ['TemplateEstimator', 'TemplateClassifier', 'TemplateTransformer',
-           '__version__']
+__all__ = [
+    'TemplateEstimator',
+    'TemplateClassifier',
+    'TemplateTransformer',
+    '__version__',
+]
