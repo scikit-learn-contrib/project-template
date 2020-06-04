@@ -42,11 +42,10 @@ def is_estimator(obj_name, obj):
 
 def list_all_estimators(module_name='skltemplate', type_filter=None):
     all_classes = []
-    modules_to_ignore = {"tests", "externals", "setup", "conftest"}
-    root = str(Path(__file__).parent.parent)  # sklearn package
-    # Ignore deprecation warnings triggered at import time and from walking
-    # packages
-    #root = os.path.join(root, module_name)
+    modules_to_ignore = {"tests", "externals", "setup", "conftest", "Cython"}
+    root = str(Path(__file__).parent.parent)
+
+    # root = os.path.join(root, module_name)
     prefix = module_name + '.'
     for _, modname, _ in pkgutil.walk_packages(path=[root], prefix=prefix):
         if modname.startswith(module_name + '.' + module_name):
@@ -86,6 +85,4 @@ def list_all_estimators(module_name='skltemplate', type_filter=None):
         estimators = [(_name, _cls()) for _name, _cls in estimators]
 
     # drop duplicates, sort for reproducibility
-    # itemgetter is used to ensure the sort does not extend to the 2nd item of
-    # the tuple
     return sorted(set(estimators), key=itemgetter(0))
