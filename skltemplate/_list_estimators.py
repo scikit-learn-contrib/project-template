@@ -1,5 +1,5 @@
 """
-This is a helper module to list all estimators within a project 
+This is a helper module to list all estimators within a project
 """
 import inspect
 import pkgutil
@@ -28,6 +28,7 @@ TYPE_FILTERS = dict(
     cluster=ClusterMixin,
 )
 
+
 def is_abstract(c):
     if not(hasattr(c, '__abstractmethods__')):
         return False
@@ -35,10 +36,12 @@ def is_abstract(c):
         return False
     return True
 
+
 def is_estimator(obj_name, obj):
     is_est = issubclass(obj, BaseEstimator) and obj_name != 'BaseEstimator'
     is_est &= (not is_abstract(obj))
     return is_est
+
 
 def list_all_estimators(module_name='skltemplate', type_filter=None):
     all_classes = []
@@ -51,9 +54,14 @@ def list_all_estimators(module_name='skltemplate', type_filter=None):
         if modname.startswith(module_name + '.' + module_name):
             modname = modname[len(prefix):]  # remove starting prefix
         mod_parts = modname.split(".")
-        if (any(part in modules_to_ignore for part in mod_parts) or '._' in modname):
+        if (any(part in modules_to_ignore for part in mod_parts)
+            or '._' in modname):
             continue
-        module = import_module(modname)
+
+        try:
+            module = import_module(modname)
+        except ImportError:
+            continue
         classes = inspect.getmembers(module, inspect.isclass)
         classes = [(name, est_cls) for name, est_cls in classes
                     if not name.startswith("_")]
@@ -65,9 +73,11 @@ def list_all_estimators(module_name='skltemplate', type_filter=None):
     estimators = [c for c in all_classes if is_estimator(*c)]
 
     if type_filter is not None:
-        type_filter = list(type_filter) if isinstance(type_filter, list) else [type_filter]
+        if not isinstance(type_filter, list):
+            type_filter = [type_filter]
         if set(type_filter).isdisjoint(TYPE_FILTERS.keys()):
-            raise ValueError("Parameter type_filter must be {}"
+            raise ValueError(
+                "Parameter type_filter must be {}"
                 .format(' or '.join(TYPE_FILTERS.keys())))
 
         filtered_estimators = []
