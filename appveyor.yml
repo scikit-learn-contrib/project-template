@@ -2,15 +2,14 @@ build: false
 
 environment:
   matrix:
-    - PYTHON: "C:\\Miniconda3-x64"
-      PYTHON_VERSION: "3.5.x"
+  MINICONDA: "C:\\Miniconda3-x64"
+    - PYTHON_VERSION: "3.5.x"
       PYTHON_ARCH: "32"
       NUMPY_VERSION: "1.13.1"
       SCIPY_VERSION: "0.19.1"
       SKLEARN_VERSION: "0.19.1"
 
-    - PYTHON: "C:\\Miniconda3-x64"
-      PYTHON_VERSION: "3.6.x"
+    - PYTHON_VERSION: "3.6.x"
       PYTHON_ARCH: "64"
       NUMPY_VERSION: "*"
       SCIPY_VERSION: "*"
@@ -20,10 +19,10 @@ install:
   # Prepend miniconda installed Python to the PATH of this build
   # Add Library/bin directory to fix issue
   # https://github.com/conda/conda/issues/1753
-  - "SET PATH=%PYTHON%;%PYTHON%\\Scripts;%PYTHON%\\Library\\bin;%PATH%"
+  - cmd: call %MINICONDA%\Scripts\activate.bat
   # install the dependencies
-  - "conda install --yes -c conda-forge pip numpy==%NUMPY_VERSION% scipy==%SCIPY_VERSION% scikit-learn==%SKLEARN_VERSION%"
-  - pip install codecov nose pytest pytest-cov
+  - conda create -n test-env --yes -c conda-forge python=%PYTHON_VERSION% numpy==%NUMPY_VERSION% scipy==%SCIPY_VERSION% scikit-learn==%SKLEARN_VERSION% codecov nose pytest pytest-cov
+  - conda activate test-env
   - pip install .
   - python --version
 
