@@ -25,6 +25,7 @@ install:
   - "conda install --yes -c conda-forge pip numpy==%NUMPY_VERSION% scipy==%SCIPY_VERSION% scikit-learn==%SKLEARN_VERSION%"
   - pip install codecov nose pytest pytest-cov
   - pip install .
+  - python --version
 
 test_script:
   - mkdir for_test
