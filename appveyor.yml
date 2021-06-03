@@ -3,13 +3,15 @@ build: false
 environment:
   MINICONDA: "C:\\Miniconda3-x64"
   matrix:
-    - PYTHON_VERSION: "3.5.x"
+    - PYTHON: "C:\\Python35"
+      PYTHON_VERSION: "3.5.x"
       PYTHON_ARCH: "32"
       NUMPY_VERSION: "1.13.1"
       SCIPY_VERSION: "0.19.1"
       SKLEARN_VERSION: "0.19.1"
 
-    - PYTHON_VERSION: "3.6.x"
+    - PYTHON: "C:\\Python36-x64"
+      PYTHON_VERSION: "3.6.x"
       PYTHON_ARCH: "64"
       NUMPY_VERSION: "*"
       SCIPY_VERSION: "*"
@@ -21,7 +23,7 @@ install:
   # https://github.com/conda/conda/issues/1753
   - cmd: call %MINICONDA%\Scripts\activate.bat
   # install the dependencies
-  - conda create -n test-env --yes -c conda-forge python=%PYTHON_VERSION% numpy==%NUMPY_VERSION% scipy==%SCIPY_VERSION% scikit-learn==%SKLEARN_VERSION% codecov nose pytest pytest-cov
+  - conda create -n test-env --yes -c conda-forge numpy==%NUMPY_VERSION% scipy==%SCIPY_VERSION% scikit-learn==%SKLEARN_VERSION% codecov nose pytest pytest-cov
   - conda activate test-env
   - pip install .
   - python --version
