@@ -1,8 +1,8 @@
 build: false
 
 environment:
+  MINICONDA: "C:\\Miniconda3-x64"
   matrix:
-    MINICONDA: "C:\\Miniconda3-x64"
     - PYTHON_VERSION: "3.5.x"
       PYTHON_ARCH: "32"
       NUMPY_VERSION: "1.13.1"
