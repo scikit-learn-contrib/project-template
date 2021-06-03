@@ -27,7 +27,7 @@ class TemplateEstimator(BaseEstimator):
     >>> y = np.zeros((100, ))
     >>> estimator = TemplateEstimator()
     >>> estimator.fit(X, y)
-    TemplateEstimator(demo_param='demo_param')
+    TemplateEstimator()
     """
     def __init__(self, demo_param='demo_param'):
         self.demo_param = demo_param

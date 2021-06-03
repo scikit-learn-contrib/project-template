@@ -1,9 +1,9 @@
 import pytest
 import numpy as np
 
+from sklearn.utils._testing import assert_array_equal
+from sklearn.utils._testing import assert_allclose
 from sklearn.datasets import load_iris
-from sklearn.utils.testing import assert_array_equal
-from sklearn.utils.testing import assert_allclose
 
 from skltemplate import TemplateEstimator
 from skltemplate import TemplateTransformer
