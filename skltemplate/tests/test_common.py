@@ -8,7 +8,8 @@ from skltemplate import TemplateTransformer
 
 
 @pytest.mark.parametrize(
-    "Estimator", [TemplateEstimator, TemplateTransformer, TemplateClassifier]
+    "estimator",
+    [TemplateEstimator(), TemplateTransformer(), TemplateClassifier()]
 )
-def test_all_estimators(Estimator):
-    return check_estimator(Estimator)
+def test_all_estimators(estimator):
+    return check_estimator(estimator)
