@@ -1,0 +1,26 @@
+name: Tests
+
+on: [push, pull_request]  # hooks
+
+jobs:
+  build:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest] # hooks ?
+        python-version: [3.9] # hooks ?
+
+    steps:
+    - name: Git clone
+      uses: actions/checkout@v2
+    - name: Set up virtual environment
+      uses: conda-incubator/setup-miniconda@v2
+      with:
+        python-version: ${{ matrix.python-version }}
+        channels: defaults, conda-forge  # hooks ?
+    - name: Install dependencies
+      run: conda install numpy scipy scikit-learn codecov pytest-cov
+    - name: Test with pytest
+      run: pytest -v --cov=skltemplate --pyargs skltemplate
+    - name: Code coverage
+      run: codecov
