@@ -2,7 +2,7 @@
 
 |GitHubActions|_ |Codecov|_ |CircleCI|_ |ReadTheDocs|_
 
-.. |GitHubActions| image:: https://github.com/gmartinonQM/project-template/actions/workflows/tests.yml/badge.svg?branch=ci_with_github_actions
+.. |GitHubActions| image:: https://github.com/scikit-learn-contrib/project-template/actions/workflows/tests.yml/badge.svg
 .. _GitHubActions: https://github.com/scikit-learn-contrib/project-template/actions
 
 .. |Codecov| image:: https://codecov.io/gh/scikit-learn-contrib/project-template/branch/master/graph/badge.svg
