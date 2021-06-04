@@ -1,14 +1,14 @@
 name: Tests
 
-on: [push, pull_request]  # hooks
+on: [push, pull_request]
 
 jobs:
   build:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: [ubuntu-latest, macos-latest, windows-latest] # hooks ?
-        python-version: [3.9] # hooks ?
+        os: [ubuntu-latest, windows-latest]
+        python-version: [3.9]
     # Needed by miniconda
     # https://github.com/marketplace/actions/setup-miniconda#important
     defaults:
@@ -22,7 +22,7 @@ jobs:
       uses: conda-incubator/setup-miniconda@v2
       with:
         python-version: ${{ matrix.python-version }}
-        channels: defaults, conda-forge  # hooks ?
+        channels: [defaults, conda-forge]
     - name: Install dependencies
       run: conda install numpy scipy scikit-learn codecov pytest-cov
     - name: Test with pytest
