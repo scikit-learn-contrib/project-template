@@ -10,7 +10,7 @@ jobs:
         shell: bash -l {0}
     strategy:
       matrix:
-        os: [ubuntu-latest] # hooks ?
+        os: [ubuntu-latest, macos-latest] # hooks ?
         python-version: [3.9] # hooks ?
 
     steps:
