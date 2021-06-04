@@ -1,0 +1,31 @@
+name: Tests
+
+on: [push, pull_request]
+
+jobs:
+  build:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+        python-version: [3.9]
+    # Needed by miniconda
+    # https://github.com/marketplace/actions/setup-miniconda#important
+    defaults:
+      run:
+        shell: bash -l {0}
+
+    steps:
+    - name: Git clone
+      uses: actions/checkout@v2
+    - name: Set up virtual environment
+      uses: conda-incubator/setup-miniconda@v2
+      with:
+        python-version: ${{ matrix.python-version }}
+        channels: defaults, conda-forge
+    - name: Install dependencies
+      run: conda install numpy scipy scikit-learn codecov pytest-cov
+    - name: Test with pytest
+      run: pytest -v --cov=skltemplate --pyargs skltemplate
+    - name: Code coverage
+      run: codecov

@@ -14,6 +14,7 @@ from skltemplate import TemplateClassifier
 def data():
     return load_iris(return_X_y=True)
 
+
 def test_template_estimator(data):
     est = TemplateEstimator()
     assert est.demo_param == 'demo_param'

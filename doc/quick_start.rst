@@ -102,10 +102,8 @@ The documentation is built with the following commands::
 The project template already contains configuration files of the continuous
 integration system. Basically, the following systems are set:
 
-* Travis CI is used to test the package in Linux. You need to activate Travis
-  CI for your own repository. Refer to the Travis CI documentation.
-* AppVeyor is used to test the package in Windows. You need to activate
-  AppVeyor for your own repository. Refer to the AppVeyor documentation.
+* GitHub Actions is used to test the package in both Linux and Windows.
+  Refer to the GitHub Actions documentation.
 * Circle CI is used to check if the documentation is generated properly. You
   need to activate Circle CI for your own repository. Refer to the Circle CI
   documentation.
