@@ -17,7 +17,7 @@ class TemplateEstimator(BaseEstimator):
     Parameters
     ----------
     demo_param : str, default='demo_param'
-        A parameter used for demonstation of how to pass and store paramters.
+        A parameter used for demonstration of how to pass and store parameters.
 
     Examples
     --------
