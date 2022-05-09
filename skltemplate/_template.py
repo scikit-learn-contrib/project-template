@@ -133,7 +133,7 @@ class TemplateClassifier(ClassifierMixin, BaseEstimator):
             The label for each sample is the label of the closest sample
             seen during fit.
         """
-        # Check is fit had been called
+        # Check if fit had been called
         check_is_fitted(self, ['X_', 'y_'])
 
         # Input validation
@@ -199,7 +199,7 @@ class TemplateTransformer(TransformerMixin, BaseEstimator):
             The array containing the element-wise square roots of the values
             in ``X``.
         """
-        # Check is fit had been called
+        # Check if fit had been called
         check_is_fitted(self, 'n_features_')
 
         # Input validation
