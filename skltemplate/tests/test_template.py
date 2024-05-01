@@ -6,6 +6,9 @@ from sklearn.utils._testing import assert_allclose, assert_array_equal
 
 from skltemplate import TemplateClassifier, TemplateEstimator, TemplateTransformer
 
+# Authors: scikit-learn-contrib developers
+# License: BSD 3 clause
+
 
 @pytest.fixture
 def data():

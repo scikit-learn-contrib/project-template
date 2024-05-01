@@ -1,11 +1,15 @@
 """
 This is a module to be used as a reference for building other modules
 """
+
+# Authors: scikit-learn-contrib developers
+# License: BSD 3 clause
+
 import numpy as np
 from sklearn.base import BaseEstimator, ClassifierMixin, TransformerMixin, _fit_context
 from sklearn.metrics import euclidean_distances
 from sklearn.utils.multiclass import check_classification_targets
-from sklearn.utils.validation import  check_is_fitted
+from sklearn.utils.validation import check_is_fitted
 
 
 class TemplateEstimator(BaseEstimator):
@@ -301,4 +305,4 @@ class TemplateTransformer(TransformerMixin, BaseEstimator):
         # https://scikit-learn.org/dev/developers/develop.html#estimator-tags
         # Here, our transformer does not do any operation in `fit` and only validate
         # the parameters. Thus, it is stateless.
-        return {'stateless': True}
+        return {"stateless": True}
