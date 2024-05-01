@@ -1,6 +1,10 @@
+[build-system]
+requires = ["setuptools>=64", "setuptools_scm[toml]>=8"]
+build-backend = "setuptools.build_meta"
+
 [project]
 name = "skltemplate"
-version = "0.1.0"
+dynamic = ["version"]
 authors = [
   { name="Vighnesh Birodkar", email="vighneshbirodkar@nyu.edu" },
   { name="Guillaume Lemaitre", email="g.lemaitre58@gmail.com" },
@@ -27,6 +31,9 @@ classifiers = [
 [project.urls]
 Homepage = "https://github.com/scikit-learn-contrib/project-template"
 Issues = "https://github.com/scikit-learn-contrib/project-template/issues"
+
+[tool.setuptools_scm]
+version_file = "skltemplate/_version.py"
 
 [tool.pixi.project]
 channels = ["conda-forge"]
@@ -60,6 +67,7 @@ test = { cmd = "pytest -vsl --cov=skltemplate --cov-report=xml skltemplate" }
 matplotlib = "*"
 numpydoc = "*"
 pydata-sphinx-theme = "*"
+setuptools-scm = ">=8"  # needed for the versioning
 sphinx = "*"
 sphinx-gallery = "*"
 sphinx-prompt = "*"
@@ -84,6 +92,7 @@ exclude = '''
   | \.vscode
 )/
 '''
+force-exclude = "skltemplate/_version.py"
 
 [tool.ruff]
 # max line length for black
@@ -96,6 +105,7 @@ exclude=[
     "doc/_build",
     "doc/auto_examples",
     "build",
+    "skltemplate/_version.py",
 ]
 
 [tool.ruff.lint]

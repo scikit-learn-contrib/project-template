@@ -35,7 +35,7 @@ The use case is the following:
 
 In addition, scikit-learn provides a
 mixin_, i.e. :class:`sklearn.base.TransformerMixin`, which
-implement the combination of ``fit`` and ``transform`` called ``fit_transform``::
+implement the combination of ``fit`` and ``transform`` called ``fit_transform``.
 
 One can import the mixin class as::
 
