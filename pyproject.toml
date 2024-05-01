@@ -6,7 +6,7 @@ authors = [
   { name="Guillaume Lemaitre", email="g.lemaitre58@gmail.com" },
 ]
 description = "A template for scikit-learn compatible packages."
-readme = "README.rst"
+readme = "README.md"
 requires-python = ">=3.9"
 classifiers = [
     "Programming Language :: Python :: 3",
