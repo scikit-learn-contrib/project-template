@@ -1,5 +1,6 @@
 [build-system]
-requires = ["setuptools>=62", "setuptools_scm[toml]>=8.0"]
+requires = ["setuptools>=64", "setuptools_scm[toml]>=8"]
+build-backend = "setuptools.build_meta"
 
 [project]
 name = "skltemplate"
@@ -66,7 +67,7 @@ test = { cmd = "pytest -vsl --cov=skltemplate --cov-report=xml skltemplate" }
 matplotlib = "*"
 numpydoc = "*"
 pydata-sphinx-theme = "*"
-setuptools-scm = ">=8.0"  # needed for the versioning
+setuptools-scm = ">=8"  # needed for the versioning
 sphinx = "*"
 sphinx-gallery = "*"
 sphinx-prompt = "*"
