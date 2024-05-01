@@ -42,17 +42,16 @@ default_role = "literal"
 html_theme = "pydata_sphinx_theme"
 html_static_path = ["_static"]
 html_style = "css/project-template.css"
-# html_logo = "_static/img/logo.png"
+html_logo = "_static/img/logo.png"
 # html_favicon = "_static/img/favicon.ico"
 html_css_files = [
     "css/project-template.css",
 ]
-# html_sidebars = {
-#     "install": [],
-#     "auto_examples/index": [],
-#     "whats_new": [],
-#     "about": [],
-# }
+html_sidebars = {
+    "quick_start": [],
+    "user_guide": [],
+    "auto_examples/index": [],
+}
 
 html_theme_options = {
     "external_links": [],

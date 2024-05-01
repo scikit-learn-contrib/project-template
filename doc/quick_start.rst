@@ -1,6 +1,6 @@
-#####################################
-Quick Start with the project-template
-#####################################
+###############
+Getting started
+###############
 
 This package serves as a skeleton package aiding at developing compatible
 scikit-learn contribution.
