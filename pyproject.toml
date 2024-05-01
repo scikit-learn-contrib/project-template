@@ -92,6 +92,7 @@ exclude = '''
   | \.vscode
 )/
 '''
+force-exclude = "skltemplate/_version.py"
 
 [tool.ruff]
 # max line length for black
@@ -104,6 +105,7 @@ exclude=[
     "doc/_build",
     "doc/auto_examples",
     "build",
+    "skltemplate/_version.py",
 ]
 
 [tool.ruff.lint]

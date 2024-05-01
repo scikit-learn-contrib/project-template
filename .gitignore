@@ -73,3 +73,6 @@ target/
 .DS_Store
 .AppleDouble
 .LSOverride
+
+# auto-generated files
+skltemplate/_version.py

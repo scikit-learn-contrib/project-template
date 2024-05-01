@@ -7432,9 +7432,9 @@ packages:
   timestamp: 1620240338595
 - kind: pypi
   name: skltemplate
-  version: 0.1.1.dev4+g0bfd40c.d20240501
+  version: 0.1.1.dev6+ga2e3d23.d20240501
   path: .
-  sha256: 9defc32a7b6f338513fdd42abb4997ba2e1229e5637615390fecf4b6404a0f26
+  sha256: 2668080481c4b86bd15ab67bbbf59fbe02dc0eeb52c8f77f3c2cc9ee624a9394
   requires_dist:
   - scikit-learn>=1.4.2
   requires_python: '>=3.9'
