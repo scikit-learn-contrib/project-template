@@ -1,0 +1,44 @@
+﻿TemplateClassifier
+============================================
+
+.. currentmodule:: skltemplate
+
+.. autoclass:: TemplateClassifier
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      
+      
+        ~TemplateClassifier.fit
+      
+      
+        ~TemplateClassifier.get_metadata_routing
+      
+      
+        ~TemplateClassifier.get_params
+      
+      
+        ~TemplateClassifier.predict
+      
+      
+        ~TemplateClassifier.score
+      
+      
+        ~TemplateClassifier.set_params
+      
+      
+        ~TemplateClassifier.set_score_request
+      
+   
+   
+
+.. include:: skltemplate.TemplateClassifier.examples
+
+.. raw:: html
+
+    <div style='clear:both'></div>

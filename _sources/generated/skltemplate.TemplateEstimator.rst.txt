@@ -1,0 +1,38 @@
+﻿TemplateEstimator
+===========================================
+
+.. currentmodule:: skltemplate
+
+.. autoclass:: TemplateEstimator
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      
+      
+        ~TemplateEstimator.fit
+      
+      
+        ~TemplateEstimator.get_metadata_routing
+      
+      
+        ~TemplateEstimator.get_params
+      
+      
+        ~TemplateEstimator.predict
+      
+      
+        ~TemplateEstimator.set_params
+      
+   
+   
+
+.. include:: skltemplate.TemplateEstimator.examples
+
+.. raw:: html
+
+    <div style='clear:both'></div>

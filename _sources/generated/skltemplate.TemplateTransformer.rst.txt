@@ -1,0 +1,44 @@
+﻿TemplateTransformer
+=============================================
+
+.. currentmodule:: skltemplate
+
+.. autoclass:: TemplateTransformer
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      
+      
+        ~TemplateTransformer.fit
+      
+      
+        ~TemplateTransformer.fit_transform
+      
+      
+        ~TemplateTransformer.get_metadata_routing
+      
+      
+        ~TemplateTransformer.get_params
+      
+      
+        ~TemplateTransformer.set_output
+      
+      
+        ~TemplateTransformer.set_params
+      
+      
+        ~TemplateTransformer.transform
+      
+   
+   
+
+.. include:: skltemplate.TemplateTransformer.examples
+
+.. raw:: html
+
+    <div style='clear:both'></div>

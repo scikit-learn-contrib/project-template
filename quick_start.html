@@ -1,0 +1,645 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Quick Start with the project-template &#8212; Scikit-learn Project Template 0.0.4.dev0 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="_static/css/project-template.css?v=c3398c1d" />
+    <link rel="stylesheet" type="text/css" href="_static/sg_gallery.css?v=61a4c737" />
+    <link rel="stylesheet" type="text/css" href="_static/sg_gallery-binder.css?v=f4aeca0c" />
+    <link rel="stylesheet" type="text/css" href="_static/sg_gallery-dataframe.css?v=2082cf3c" />
+    <link rel="stylesheet" type="text/css" href="_static/sg_gallery-rendered-html.css?v=1277b6f3" />
+    <link rel="stylesheet" type="text/css" href="_static/css/project-template.css?v=c3398c1d" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+
+    <script src="_static/documentation_options.js?v=fa0a5e14"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'quick_start';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="User guide: create your own scikit-learn estimator" href="user_guide.html" />
+    <link rel="prev" title="Welcome to sklearn-template’s documentation!" href="index.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+<div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+    <span class="fa-solid fa-bars"></span>
+  </label>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+
+<a class="navbar-brand logo" href="index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Scikit-learn Project Template 0.0.4.dev0 documentation</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav class="navbar-nav">
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="#">
+                        Quick Start with the project-template
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="user_guide.html">
+                        User guide: create your own scikit-learn estimator
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="api.html">
+                        project-template API
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="auto_examples/index.html">
+                        General examples
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/scikit-learn-contrib/project-template" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+    </div>
+  
+
+  
+    <label class="sidebar-toggle secondary-toggle" for="__secondary" tabindex="0">
+      <span class="fa-solid fa-outdent"></span>
+    </label>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          <div class="navbar-item">
+<nav class="navbar-nav">
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="#">
+                        Quick Start with the project-template
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="user_guide.html">
+                        User guide: create your own scikit-learn estimator
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="api.html">
+                        project-template API
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="auto_examples/index.html">
+                        General examples
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/scikit-learn-contrib/project-template" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"></div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+<nav aria-label="Breadcrumb">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    <li class="breadcrumb-item active" aria-current="page">Quick Start...</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="quick-start-with-the-project-template">
+<h1>Quick Start with the project-template<a class="headerlink" href="#quick-start-with-the-project-template" title="Link to this heading">#</a></h1>
+<p>This package serves as a skeleton package aiding at developing compatible
+scikit-learn contribution.</p>
+<section id="creating-your-own-scikit-learn-contribution-package">
+<h2>Creating your own scikit-learn contribution package<a class="headerlink" href="#creating-your-own-scikit-learn-contribution-package" title="Link to this heading">#</a></h2>
+<section id="download-and-setup-your-repository">
+<h3>1. Download and setup your repository<a class="headerlink" href="#download-and-setup-your-repository" title="Link to this heading">#</a></h3>
+<p>To create your package, you need to clone the <code class="docutils literal notranslate"><span class="pre">project-template</span></code> repository:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git clone https://github.com/scikit-learn-contrib/project-template.git
+</pre></div>
+</div>
+<p>Before to reinitialize your git repository, you need to make the following
+changes. Replace all occurrences of <code class="docutils literal notranslate"><span class="pre">skltemplate</span></code> and <code class="docutils literal notranslate"><span class="pre">sklearn-template</span></code>
+with the name of you own contribution. You can find all the occurrences using
+the following command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git grep skltemplate
+$ git grep sklearn-template
+</pre></div>
+</div>
+<p>To remove the history of the template package, you need to remove the <code class="docutils literal notranslate"><span class="pre">.git</span></code>
+directory:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ cd project-template
+$ rm -rf .git
+</pre></div>
+</div>
+<p>Then, you need to initialize your new git repository:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git init
+$ git add .
+$ git commit -m &#39;Initial commit&#39;
+</pre></div>
+</div>
+<p>Finally, you create an online repository on GitHub and push your code online:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git remote add origin https://github.com/your_remote/your_contribution.git
+$ git push origin master
+</pre></div>
+</div>
+</section>
+<section id="develop-your-own-scikit-learn-estimators">
+<h3>2. Develop your own scikit-learn estimators<a class="headerlink" href="#develop-your-own-scikit-learn-estimators" title="Link to this heading">#</a></h3>
+<p>You can modify the source files as you want. However, your custom estimators
+need to pass the <a class="reference external" href="http://scikit-learn.org/stable/modules/generated/sklearn.utils.estimator_checks.check_estimator.html#sklearn.utils.estimator_checks.check_estimator">check_estimator</a> test to be scikit-learn compatible. You can
+refer to the <a class="reference internal" href="user_guide.html#user-guide"><span class="std std-ref">User Guide</span></a> to help you create a compatible
+scikit-learn estimator.</p>
+<p>In any case, developers should endeavor to adhere to scikit-learn’s
+<a class="reference external" href="http://scikit-learn.org/stable/developers/">Contributor’s Guide</a> which promotes the use of:</p>
+<ul class="simple">
+<li><p>algorithm-specific unit tests, in addition to <code class="docutils literal notranslate"><span class="pre">check_estimator</span></code>’s common
+tests;</p></li>
+<li><p><a class="reference external" href="https://www.python.org/dev/peps/pep-0008/">PEP8</a>-compliant code;</p></li>
+<li><p>a clearly documented API using <a class="reference external" href="https://github.com/numpy/numpydoc">NumpyDoc</a> and <a class="reference external" href="https://www.python.org/dev/peps/pep-0257/">PEP257</a>-compliant docstrings;</p></li>
+<li><p>references to relevant scientific literature in standard citation formats;</p></li>
+<li><p><a class="reference external" href="https://docs.python.org/3/library/doctest.html">doctests</a> to provide succinct usage examples;</p></li>
+<li><p>standalone examples to illustrate the usage, model visualisation, and
+benefits/benchmarks of particular algorithms;</p></li>
+<li><p>efficient code when the need for optimization is supported by benchmarks.</p></li>
+</ul>
+</section>
+<section id="edit-the-documentation">
+<h3>3. Edit the documentation<a class="headerlink" href="#edit-the-documentation" title="Link to this heading">#</a></h3>
+<p>The documentation is created using <a class="reference external" href="http://www.sphinx-doc.org/en/stable/">Sphinx</a>. In addition, the examples are
+created using <code class="docutils literal notranslate"><span class="pre">sphinx-gallery</span></code>. Therefore, to generate locally the
+documentation, you are required to install the following packages:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ pip install sphinx sphinx-gallery sphinx_rtd_theme matplotlib numpydoc pillow
+</pre></div>
+</div>
+<p>The documentation is made of:</p>
+<ul class="simple">
+<li><p>a home page, <code class="docutils literal notranslate"><span class="pre">doc/index.rst</span></code>;</p></li>
+<li><p>an API documentation, <code class="docutils literal notranslate"><span class="pre">doc/api.rst</span></code> in which you should add all public
+objects for which the docstring should be exposed publicly.</p></li>
+<li><p>a User Guide documentation, <code class="docutils literal notranslate"><span class="pre">doc/user_guide.rst</span></code>, containing the narrative
+documentation of your package, to give as much intuition as possible to your
+users.</p></li>
+<li><p>examples which are created in the <code class="docutils literal notranslate"><span class="pre">examples/</span></code> folder. Each example
+illustrates some usage of the package. the example file name should start by
+<code class="docutils literal notranslate"><span class="pre">plot_*.py</span></code>.</p></li>
+</ul>
+<p>The documentation is built with the following commands:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ cd doc
+$ make html
+</pre></div>
+</div>
+</section>
+<section id="setup-the-continuous-integration">
+<h3>4. Setup the continuous integration<a class="headerlink" href="#setup-the-continuous-integration" title="Link to this heading">#</a></h3>
+<p>The project template already contains configuration files of the continuous
+integration system. Basically, the following systems are set:</p>
+<ul class="simple">
+<li><p>Travis CI is used to test the package in Linux. You need to activate Travis
+CI for your own repository. Refer to the Travis CI documentation.</p></li>
+<li><p>AppVeyor is used to test the package in Windows. You need to activate
+AppVeyor for your own repository. Refer to the AppVeyor documentation.</p></li>
+<li><p>Circle CI is used to check if the documentation is generated properly. You
+need to activate Circle CI for your own repository. Refer to the Circle CI
+documentation.</p></li>
+<li><p>ReadTheDocs is used to build and host the documentation. You need to activate
+ReadTheDocs for your own repository. Refer to the ReadTheDocs documentation.</p></li>
+<li><p>CodeCov for tracking the code coverage of the package. You need to activate
+CodeCov for you own repository.</p></li>
+<li><p>PEP8Speaks for automatically checking the PEP8 compliance of your project for
+each Pull Request.</p></li>
+</ul>
+</section>
+</section>
+<section id="publish-your-package">
+<h2>Publish your package<a class="headerlink" href="#publish-your-package" title="Link to this heading">#</a></h2>
+<p>You can make your package available through <a class="reference external" href="https://packaging.python.org/tutorials/packaging-projects/">PyPi</a> and <a href="#id1"><span class="problematic" id="id2">conda-forge_</span></a>. Refer to
+the associated documentation to be able to upload your packages such that
+it will be installable with <code class="docutils literal notranslate"><span class="pre">pip</span></code> and <code class="docutils literal notranslate"><span class="pre">conda</span></code>. Once published, it will
+be possible to install your package with the following commands:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ pip install your-scikit-learn-contribution
+$ conda install -c conda-forge your-scikit-learn-contribution
+</pre></div>
+</div>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="index.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Welcome to sklearn-template’s documentation!</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="user_guide.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">User guide: create your own scikit-learn estimator</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-your-own-scikit-learn-contribution-package">Creating your own scikit-learn contribution package</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#download-and-setup-your-repository">1. Download and setup your repository</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#develop-your-own-scikit-learn-estimators">2. Develop your own scikit-learn estimators</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#edit-the-documentation">3. Edit the documentation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#setup-the-continuous-integration">4. Setup the continuous integration</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#publish-your-package">Publish your package</a></li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+
+  
+  <div class="tocsection editthispage">
+    <a href="https://github.com/scikit-learn-contrib/project-template/edit/master/doc/quick_start.rst">
+      <i class="fa-solid fa-pencil"></i>
+      
+      
+        
+          Edit on GitHub
+        
+      
+    </a>
+  </div>
+</div>
+
+  <div class="sidebar-secondary-item">
+
+  <div class="tocsection sourcelink">
+    <a href="_sources/quick_start.rst.txt">
+      <i class="fa-solid fa-file-lines"></i> Show Source
+    </a>
+  </div>
+</div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2016, V. Birodkar.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.3.7.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.15.2.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>
