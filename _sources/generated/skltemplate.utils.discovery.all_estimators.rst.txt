@@ -1,0 +1,6 @@
+﻿skltemplate.utils.discovery.all\_estimators
+===========================================
+
+.. currentmodule:: skltemplate.utils.discovery
+
+.. autofunction:: all_estimators

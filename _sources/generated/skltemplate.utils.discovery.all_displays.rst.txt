@@ -1,0 +1,6 @@
+﻿skltemplate.utils.discovery.all\_displays
+=========================================
+
+.. currentmodule:: skltemplate.utils.discovery
+
+.. autofunction:: all_displays
