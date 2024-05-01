@@ -390,42 +390,37 @@ scikit-learn contribution.</p>
 <section id="creating-your-own-scikit-learn-contribution-package">
 <h2>Creating your own scikit-learn contribution package<a class="headerlink" href="#creating-your-own-scikit-learn-contribution-package" title="Link to this heading">#</a></h2>
 <section id="download-and-setup-your-repository">
-<h3>1. Download and setup your repository<a class="headerlink" href="#download-and-setup-your-repository" title="Link to this heading">#</a></h3>
+<h3>Download and setup your repository<a class="headerlink" href="#download-and-setup-your-repository" title="Link to this heading">#</a></h3>
 <p>To create your package, you need to clone the <code class="docutils literal notranslate"><span class="pre">project-template</span></code> repository:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git clone https://github.com/scikit-learn-contrib/project-template.git
-</pre></div>
-</div>
-<p>Before to reinitialize your git repository, you need to make the following
-changes. Replace all occurrences of <code class="docutils literal notranslate"><span class="pre">skltemplate</span></code> and <code class="docutils literal notranslate"><span class="pre">sklearn-template</span></code>
-with the name of you own contribution. You can find all the occurrences using
-the following command:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git grep skltemplate
-$ git grep sklearn-template
-</pre></div>
-</div>
-<p>To remove the history of the template package, you need to remove the <code class="docutils literal notranslate"><span class="pre">.git</span></code>
+<div class="highlight-default notranslate"><div class="highlight"><pre><style type="text/css">
+span.prompt1:before {
+  content: "$ ";
+}
+</style><span class="prompt1">git<span class="w"> </span>clone<span class="w"> </span>https://github.com/scikit-learn-contrib/project-template.git</span>
+</pre></div></div><p>Before to reinitialize your git repository, you need to make the following
+changes. Replace all occurrences of <code class="docutils literal notranslate"><span class="pre">skltemplate</span></code>, <code class="docutils literal notranslate"><span class="pre">sklearn-template</span></code>, or
+<code class="docutils literal notranslate"><span class="pre">project-template</span></code> with the name of you own project. You can find all the
+occurrences using the following command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">git<span class="w"> </span>grep<span class="w"> </span>skltemplate</span>
+<span class="prompt1">git<span class="w"> </span>grep<span class="w"> </span>sklearn-template</span>
+<span class="prompt1">git<span class="w"> </span>grep<span class="w"> </span>project-template</span>
+</pre></div></div><p>To remove the history of the template package, you need to remove the <code class="docutils literal notranslate"><span class="pre">.git</span></code>
 directory:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ cd project-template
-$ rm -rf .git
-</pre></div>
-</div>
-<p>Then, you need to initialize your new git repository:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git init
-$ git add .
-$ git commit -m &#39;Initial commit&#39;
-</pre></div>
-</div>
-<p>Finally, you create an online repository on GitHub and push your code online:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git remote add origin https://github.com/your_remote/your_contribution.git
-$ git push origin master
-</pre></div>
-</div>
-</section>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">rm<span class="w"> </span>-rf<span class="w"> </span>.git</span>
+</pre></div></div><p>Then, you need to initialize your new git repository:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">git<span class="w"> </span>init</span>
+<span class="prompt1">git<span class="w"> </span>add<span class="w"> </span>.</span>
+<span class="prompt1">git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s1">&#39;Initial commit&#39;</span></span>
+</pre></div></div><p>Finally, you create an online repository on GitHub and push your code online:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">git<span class="w"> </span>remote<span class="w"> </span>add<span class="w"> </span>origin<span class="w"> </span>https://github.com/your_remote/your_contribution.git</span>
+<span class="prompt1">git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </span>main</span>
+</pre></div></div></section>
 <section id="develop-your-own-scikit-learn-estimators">
-<h3>2. Develop your own scikit-learn estimators<a class="headerlink" href="#develop-your-own-scikit-learn-estimators" title="Link to this heading">#</a></h3>
+<h3>Develop your own scikit-learn estimators<a class="headerlink" href="#develop-your-own-scikit-learn-estimators" title="Link to this heading">#</a></h3>
 <p>You can modify the source files as you want. However, your custom estimators
-need to pass the <a class="reference external" href="http://scikit-learn.org/stable/modules/generated/sklearn.utils.estimator_checks.check_estimator.html#sklearn.utils.estimator_checks.check_estimator">check_estimator</a> test to be scikit-learn compatible. You can
-refer to the <a class="reference internal" href="user_guide.html#user-guide"><span class="std std-ref">User Guide</span></a> to help you create a compatible
+need to pass the <a class="reference external" href="http://scikit-learn.org/stable/modules/generated/sklearn.utils.estimator_checks.check_estimator.html#sklearn.utils.estimator_checks.check_estimator">check_estimator</a> test to be scikit-learn compatible. We provide a
+file called <code class="docutils literal notranslate"><span class="pre">test_common.py</span></code> where we run the checks on our custom estimators.</p>
+<p>You can refer to the <a class="reference internal" href="user_guide.html#user-guide"><span class="std std-ref">User Guide</span></a> to help you create a compatible
 scikit-learn estimator.</p>
 <p>In any case, developers should endeavor to adhere to scikit-learn’s
 <a class="reference external" href="http://scikit-learn.org/stable/developers/">Contributor’s Guide</a> which promotes the use of:</p>
@@ -441,15 +436,21 @@ benefits/benchmarks of particular algorithms;</p></li>
 <li><p>efficient code when the need for optimization is supported by benchmarks.</p></li>
 </ul>
 </section>
+<section id="managing-your-local-and-continuous-integration-environment">
+<h3>Managing your local and continuous integration environment<a class="headerlink" href="#managing-your-local-and-continuous-integration-environment" title="Link to this heading">#</a></h3>
+<p>Here, we set up for you an repository that uses <code class="docutils literal notranslate"><span class="pre">pixi</span></code>. The <code class="docutils literal notranslate"><span class="pre">pixi.toml</span></code> file defines
+the packages and tasks to be run that we will present below. You can refer to the
+following documentation link to install <code class="docutils literal notranslate"><span class="pre">pixi</span></code>: <a class="reference external" href="https://pixi.sh/latest/#installation">https://pixi.sh/latest/#installation</a></p>
+<p>Once done, you can refer to the documentation to get started but we provide the
+command below to interact with the main task requested to develop your package.</p>
+</section>
 <section id="edit-the-documentation">
-<h3>3. Edit the documentation<a class="headerlink" href="#edit-the-documentation" title="Link to this heading">#</a></h3>
+<h3>Edit the documentation<a class="headerlink" href="#edit-the-documentation" title="Link to this heading">#</a></h3>
 <p>The documentation is created using <a class="reference external" href="http://www.sphinx-doc.org/en/stable/">Sphinx</a>. In addition, the examples are
 created using <code class="docutils literal notranslate"><span class="pre">sphinx-gallery</span></code>. Therefore, to generate locally the
-documentation, you are required to install the following packages:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ pip install sphinx sphinx-gallery sphinx_rtd_theme matplotlib numpydoc pillow
-</pre></div>
-</div>
-<p>The documentation is made of:</p>
+documentation, you can leverage the following <code class="docutils literal notranslate"><span class="pre">pixi</span></code> task:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">pixi<span class="w"> </span>run<span class="w"> </span>build-doc</span>
+</pre></div></div><p>The documentation is made of:</p>
 <ul class="simple">
 <li><p>a home page, <code class="docutils literal notranslate"><span class="pre">doc/index.rst</span></code>;</p></li>
 <li><p>an API documentation, <code class="docutils literal notranslate"><span class="pre">doc/api.rst</span></code> in which you should add all public
@@ -461,30 +462,25 @@ users.</p></li>
 illustrates some usage of the package. the example file name should start by
 <code class="docutils literal notranslate"><span class="pre">plot_*.py</span></code>.</p></li>
 </ul>
-<p>The documentation is built with the following commands:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ cd doc
-$ make html
-</pre></div>
-</div>
 </section>
+<section id="local-testing">
+<h3>Local testing<a class="headerlink" href="#local-testing" title="Link to this heading">#</a></h3>
+<p>To run the tests locally, you can use the following command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">pixi<span class="w"> </span>run<span class="w"> </span><span class="nb">test</span></span>
+</pre></div></div><p>It will use <code class="docutils literal notranslate"><span class="pre">pytest</span></code> under the hood to run the package tests.</p>
+<p>In addition, you have a linter task to check the code consistency in terms of style:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">pixi<span class="w"> </span>run<span class="w"> </span>lint</span>
+</pre></div></div></section>
 <section id="setup-the-continuous-integration">
-<h3>4. Setup the continuous integration<a class="headerlink" href="#setup-the-continuous-integration" title="Link to this heading">#</a></h3>
+<h3>Setup the continuous integration<a class="headerlink" href="#setup-the-continuous-integration" title="Link to this heading">#</a></h3>
 <p>The project template already contains configuration files of the continuous
-integration system. Basically, the following systems are set:</p>
+integration system. It leverage the above pixi commands and run on GitHub Actions.
+In short, it will:</p>
 <ul class="simple">
-<li><p>Travis CI is used to test the package in Linux. You need to activate Travis
-CI for your own repository. Refer to the Travis CI documentation.</p></li>
-<li><p>AppVeyor is used to test the package in Windows. You need to activate
-AppVeyor for your own repository. Refer to the AppVeyor documentation.</p></li>
-<li><p>Circle CI is used to check if the documentation is generated properly. You
-need to activate Circle CI for your own repository. Refer to the Circle CI
-documentation.</p></li>
-<li><p>ReadTheDocs is used to build and host the documentation. You need to activate
-ReadTheDocs for your own repository. Refer to the ReadTheDocs documentation.</p></li>
-<li><p>CodeCov for tracking the code coverage of the package. You need to activate
-CodeCov for you own repository.</p></li>
-<li><p>PEP8Speaks for automatically checking the PEP8 compliance of your project for
-each Pull Request.</p></li>
+<li><p>run the tests on the different platforms (Linux, MacOS, Windows) and upload the
+coverage report to codecov.io;</p></li>
+<li><p>check the code style (linter);</p></li>
+<li><p>build the documentation and deploy it automatically on GitHub Pages.</p></li>
 </ul>
 </section>
 </section>
@@ -492,12 +488,7 @@ each Pull Request.</p></li>
 <h2>Publish your package<a class="headerlink" href="#publish-your-package" title="Link to this heading">#</a></h2>
 <p>You can make your package available through <a class="reference external" href="https://packaging.python.org/tutorials/packaging-projects/">PyPi</a> and <a href="#id1"><span class="problematic" id="id2">conda-forge_</span></a>. Refer to
 the associated documentation to be able to upload your packages such that
-it will be installable with <code class="docutils literal notranslate"><span class="pre">pip</span></code> and <code class="docutils literal notranslate"><span class="pre">conda</span></code>. Once published, it will
-be possible to install your package with the following commands:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ pip install your-scikit-learn-contribution
-$ conda install -c conda-forge your-scikit-learn-contribution
-</pre></div>
-</div>
+it will be installable with <code class="docutils literal notranslate"><span class="pre">pip</span></code> and <code class="docutils literal notranslate"><span class="pre">conda</span></code>.</p>
 </section>
 </section>
 
@@ -548,10 +539,12 @@ $ conda install -c conda-forge your-scikit-learn-contribution
   <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-your-own-scikit-learn-contribution-package">Creating your own scikit-learn contribution package</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#download-and-setup-your-repository">1. Download and setup your repository</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#develop-your-own-scikit-learn-estimators">2. Develop your own scikit-learn estimators</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#edit-the-documentation">3. Edit the documentation</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#setup-the-continuous-integration">4. Setup the continuous integration</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#download-and-setup-your-repository">Download and setup your repository</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#develop-your-own-scikit-learn-estimators">Develop your own scikit-learn estimators</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#managing-your-local-and-continuous-integration-environment">Managing your local and continuous integration environment</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#edit-the-documentation">Edit the documentation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#local-testing">Local testing</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#setup-the-continuous-integration">Setup the continuous integration</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#publish-your-package">Publish your package</a></li>

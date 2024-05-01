@@ -8,40 +8,50 @@ scikit-learn contribution.
 Creating your own scikit-learn contribution package
 ===================================================
 
-1. Download and setup your repository
--------------------------------------
+Download and setup your repository
+----------------------------------
 
-To create your package, you need to clone the ``project-template`` repository::
+To create your package, you need to clone the ``project-template`` repository:
 
-    $ git clone https://github.com/scikit-learn-contrib/project-template.git
+.. prompt:: bash $
+
+  git clone https://github.com/scikit-learn-contrib/project-template.git
 
 Before to reinitialize your git repository, you need to make the following
-changes. Replace all occurrences of ``skltemplate`` and ``sklearn-template``
-with the name of you own contribution. You can find all the occurrences using
-the following command::
+changes. Replace all occurrences of ``skltemplate``, ``sklearn-template``, or
+``project-template`` with the name of you own project. You can find all the
+occurrences using the following command:
 
-    $ git grep skltemplate
-    $ git grep sklearn-template
+.. prompt:: bash $
+
+  git grep skltemplate
+  git grep sklearn-template
+  git grep project-template
 
 To remove the history of the template package, you need to remove the `.git`
-directory::
+directory:
 
-    $ cd project-template
-    $ rm -rf .git
+.. prompt:: bash $
 
-Then, you need to initialize your new git repository::
+  rm -rf .git
 
-    $ git init
-    $ git add .
-    $ git commit -m 'Initial commit'
+Then, you need to initialize your new git repository:
 
-Finally, you create an online repository on GitHub and push your code online::
+.. prompt:: bash $
 
-    $ git remote add origin https://github.com/your_remote/your_contribution.git
-    $ git push origin master
+  git init
+  git add .
+  git commit -m 'Initial commit'
 
-2. Develop your own scikit-learn estimators
--------------------------------------------
+Finally, you create an online repository on GitHub and push your code online:
+
+.. prompt:: bash $
+
+  git remote add origin https://github.com/your_remote/your_contribution.git
+  git push origin main
+
+Develop your own scikit-learn estimators
+----------------------------------------
 
 .. _check_estimator: http://scikit-learn.org/stable/modules/generated/sklearn.utils.estimator_checks.check_estimator.html#sklearn.utils.estimator_checks.check_estimator
 .. _`Contributor's Guide`: http://scikit-learn.org/stable/developers/
@@ -51,8 +61,10 @@ Finally, you create an online repository on GitHub and push your code online::
 .. _doctests: https://docs.python.org/3/library/doctest.html
 
 You can modify the source files as you want. However, your custom estimators
-need to pass the check_estimator_ test to be scikit-learn compatible. You can
-refer to the :ref:`User Guide <user_guide>` to help you create a compatible
+need to pass the check_estimator_ test to be scikit-learn compatible. We provide a
+file called `test_common.py` where we run the checks on our custom estimators.
+
+You can refer to the :ref:`User Guide <user_guide>` to help you create a compatible
 scikit-learn estimator.
 
 In any case, developers should endeavor to adhere to scikit-learn's
@@ -68,16 +80,28 @@ In any case, developers should endeavor to adhere to scikit-learn's
   benefits/benchmarks of particular algorithms;
 * efficient code when the need for optimization is supported by benchmarks.
 
-3. Edit the documentation
--------------------------
+Managing your local and continuous integration environment
+----------------------------------------------------------
+
+Here, we set up for you an repository that uses `pixi`. The `pixi.toml` file defines
+the packages and tasks to be run that we will present below. You can refer to the
+following documentation link to install `pixi`: https://pixi.sh/latest/#installation
+
+Once done, you can refer to the documentation to get started but we provide the
+command below to interact with the main task requested to develop your package.
+
+Edit the documentation
+----------------------
 
 .. _Sphinx: http://www.sphinx-doc.org/en/stable/
 
 The documentation is created using Sphinx_. In addition, the examples are
 created using ``sphinx-gallery``. Therefore, to generate locally the
-documentation, you are required to install the following packages::
+documentation, you can leverage the following `pixi` task:
 
-    $ pip install sphinx sphinx-gallery sphinx_rtd_theme matplotlib numpydoc pillow
+.. prompt:: bash $
+
+  pixi run build-doc
 
 The documentation is made of:
 
@@ -91,30 +115,34 @@ The documentation is made of:
   illustrates some usage of the package. the example file name should start by
   `plot_*.py`.
 
-The documentation is built with the following commands::
+Local testing
+-------------
 
-    $ cd doc
-    $ make html
+To run the tests locally, you can use the following command:
 
-4. Setup the continuous integration
------------------------------------
+.. prompt:: bash $
+
+  pixi run test
+
+It will use `pytest` under the hood to run the package tests.
+
+In addition, you have a linter task to check the code consistency in terms of style:
+
+.. prompt:: bash $
+
+  pixi run lint
+
+Setup the continuous integration
+--------------------------------
 
 The project template already contains configuration files of the continuous
-integration system. Basically, the following systems are set:
+integration system. It leverage the above pixi commands and run on GitHub Actions.
+In short, it will:
 
-* Travis CI is used to test the package in Linux. You need to activate Travis
-  CI for your own repository. Refer to the Travis CI documentation.
-* AppVeyor is used to test the package in Windows. You need to activate
-  AppVeyor for your own repository. Refer to the AppVeyor documentation.
-* Circle CI is used to check if the documentation is generated properly. You
-  need to activate Circle CI for your own repository. Refer to the Circle CI
-  documentation.
-* ReadTheDocs is used to build and host the documentation. You need to activate
-  ReadTheDocs for your own repository. Refer to the ReadTheDocs documentation.
-* CodeCov for tracking the code coverage of the package. You need to activate
-  CodeCov for you own repository.
-* PEP8Speaks for automatically checking the PEP8 compliance of your project for
-  each Pull Request.
+* run the tests on the different platforms (Linux, MacOS, Windows) and upload the
+  coverage report to codecov.io;
+* check the code style (linter);
+* build the documentation and deploy it automatically on GitHub Pages.
 
 Publish your package
 ====================
@@ -124,8 +152,4 @@ Publish your package
 
 You can make your package available through PyPi_ and conda-forge_. Refer to
 the associated documentation to be able to upload your packages such that
-it will be installable with ``pip`` and ``conda``. Once published, it will
-be possible to install your package with the following commands::
-
-    $ pip install your-scikit-learn-contribution
-    $ conda install -c conda-forge your-scikit-learn-contribution
+it will be installable with ``pip`` and ``conda``.
