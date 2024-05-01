@@ -3,13 +3,13 @@ This is a module to be used as a reference for building other modules
 """
 import numpy as np
 from sklearn.base import BaseEstimator, ClassifierMixin, TransformerMixin
-from sklearn.utils.validation import check_X_y, check_array, check_is_fitted
-from sklearn.utils.multiclass import unique_labels
 from sklearn.metrics import euclidean_distances
+from sklearn.utils.multiclass import unique_labels
+from sklearn.utils.validation import check_array, check_is_fitted, check_X_y
 
 
 class TemplateEstimator(BaseEstimator):
-    """ A template estimator to be used as a reference implementation.
+    """A template estimator to be used as a reference implementation.
 
     For more information regarding how to build your own estimator, read more
     in the :ref:`User Guide <user_guide>`.
@@ -29,7 +29,8 @@ class TemplateEstimator(BaseEstimator):
     >>> estimator.fit(X, y)
     TemplateEstimator()
     """
-    def __init__(self, demo_param='demo_param'):
+
+    def __init__(self, demo_param="demo_param"):
         self.demo_param = demo_param
 
     def fit(self, X, y):
@@ -54,7 +55,7 @@ class TemplateEstimator(BaseEstimator):
         return self
 
     def predict(self, X):
-        """ A reference implementation of a predicting function.
+        """A reference implementation of a predicting function.
 
         Parameters
         ----------
@@ -67,12 +68,12 @@ class TemplateEstimator(BaseEstimator):
             Returns an array of ones.
         """
         X = check_array(X, accept_sparse=True)
-        check_is_fitted(self, 'is_fitted_')
+        check_is_fitted(self, "is_fitted_")
         return np.ones(X.shape[0], dtype=np.int64)
 
 
 class TemplateClassifier(ClassifierMixin, BaseEstimator):
-    """ An example classifier which implements a 1-NN algorithm.
+    """An example classifier which implements a 1-NN algorithm.
 
     For more information regarding how to build your own classifier, read more
     in the :ref:`User Guide <user_guide>`.
@@ -91,7 +92,8 @@ class TemplateClassifier(ClassifierMixin, BaseEstimator):
     classes_ : ndarray, shape (n_classes,)
         The classes seen at :meth:`fit`.
     """
-    def __init__(self, demo_param='demo'):
+
+    def __init__(self, demo_param="demo"):
         self.demo_param = demo_param
 
     def fit(self, X, y):
@@ -120,7 +122,7 @@ class TemplateClassifier(ClassifierMixin, BaseEstimator):
         return self
 
     def predict(self, X):
-        """ A reference implementation of a prediction for a classifier.
+        """A reference implementation of a prediction for a classifier.
 
         Parameters
         ----------
@@ -134,7 +136,7 @@ class TemplateClassifier(ClassifierMixin, BaseEstimator):
             seen during fit.
         """
         # Check is fit had been called
-        check_is_fitted(self, ['X_', 'y_'])
+        check_is_fitted(self, ["X_", "y_"])
 
         # Input validation
         X = check_array(X)
@@ -144,7 +146,7 @@ class TemplateClassifier(ClassifierMixin, BaseEstimator):
 
 
 class TemplateTransformer(TransformerMixin, BaseEstimator):
-    """ An example transformer that returns the element-wise square root.
+    """An example transformer that returns the element-wise square root.
 
     For more information regarding how to build your own transformer, read more
     in the :ref:`User Guide <user_guide>`.
@@ -159,7 +161,8 @@ class TemplateTransformer(TransformerMixin, BaseEstimator):
     n_features_ : int
         The number of features of the data passed to :meth:`fit`.
     """
-    def __init__(self, demo_param='demo'):
+
+    def __init__(self, demo_param="demo"):
         self.demo_param = demo_param
 
     def fit(self, X, y=None):
@@ -186,7 +189,7 @@ class TemplateTransformer(TransformerMixin, BaseEstimator):
         return self
 
     def transform(self, X):
-        """ A reference implementation of a transform function.
+        """A reference implementation of a transform function.
 
         Parameters
         ----------
@@ -200,7 +203,7 @@ class TemplateTransformer(TransformerMixin, BaseEstimator):
             in ``X``.
         """
         # Check is fit had been called
-        check_is_fitted(self, 'n_features_')
+        check_is_fitted(self, "n_features_")
 
         # Input validation
         X = check_array(X, accept_sparse=True)
@@ -208,6 +211,5 @@ class TemplateTransformer(TransformerMixin, BaseEstimator):
         # Check that the input is of the same shape as the one passed
         # during fit.
         if X.shape[1] != self.n_features_:
-            raise ValueError('Shape of input is different from what was seen'
-                             'in `fit`')
+            raise ValueError("Shape of input is different from what was seenin `fit`")
         return np.sqrt(X)
