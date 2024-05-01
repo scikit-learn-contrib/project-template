@@ -9,7 +9,7 @@ import numpy as np
 from matplotlib import pyplot as plt
 from skltemplate import TemplateTransformer
 
-X = np.arange(50, dtype=np.float).reshape(-1, 1)
+X = np.arange(50, dtype=np.float64).reshape(-1, 1)
 X /= 50
 estimator = TemplateTransformer()
 X_transformed = estimator.fit_transform(X)
