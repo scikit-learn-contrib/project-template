@@ -39,6 +39,7 @@ numpydoc = "*"
 pydata-sphinx-theme = "*"
 sphinx = "*"
 sphinx-gallery = "*"
+sphinx-prompt = "*"
 
 [feature.doc.tasks]
 build-doc = { cmd = "make html", cwd = "doc" }
