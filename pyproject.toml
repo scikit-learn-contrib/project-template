@@ -7,6 +7,7 @@ authors = [
 ]
 description = "A template for scikit-learn compatible packages."
 readme = "README.md"
+requires-python = ">=3.9"
 dependencies = [
   "scikit-learn>=1.4.2",
 ]
@@ -26,6 +27,51 @@ classifiers = [
 [project.urls]
 Homepage = "https://github.com/scikit-learn-contrib/project-template"
 Issues = "https://github.com/scikit-learn-contrib/project-template/issues"
+
+[tool.pixi.project]
+channels = ["conda-forge"]
+platforms = ["win-64", "linux-64", "osx-64", "osx-arm64"]
+
+[tool.pixi.dependencies]
+python = ">=3.9"
+scikit-learn = ">=1.4.2"
+
+[tool.pixi.pypi-dependencies]
+skltemplate = { path=".", editable=true }
+
+[tool.pixi.feature.lint.dependencies]
+# The version below should be aligned with the one of `.pre-commit-config.yaml`
+black = "23.3.0"
+ruff = "0.4.2"
+
+[tool.pixi.feature.lint.tasks]
+black = { cmd = "black --check --diff skltemplate && black --check --diff examples" }
+ruff = { cmd = "ruff check --output-format=full skltemplate && ruff check --output-format=full examples" }
+lint = { depends_on = ["black", "ruff"]}
+
+[tool.pixi.feature.test.dependencies]
+pytest = "*"
+pytest-cov = "*"
+
+[tool.pixi.feature.test.tasks]
+test = { cmd = "pytest -vsl --cov=skltemplate --cov-report=xml skltemplate" }
+
+[tool.pixi.feature.doc.dependencies]
+matplotlib = "*"
+numpydoc = "*"
+pydata-sphinx-theme = "*"
+sphinx = "*"
+sphinx-gallery = "*"
+sphinx-prompt = "*"
+
+[tool.pixi.feature.doc.tasks]
+build-doc = { cmd = "make html", cwd = "doc" }
+clean-doc = { cmd = "rm -rf _build", cwd = "doc" }
+
+[tool.pixi.environments]
+doc = ["doc"]
+lint = ["lint"]
+test = ["test"]
 
 [tool.black]
 line-length = 88
