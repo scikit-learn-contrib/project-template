@@ -1,0 +1,38 @@
+[project]
+name = "skltemplate"
+version = "0.0.4.dev0"
+description = "A template for scikit-learn compatible packages."
+authors = ["Vighnesh Birodkar <vighneshbirodkar@nyu.edu>", "Guillaume Lemaitre <g.lemaite58@gmail.com>"]
+channels = ["conda-forge"]
+platforms = ["win-64", "linux-64", "osx-64", "osx-arm64"]
+license = "BSD-3-Clause"
+homepage = "https://github.com/scikit-learn-contrib/project-template"
+readme = "README.rst"
+
+[dependencies]
+python = "*"
+scikit-learn = "*"
+
+[pypi-dependencies]
+skltemplate = { path=".", editable=true }
+
+[feature.test.dependencies]
+pytest = "*"
+pytest-cov = "*"
+
+[feature.test.tasks]
+test = { cmd = "pytest -vsl --cov=skltemplate --cov-report=xml skltemplate" }
+
+[feature.doc.dependencies]
+matplotlib = "*"
+numpydoc = "*"
+sphinx = "*"
+sphinx-gallery = "*"
+sphinx_rtd_theme = "*"
+
+[feature.doc.tasks]
+build-doc = { cmd = "make html", cwd = "doc" }
+
+[environments]
+test = ["test"]
+doc = ["doc"]

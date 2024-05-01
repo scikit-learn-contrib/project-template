@@ -4,18 +4,3 @@
 branch = True
 source = skltemplate
 include = */skltemplate/*
-omit =
-    */setup.py
-
-[report]
-exclude_lines =
-    pragma: no cover
-    def __repr__
-    if self.debug:
-    if settings.DEBUG
-    raise AssertionError
-    raise NotImplementedError
-    if 0:
-    if __name__ == .__main__.:
-    if self.verbose:
-show_missing = True
