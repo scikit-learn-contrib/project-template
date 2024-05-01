@@ -1,0 +1,26 @@
+[project]
+name = "skltemplate"
+version = "0.0.4.dev0"
+authors = [
+  { name="Vighnesh Birodkar", email="vighneshbirodkar@nyu.edu" },
+  { name="Guillaume Lemaitre", email="g.lemaitre58@gmail.com" },
+]
+description = "A template for scikit-learn compatible packages."
+readme = "README.rst"
+requires-python = ">=3.9"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "License :: OSI Approved :: BSD License",
+    "Operating System :: POSIX",
+    "Operating System :: Unix",
+    "Operating System :: MacOS",
+    "Operating System :: Microsoft :: Windows",
+]
+
+[project.urls]
+Homepage = "https://github.com/scikit-learn-contrib/project-template"
+Issues = "https://github.com/scikit-learn-contrib/project-template/issues"
