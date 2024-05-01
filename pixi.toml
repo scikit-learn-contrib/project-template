@@ -26,12 +26,13 @@ test = { cmd = "pytest -vsl --cov=skltemplate --cov-report=xml skltemplate" }
 [feature.doc.dependencies]
 matplotlib = "*"
 numpydoc = "*"
+pydata-sphinx-theme = "*"
 sphinx = "*"
 sphinx-gallery = "*"
-sphinx_rtd_theme = "*"
 
 [feature.doc.tasks]
 build-doc = { cmd = "make html", cwd = "doc" }
+clean-doc = { cmd = "rm -rf _build", cwd = "doc" }
 
 [environments]
 test = ["test"]

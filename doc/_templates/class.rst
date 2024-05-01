@@ -1,13 +1,22 @@
-:mod:`{{module}}`.{{objname}}
+{{objname}}
 {{ underline }}==============
 
 .. currentmodule:: {{ module }}
 
 .. autoclass:: {{ objname }}
-   :members:
 
    {% block methods %}
-   .. automethod:: __init__
+
+   {% if methods %}
+   .. rubric:: Methods
+
+   .. autosummary::
+   {% for item in methods %}
+      {% if '__init__' not in item %}
+        ~{{ name }}.{{ item }}
+      {% endif %}
+   {%- endfor %}
+   {% endif %}
    {% endblock %}
 
 .. include:: {{module}}.{{objname}}.examples
