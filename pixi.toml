@@ -11,7 +11,7 @@ readme = "README.md"
 
 [dependencies]
 python = "*"
-scikit-learn = "*"
+scikit-learn = ">=1.4.2"
 
 [pypi-dependencies]
 skltemplate = { path=".", editable=true }

@@ -2,10 +2,10 @@
 This is a module to be used as a reference for building other modules
 """
 import numpy as np
-from sklearn.base import BaseEstimator, ClassifierMixin, TransformerMixin
+from sklearn.base import BaseEstimator, ClassifierMixin, TransformerMixin, _fit_context
 from sklearn.metrics import euclidean_distances
-from sklearn.utils.multiclass import unique_labels
-from sklearn.utils.validation import check_array, check_is_fitted, check_X_y
+from sklearn.utils.multiclass import check_classification_targets
+from sklearn.utils.validation import  check_is_fitted
 
 
 class TemplateEstimator(BaseEstimator):
@@ -17,7 +17,19 @@ class TemplateEstimator(BaseEstimator):
     Parameters
     ----------
     demo_param : str, default='demo_param'
-        A parameter used for demonstation of how to pass and store paramters.
+        A parameter used for demonstration of how to pass and store parameters.
+
+    Attributes
+    ----------
+    is_fitted_ : bool
+        A boolean indicating whether the estimator has been fitted.
+
+    n_features_in_ : int
+        Number of features seen during :term:`fit`.
+
+    feature_names_in_ : ndarray of shape (`n_features_in_`,)
+        Names of features seen during :term:`fit`. Defined only when `X`
+        has feature names that are all strings.
 
     Examples
     --------
@@ -30,9 +42,16 @@ class TemplateEstimator(BaseEstimator):
     TemplateEstimator()
     """
 
+    # This is a dictionary allowing to define the type of parameters.
+    # It used to validate parameter within the `_fit_context` decorator.
+    _parameter_constraints = {
+        "demo_param": [str],
+    }
+
     def __init__(self, demo_param="demo_param"):
         self.demo_param = demo_param
 
+    @_fit_context(prefer_skip_nested_validation=True)
     def fit(self, X, y):
         """A reference implementation of a fitting function.
 
@@ -40,6 +59,7 @@ class TemplateEstimator(BaseEstimator):
         ----------
         X : {array-like, sparse matrix}, shape (n_samples, n_features)
             The training input samples.
+
         y : array-like, shape (n_samples,) or (n_samples, n_outputs)
             The target values (class labels in classification, real numbers in
             regression).
@@ -49,7 +69,12 @@ class TemplateEstimator(BaseEstimator):
         self : object
             Returns self.
         """
-        X, y = check_X_y(X, y, accept_sparse=True)
+        # `_validate_data` is defined in the `BaseEstimator` class.
+        # It allows to:
+        # - run different checks on the input data;
+        # - define some attributes associated to the input data: `n_features_in_` and
+        #   `feature_names_in_`.
+        X, y = self._validate_data(X, y, accept_sparse=True)
         self.is_fitted_ = True
         # `fit` should always return `self`
         return self
@@ -67,11 +92,16 @@ class TemplateEstimator(BaseEstimator):
         y : ndarray, shape (n_samples,)
             Returns an array of ones.
         """
-        X = check_array(X, accept_sparse=True)
-        check_is_fitted(self, "is_fitted_")
+        # Check is fit had been called
+        check_is_fitted(self)
+        # We need to set reset=False because we don't want to overwrite `n_features_in_`
+        # `feature_names_in_` but only check that the shape is consistent.
+        X = self._validate_data(X, accept_sparse=True, reset=False)
         return np.ones(X.shape[0], dtype=np.int64)
 
 
+# Note that the mixin class should always be on the left of `BaseEstimator` to ensure
+# the MRO works as expected.
 class TemplateClassifier(ClassifierMixin, BaseEstimator):
     """An example classifier which implements a 1-NN algorithm.
 
@@ -87,15 +117,46 @@ class TemplateClassifier(ClassifierMixin, BaseEstimator):
     ----------
     X_ : ndarray, shape (n_samples, n_features)
         The input passed during :meth:`fit`.
+
     y_ : ndarray, shape (n_samples,)
         The labels passed during :meth:`fit`.
+
     classes_ : ndarray, shape (n_classes,)
         The classes seen at :meth:`fit`.
+
+    n_features_in_ : int
+        Number of features seen during :term:`fit`.
+
+    feature_names_in_ : ndarray of shape (`n_features_in_`,)
+        Names of features seen during :term:`fit`. Defined only when `X`
+        has feature names that are all strings.
+
+    Examples
+    --------
+    >>> from sklearn.datasets import load_iris
+    >>> from skltemplate import TemplateClassifier
+    >>> X, y = load_iris(return_X_y=True)
+    >>> clf = TemplateClassifier().fit(X, y)
+    >>> clf.predict(X)
+    array([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+           0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+           0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+           1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+           1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2,
+           2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2,
+           2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2])
     """
+
+    # This is a dictionary allowing to define the type of parameters.
+    # It used to validate parameter within the `_fit_context` decorator.
+    _parameter_constraints = {
+        "demo_param": [str],
+    }
 
     def __init__(self, demo_param="demo"):
         self.demo_param = demo_param
 
+    @_fit_context(prefer_skip_nested_validation=True)
     def fit(self, X, y):
         """A reference implementation of a fitting function for a classifier.
 
@@ -103,6 +164,7 @@ class TemplateClassifier(ClassifierMixin, BaseEstimator):
         ----------
         X : array-like, shape (n_samples, n_features)
             The training input samples.
+
         y : array-like, shape (n_samples,)
             The target values. An array of int.
 
@@ -111,13 +173,22 @@ class TemplateClassifier(ClassifierMixin, BaseEstimator):
         self : object
             Returns self.
         """
-        # Check that X and y have correct shape
-        X, y = check_X_y(X, y)
-        # Store the classes seen during fit
-        self.classes_ = unique_labels(y)
+        # `_validate_data` is defined in the `BaseEstimator` class.
+        # It allows to:
+        # - run different checks on the input data;
+        # - define some attributes associated to the input data: `n_features_in_` and
+        #   `feature_names_in_`.
+        X, y = self._validate_data(X, y)
+        # We need to make sure that we have a classification task
+        check_classification_targets(y)
 
+        # classifier should always store the classes seen during `fit`
+        self.classes_ = np.unique(y)
+
+        # Store the training data to predict later
         self.X_ = X
         self.y_ = y
+
         # Return the classifier
         return self
 
@@ -136,15 +207,19 @@ class TemplateClassifier(ClassifierMixin, BaseEstimator):
             seen during fit.
         """
         # Check is fit had been called
-        check_is_fitted(self, ["X_", "y_"])
+        check_is_fitted(self)
 
         # Input validation
-        X = check_array(X)
+        # We need to set reset=False because we don't want to overwrite `n_features_in_`
+        # `feature_names_in_` but only check that the shape is consistent.
+        X = self._validate_data(X, reset=False)
 
         closest = np.argmin(euclidean_distances(X, self.X_), axis=1)
         return self.y_[closest]
 
 
+# Note that the mixin class should always be on the left of `BaseEstimator` to ensure
+# the MRO works as expected.
 class TemplateTransformer(TransformerMixin, BaseEstimator):
     """An example transformer that returns the element-wise square root.
 
@@ -158,13 +233,24 @@ class TemplateTransformer(TransformerMixin, BaseEstimator):
 
     Attributes
     ----------
-    n_features_ : int
-        The number of features of the data passed to :meth:`fit`.
+    n_features_in_ : int
+        Number of features seen during :term:`fit`.
+
+    feature_names_in_ : ndarray of shape (`n_features_in_`,)
+        Names of features seen during :term:`fit`. Defined only when `X`
+        has feature names that are all strings.
     """
+
+    # This is a dictionary allowing to define the type of parameters.
+    # It used to validate parameter within the `_fit_context` decorator.
+    _parameter_constraints = {
+        "demo_param": [str],
+    }
 
     def __init__(self, demo_param="demo"):
         self.demo_param = demo_param
 
+    @_fit_context(prefer_skip_nested_validation=True)
     def fit(self, X, y=None):
         """A reference implementation of a fitting function for a transformer.
 
@@ -172,6 +258,7 @@ class TemplateTransformer(TransformerMixin, BaseEstimator):
         ----------
         X : {array-like, sparse matrix}, shape (n_samples, n_features)
             The training input samples.
+
         y : None
             There is no need of a target in a transformer, yet the pipeline API
             requires this parameter.
@@ -181,9 +268,7 @@ class TemplateTransformer(TransformerMixin, BaseEstimator):
         self : object
             Returns self.
         """
-        X = check_array(X, accept_sparse=True)
-
-        self.n_features_ = X.shape[1]
+        X = self._validate_data(X, accept_sparse=True)
 
         # Return the transformer
         return self
@@ -202,14 +287,18 @@ class TemplateTransformer(TransformerMixin, BaseEstimator):
             The array containing the element-wise square roots of the values
             in ``X``.
         """
-        # Check is fit had been called
-        check_is_fitted(self, "n_features_")
+        # Since this is a stateless transformer, we should not call `check_is_fitted`.
+        # Common test will check for this particularly.
 
         # Input validation
-        X = check_array(X, accept_sparse=True)
-
-        # Check that the input is of the same shape as the one passed
-        # during fit.
-        if X.shape[1] != self.n_features_:
-            raise ValueError("Shape of input is different from what was seenin `fit`")
+        # We need to set reset=False because we don't want to overwrite `n_features_in_`
+        # `feature_names_in_` but only check that the shape is consistent.
+        X = self._validate_data(X, accept_sparse=True, reset=False)
         return np.sqrt(X)
+
+    def _more_tags(self):
+        # This is a quick example to show the tags API:\
+        # https://scikit-learn.org/dev/developers/develop.html#estimator-tags
+        # Here, our transformer does not do any operation in `fit` and only validate
+        # the parameters. Thus, it is stateless.
+        return {'stateless': True}

@@ -7457,9 +7457,9 @@ packages:
   name: skltemplate
   version: 0.0.4.dev0
   path: .
-  sha256: a32d9681bc6d716fba6066b46c2f098f611b350764a19cd7fbf0bf18d5f69d48
+  sha256: 95e8e81228995405882f2f42a98e153346768aee4bad8af8c0d5da53c1528940
   requires_dist:
-  - scikit-learn>=1.0.2
+  - scikit-learn>=1.4.2
   editable: true
 - kind: conda
   name: snowballstemmer

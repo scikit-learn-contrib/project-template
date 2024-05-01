@@ -1,7 +1,8 @@
+"""This file will just show how to write tests for the template classes."""
 import numpy as np
 import pytest
-from numpy.testing import assert_allclose, assert_array_equal
 from sklearn.datasets import load_iris
+from sklearn.utils._testing import assert_allclose, assert_array_equal
 
 from skltemplate import TemplateClassifier, TemplateEstimator, TemplateTransformer
 
@@ -12,6 +13,7 @@ def data():
 
 
 def test_template_estimator(data):
+    """Check the internals and behaviour of `TemplateEstimator`."""
     est = TemplateEstimator()
     assert est.demo_param == "demo_param"
 
@@ -23,22 +25,14 @@ def test_template_estimator(data):
     assert_array_equal(y_pred, np.ones(X.shape[0], dtype=np.int64))
 
 
-def test_template_transformer_error(data):
-    X, y = data
-    trans = TemplateTransformer()
-    trans.fit(X)
-    with pytest.raises(ValueError, match="Shape of input is different"):
-        X_diff_size = np.ones((10, X.shape[1] + 1))
-        trans.transform(X_diff_size)
-
-
 def test_template_transformer(data):
+    """Check the internals and behaviour of `TemplateTransformer`."""
     X, y = data
     trans = TemplateTransformer()
     assert trans.demo_param == "demo"
 
     trans.fit(X)
-    assert trans.n_features_ == X.shape[1]
+    assert trans.n_features_in_ == X.shape[1]
 
     X_trans = trans.transform(X)
     assert_allclose(X_trans, np.sqrt(X))
@@ -48,6 +42,7 @@ def test_template_transformer(data):
 
 
 def test_template_classifier(data):
+    """Check the internals and behaviour of `TemplateClassifier`."""
     X, y = data
     clf = TemplateClassifier()
     assert clf.demo_param == "demo"

@@ -8,7 +8,7 @@ authors = [
 description = "A template for scikit-learn compatible packages."
 readme = "README.md"
 dependencies = [
-  "scikit-learn>=1.0.2",
+  "scikit-learn>=1.4.2",
 ]
 classifiers = [
     "Programming Language :: Python :: 3",
@@ -70,3 +70,7 @@ ignore=[
 "examples/*"=["E402"]
 "doc/conf.py"=["E402"]
 "doc/_templates/numpydoc_docstring.py"=["F821", "W292"]
+
+[tool.pytest.ini_options]
+addopts = "--doctest-modules --color=yes"
+doctest_optionflags = "NORMALIZE_WHITESPACE"
