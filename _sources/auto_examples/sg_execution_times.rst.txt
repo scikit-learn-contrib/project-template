@@ -36,8 +36,8 @@ Computation times
      - 00:00.080
      - 0.0
    * - :ref:`sphx_glr_auto_examples_plot_template.py` (``plot_template.py``)
-     - 00:00.072
+     - 00:00.073
      - 0.0
    * - :ref:`sphx_glr_auto_examples_plot_transformer.py` (``plot_transformer.py``)
-     - 00:00.060
+     - 00:00.061
      - 0.0
