@@ -415,7 +415,7 @@ in the <a class="reference internal" href="../user_guide.html#user-guide"><span 
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>demo_param</strong><span class="classifier">str, default=’demo_param’</span></dt><dd><p>A parameter used for demonstation of how to pass and store paramters.</p>
+<dt><strong>demo_param</strong><span class="classifier">str, default=’demo_param’</span></dt><dd><p>A parameter used for demonstration of how to pass and store parameters.</p>
 </dd>
 </dl>
 </dd>
@@ -430,6 +430,19 @@ in the <a class="reference internal" href="../user_guide.html#user-guide"><span 
 <span class="go">TemplateEstimator()</span>
 </pre></div>
 </div>
+<dl class="field-list">
+<dt class="field-odd">Attributes<span class="colon">:</span></dt>
+<dd class="field-odd"><dl>
+<dt><strong>is_fitted_</strong><span class="classifier">bool</span></dt><dd><p>A boolean indicating whether the estimator has been fitted.</p>
+</dd>
+<dt><strong>n_features_in_</strong><span class="classifier">int</span></dt><dd><p>Number of features seen during <a class="reference external" href="https://scikit-learn.org/stable/glossary.html#term-fit" title="(in scikit-learn v1.4)"><span class="xref std std-term">fit</span></a>.</p>
+</dd>
+<dt><strong>feature_names_in_</strong><span class="classifier">ndarray of shape (<code class="docutils literal notranslate"><span class="pre">n_features_in_</span></code>,)</span></dt><dd><p>Names of features seen during <a class="reference external" href="https://scikit-learn.org/stable/glossary.html#term-fit" title="(in scikit-learn v1.4)"><span class="xref std std-term">fit</span></a>. Defined only when <code class="docutils literal notranslate"><span class="pre">X</span></code>
+has feature names that are all strings.</p>
+</dd>
+</dl>
+</dd>
+</dl>
 <p class="rubric">Methods</p>
 <table class="autosummary longtable table autosummary">
 <tbody>

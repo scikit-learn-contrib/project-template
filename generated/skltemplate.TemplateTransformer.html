@@ -412,7 +412,7 @@ document.write(`
 <dd><p>An example transformer that returns the element-wise square root.</p>
 <p>For more information regarding how to build your own transformer, read more
 in the <a class="reference internal" href="../user_guide.html#user-guide"><span class="std std-ref">User Guide</span></a>.</p>
-<dl class="field-list simple">
+<dl class="field-list">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>demo_param</strong><span class="classifier">str, default=’demo’</span></dt><dd><p>A parameter used for demonstation of how to pass and store paramters.</p>
@@ -420,8 +420,11 @@ in the <a class="reference internal" href="../user_guide.html#user-guide"><span 
 </dl>
 </dd>
 <dt class="field-even">Attributes<span class="colon">:</span></dt>
-<dd class="field-even"><dl class="simple">
-<dt><strong>n_features_</strong><span class="classifier">int</span></dt><dd><p>The number of features of the data passed to <a class="reference internal" href="#skltemplate.TemplateTransformer.fit" title="skltemplate.TemplateTransformer.fit"><code class="xref py py-meth docutils literal notranslate"><span class="pre">fit()</span></code></a>.</p>
+<dd class="field-even"><dl>
+<dt><strong>n_features_in_</strong><span class="classifier">int</span></dt><dd><p>Number of features seen during <a class="reference external" href="https://scikit-learn.org/stable/glossary.html#term-fit" title="(in scikit-learn v1.4)"><span class="xref std std-term">fit</span></a>.</p>
+</dd>
+<dt><strong>feature_names_in_</strong><span class="classifier">ndarray of shape (<code class="docutils literal notranslate"><span class="pre">n_features_in_</span></code>,)</span></dt><dd><p>Names of features seen during <a class="reference external" href="https://scikit-learn.org/stable/glossary.html#term-fit" title="(in scikit-learn v1.4)"><span class="xref std std-term">fit</span></a>. Defined only when <code class="docutils literal notranslate"><span class="pre">X</span></code>
+has feature names that are all strings.</p>
 </dd>
 </dl>
 </dd>
