@@ -8,12 +8,13 @@ import sys
 
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
-from skltemplate import __version__
+from importlib.metadata import version as get_version
 
 project = "Scikit-learn Project Template"
 copyright = "2016, V. Birodkar"
 author = "V. Birodkar"
-release = __version__
+release = get_version('skltemplate')
+version = ".".join(release.split(".")[:3])
 
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
