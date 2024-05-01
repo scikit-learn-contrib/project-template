@@ -50,7 +50,7 @@ inherits from both :class:`sklearn.base.BaseEstimator` and
 ``transform`` takes only ``X`` as input and is expected to return the
 transformed version of ``X``::
 
-    >>> class MyOwnTransformer(BaseEstimator, TransformerMixin):
+    >>> class MyOwnTransformer(TransformerMixin, BaseEstimator):
     ...     def fit(self, X, y=None):
     ...         return self
     ...     def transform(self, X):
@@ -99,7 +99,7 @@ as input and should return ``self``. It should implement the ``predict``
 function which should output the predictions of your regressor::
 
     >>> import numpy as np
-    >>> class MyOwnRegressor(BaseEstimator, RegressorMixin):
+    >>> class MyOwnRegressor(RegressorMixin, BaseEstimator):
     ...     def fit(self, X, y):
     ...         return self
     ...     def predict(self, X):
@@ -148,7 +148,7 @@ as input and should return ``self``. It should implement the ``predict``
 function which should output the class inferred by the classifier.
 ``predict_proba`` will output some probabilities instead::
 
-    >>> class MyOwnClassifier(BaseEstimator, ClassifierMixin):
+    >>> class MyOwnClassifier(ClassifierMixin, BaseEstimator):
     ...     def fit(self, X, y):
     ...         self.classes_ = np.unique(y)
     ...         return self
