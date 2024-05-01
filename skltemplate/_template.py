@@ -92,7 +92,7 @@ class TemplateEstimator(BaseEstimator):
         y : ndarray, shape (n_samples,)
             Returns an array of ones.
         """
-        # Check is fit had been called
+        # Check if fit had been called
         check_is_fitted(self)
         # We need to set reset=False because we don't want to overwrite `n_features_in_`
         # `feature_names_in_` but only check that the shape is consistent.
@@ -206,7 +206,7 @@ class TemplateClassifier(ClassifierMixin, BaseEstimator):
             The label for each sample is the label of the closest sample
             seen during fit.
         """
-        # Check is fit had been called
+        # Check if fit had been called
         check_is_fitted(self)
 
         # Input validation
