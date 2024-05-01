@@ -1,6 +1,6 @@
 [project]
 name = "skltemplate"
-version = "0.0.4.dev0"
+version = "0.1.0"
 description = "A template for scikit-learn compatible packages."
 authors = ["Vighnesh Birodkar <vighneshbirodkar@nyu.edu>", "Guillaume Lemaitre <g.lemaite58@gmail.com>"]
 channels = ["conda-forge"]

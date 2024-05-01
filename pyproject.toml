@@ -1,6 +1,6 @@
 [project]
 name = "skltemplate"
-version = "0.0.4.dev0"
+version = "0.1.0"
 authors = [
   { name="Vighnesh Birodkar", email="vighneshbirodkar@nyu.edu" },
   { name="Guillaume Lemaitre", email="g.lemaitre58@gmail.com" },
