@@ -16,6 +16,16 @@ scikit-learn = "*"
 [pypi-dependencies]
 skltemplate = { path=".", editable=true }
 
+[feature.lint.dependencies]
+# The version below should be aligned with the one of `.pre-commit-config.yaml`
+black = "23.3.0"
+ruff = "0.4.2"
+
+[feature.lint.tasks]
+black = { cmd = "black --check --diff skltemplate && black --check --diff examples" }
+ruff = { cmd = "ruff check --output-format=full skltemplate && ruff check --output-format=full examples" }
+lint = { depends_on = ["black", "ruff"]}
+
 [feature.test.dependencies]
 pytest = "*"
 pytest-cov = "*"
@@ -35,5 +45,6 @@ build-doc = { cmd = "make html", cwd = "doc" }
 clean-doc = { cmd = "rm -rf _build", cwd = "doc" }
 
 [environments]
-test = ["test"]
 doc = ["doc"]
+lint = ["lint"]
+test = ["test"]
