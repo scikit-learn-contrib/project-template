@@ -134,6 +134,23 @@ In addition, you have a linter task to check the code consistency in terms of st
 
   pixi run lint
 
+Activating the development environment
+--------------------------------------
+
+In the case that you don't want to use the `pixi run` commands and directly interact
+with the usual python tools, you can activate the development environment:
+
+.. prompt:: bash $
+
+  pixi shell -e dev
+
+This will activate an environment containing the dependencies needed to run the linters,
+tests, and build the documentation. So for instance, you can run the tests with:
+
+.. prompt:: bash $
+
+  pytest -vsl skltemplate
+
 Setup the continuous integration
 --------------------------------
 

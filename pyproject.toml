@@ -49,6 +49,7 @@ skltemplate = { path=".", editable=true }
 [tool.pixi.feature.lint.dependencies]
 # The version below should be aligned with the one of `.pre-commit-config.yaml`
 black = "23.3.0"
+pre-commit = "3.7.1"
 ruff = "0.4.2"
 
 [tool.pixi.feature.lint.tasks]
@@ -81,6 +82,7 @@ clean-doc = { cmd = "rm -rf _build", cwd = "doc" }
 doc = ["doc"]
 lint = ["lint"]
 test = ["test"]
+dev = ["doc", "lint", "test"]
 
 [tool.black]
 line-length = 88
