@@ -69,6 +69,7 @@ numpydoc = "*"
 pydata-sphinx-theme = "*"
 setuptools-scm = ">=8"  # needed for the versioning
 sphinx = "*"
+sphinx-design = "*"
 sphinx-gallery = "*"
 sphinx-prompt = "*"
 

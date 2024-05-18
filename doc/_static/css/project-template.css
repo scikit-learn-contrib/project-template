@@ -16,75 +16,44 @@
     margin-bottom: 1em;
   }
 
-  /* Main index page overview cards */
+/* Main index page overview cards */
 
-  .intro-card {
-    padding: 30px 10px 20px 10px;
-  }
+.intro-card {
+  padding: 30px 10px 20px 10px;
+}
 
-  .intro-card .sd-card-img-top {
-    margin: 10px;
-    height: 52px;
-    background: none !important;
-  }
+.intro-card .sd-card-img-top {
+  margin: 10px;
+  height: 52px;
+  background: none !important;
+}
 
-  .intro-card .sd-card-title {
-    color: var(--pst-color-primary);
-    font-size: var(--pst-font-size-h5);
-    padding: 1rem 0rem 0.5rem 0rem;
-  }
+.intro-card .sd-card-title {
+  color: var(--pst-color-primary);
+  font-size: var(--pst-font-size-h5);
+  padding: 1rem 0rem 0.5rem 0rem;
+}
 
-  .intro-card .sd-card-footer {
-    border: none !important;
-  }
+.intro-card .sd-card-footer {
+  border: none !important;
+}
 
-  .intro-card .sd-card-footer p.sd-card-text {
-    max-width: 220px;
-    margin-left: auto;
-    margin-right: auto;
-  }
+.intro-card .sd-card-footer p.sd-card-text {
+  max-width: 220px;
+  margin-left: auto;
+  margin-right: auto;
+}
 
-  .intro-card .sd-btn-secondary {
-    background-color: #6c757d !important;
-    border-color: #6c757d !important;
-  }
+.intro-card .sd-btn-secondary {
+  background-color: #6c757d !important;
+  border-color: #6c757d !important;
+}
 
-  .intro-card .sd-btn-secondary:hover {
-    background-color: #5a6268 !important;
-    border-color: #545b62 !important;
-  }
+.intro-card .sd-btn-secondary:hover {
+  background-color: #5a6268 !important;
+  border-color: #545b62 !important;
+}
 
-  .card {
-    margin-top: 1em;
-    margin-bottom: 1em;
-  }
-
-  .card,
-  .card img {
-    background-color: var(--pst-color-background);
-  }
-
-  .custom-button {
-    background-color: #dcdcdc;
-    border: none;
-    color: #484848;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 0.9rem;
-    border-radius: 0.5rem;
-    max-width: 220px;
-    padding: 0.5rem 0rem;
-  }
-
-  .custom-button a {
-    color: #484848;
-  }
-
-  .custom-button p {
-    margin-top: 0;
-    margin-bottom: 0rem;
-    padding-left: 0.5rem;
-    padding-right: 0.5rem;
-    color: #484848;
-  }
+.card, .card img {
+  background-color: var(--pst-color-background);
+}
