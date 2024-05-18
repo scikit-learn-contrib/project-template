@@ -6,7 +6,7 @@
 
 Computation times
 =================
-**00:00.288** total execution time for 3 files **from auto_examples**:
+**00:00.275** total execution time for 3 files **from auto_examples**:
 
 .. container::
 
@@ -33,11 +33,11 @@ Computation times
      - Time
      - Mem (MB)
    * - :ref:`sphx_glr_auto_examples_plot_classifier.py` (``plot_classifier.py``)
-     - 00:00.147
+     - 00:00.136
      - 0.0
    * - :ref:`sphx_glr_auto_examples_plot_template.py` (``plot_template.py``)
-     - 00:00.077
+     - 00:00.075
      - 0.0
    * - :ref:`sphx_glr_auto_examples_plot_transformer.py` (``plot_transformer.py``)
-     - 00:00.064
+     - 00:00.063
      - 0.0
