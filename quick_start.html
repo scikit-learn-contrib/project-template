@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Getting started &#8212; Scikit-learn Project Template 0.1.2.dev1+g939dd4e documentation</title>
+    <title>Getting started &#8212; Scikit-learn Project Template 0.1.2.dev3+ga784506 documentation</title>
   
   
   
@@ -42,7 +42,7 @@
 <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
   <script src="_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script src="_static/documentation_options.js?v=8d1d479a"></script>
+    <script src="_static/documentation_options.js?v=4262caba"></script>
     <script src="_static/doctools.js?v=9a2dae69"></script>
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/design-tabs.js?v=36754332"></script>
@@ -127,8 +127,8 @@
       
     
     
-    <img src="_static/logo.png" class="logo__image only-light" alt="Scikit-learn Project Template 0.1.2.dev1+g939dd4e documentation - Home"/>
-    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Scikit-learn Project Template 0.1.2.dev1+g939dd4e documentation - Home"/>`);</script>
+    <img src="_static/logo.png" class="logo__image only-light" alt="Scikit-learn Project Template 0.1.2.dev3+ga784506 documentation - Home"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Scikit-learn Project Template 0.1.2.dev3+ga784506 documentation - Home"/>`);</script>
   
   
 </a></div>
@@ -473,6 +473,18 @@ illustrates some usage of the package. the example file name should start by
 <p>In addition, you have a linter task to check the code consistency in terms of style:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">pixi<span class="w"> </span>run<span class="w"> </span>lint</span>
 </pre></div></div></section>
+<section id="activating-the-development-environment">
+<h3>Activating the development environment<a class="headerlink" href="#activating-the-development-environment" title="Link to this heading">#</a></h3>
+<p>In the case that you don’t want to use the <code class="docutils literal notranslate"><span class="pre">pixi</span> <span class="pre">run</span></code> commands and directly interact
+with the usual python tools, you can activate the development environment:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">pixi<span class="w"> </span>shell<span class="w"> </span>-e<span class="w"> </span>dev</span>
+</pre></div></div><p>This will activate an environment containing the dependencies needed to run the linters,
+tests, and build the documentation. So for instance, you can run the tests with:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">pytest<span class="w"> </span>-vsl<span class="w"> </span>skltemplate</span>
+</pre></div></div><p>In this case, you can even use pre-commit before using git. You will need to initialize
+it with:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">pre-commit<span class="w"> </span>install</span>
+</pre></div></div></section>
 <section id="setup-the-continuous-integration">
 <h3>Setup the continuous integration<a class="headerlink" href="#setup-the-continuous-integration" title="Link to this heading">#</a></h3>
 <p>The project template already contains configuration files of the continuous
@@ -546,6 +558,7 @@ it will be installable with <code class="docutils literal notranslate"><span cla
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#managing-your-local-and-continuous-integration-environment">Managing your local and continuous integration environment</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#edit-the-documentation">Edit the documentation</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#local-testing">Local testing</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#activating-the-development-environment">Activating the development environment</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#setup-the-continuous-integration">Setup the continuous integration</a></li>
 </ul>
 </li>
