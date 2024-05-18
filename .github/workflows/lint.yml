@@ -20,4 +20,4 @@ jobs:
           frozen: true
 
       - name: Run linter
-        run: pixi run lint
+        run: pixi run -e lint lint
