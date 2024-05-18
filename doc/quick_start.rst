@@ -151,6 +151,13 @@ tests, and build the documentation. So for instance, you can run the tests with:
 
   pytest -vsl skltemplate
 
+In this case, you can even use pre-commit before using git. You will need to initialize
+it with:
+
+.. prompt:: bash $
+
+  pre-commit install
+
 Setup the continuous integration
 --------------------------------
 
