@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>User guide : contents &#8212; Scikit-learn Project Template 0.1.2.dev2+g142ff49 documentation</title>
+    <title>User guide : contents &#8212; Scikit-learn Project Template 0.1.2.dev4+g28027d9 documentation</title>
   
   
   
@@ -42,7 +42,7 @@
 <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
   <script src="_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script src="_static/documentation_options.js?v=e3ed2a9b"></script>
+    <script src="_static/documentation_options.js?v=22f60c3f"></script>
     <script src="_static/doctools.js?v=9a2dae69"></script>
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/design-tabs.js?v=36754332"></script>
@@ -128,8 +128,8 @@
       
     
     
-    <img src="_static/logo.png" class="logo__image only-light" alt="Scikit-learn Project Template 0.1.2.dev2+g142ff49 documentation - Home"/>
-    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Scikit-learn Project Template 0.1.2.dev2+g142ff49 documentation - Home"/>`);</script>
+    <img src="_static/logo.png" class="logo__image only-light" alt="Scikit-learn Project Template 0.1.2.dev4+g28027d9 documentation - Home"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Scikit-learn Project Template 0.1.2.dev4+g28027d9 documentation - Home"/>`);</script>
   
   
 </a></div>
@@ -391,7 +391,7 @@ document.write(`
 <section id="estimator">
 <h2>Estimator<a class="headerlink" href="#estimator" title="Link to this heading">#</a></h2>
 <p>The central piece of transformer, regressor, and classifier is
-<a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.base.BaseEstimator.html#sklearn.base.BaseEstimator" title="(in scikit-learn v1.4)"><code class="xref py py-class docutils literal notranslate"><span class="pre">sklearn.base.BaseEstimator</span></code></a>. All estimators in scikit-learn are derived
+<a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.base.BaseEstimator.html#sklearn.base.BaseEstimator" title="(in scikit-learn v1.5)"><code class="xref py py-class docutils literal notranslate"><span class="pre">sklearn.base.BaseEstimator</span></code></a>. All estimators in scikit-learn are derived
 from this class. In more details, this base class enables to set and get
 parameters of the estimator. It can be imported as:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sklearn.base</span> <span class="kn">import</span> <span class="n">BaseEstimator</span>
@@ -413,17 +413,17 @@ The use case is the following:</p>
 during <code class="docutils literal notranslate"><span class="pre">fit</span></code>.</p></li>
 </ul>
 <p>In addition, scikit-learn provides a
-<a class="reference external" href="https://en.wikipedia.org/wiki/Mixin">mixin</a>, i.e. <a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.base.TransformerMixin.html#sklearn.base.TransformerMixin" title="(in scikit-learn v1.4)"><code class="xref py py-class docutils literal notranslate"><span class="pre">sklearn.base.TransformerMixin</span></code></a>, which
+<a class="reference external" href="https://en.wikipedia.org/wiki/Mixin">mixin</a>, i.e. <a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.base.TransformerMixin.html#sklearn.base.TransformerMixin" title="(in scikit-learn v1.5)"><code class="xref py py-class docutils literal notranslate"><span class="pre">sklearn.base.TransformerMixin</span></code></a>, which
 implement the combination of <code class="docutils literal notranslate"><span class="pre">fit</span></code> and <code class="docutils literal notranslate"><span class="pre">transform</span></code> called <code class="docutils literal notranslate"><span class="pre">fit_transform</span></code>.</p>
 <p>One can import the mixin class as:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sklearn.base</span> <span class="kn">import</span> <span class="n">TransformerMixin</span>
 </pre></div>
 </div>
 <p>Therefore, when creating a transformer, you need to create a class which
-inherits from both <a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.base.BaseEstimator.html#sklearn.base.BaseEstimator" title="(in scikit-learn v1.4)"><code class="xref py py-class docutils literal notranslate"><span class="pre">sklearn.base.BaseEstimator</span></code></a> and
-<a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.base.TransformerMixin.html#sklearn.base.TransformerMixin" title="(in scikit-learn v1.4)"><code class="xref py py-class docutils literal notranslate"><span class="pre">sklearn.base.TransformerMixin</span></code></a>. The scikit-learn API imposed <code class="docutils literal notranslate"><span class="pre">fit</span></code> to
+inherits from both <a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.base.BaseEstimator.html#sklearn.base.BaseEstimator" title="(in scikit-learn v1.5)"><code class="xref py py-class docutils literal notranslate"><span class="pre">sklearn.base.BaseEstimator</span></code></a> and
+<a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.base.TransformerMixin.html#sklearn.base.TransformerMixin" title="(in scikit-learn v1.5)"><code class="xref py py-class docutils literal notranslate"><span class="pre">sklearn.base.TransformerMixin</span></code></a>. The scikit-learn API imposed <code class="docutils literal notranslate"><span class="pre">fit</span></code> to
 <strong>return ``self``</strong>. The reason is that it allows to pipeline <code class="docutils literal notranslate"><span class="pre">fit</span></code> and
-<code class="docutils literal notranslate"><span class="pre">transform</span></code> imposed by the <a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.base.TransformerMixin.html#sklearn.base.TransformerMixin" title="(in scikit-learn v1.4)"><code class="xref py py-class docutils literal notranslate"><span class="pre">sklearn.base.TransformerMixin</span></code></a>. The
+<code class="docutils literal notranslate"><span class="pre">transform</span></code> imposed by the <a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.base.TransformerMixin.html#sklearn.base.TransformerMixin" title="(in scikit-learn v1.5)"><code class="xref py py-class docutils literal notranslate"><span class="pre">sklearn.base.TransformerMixin</span></code></a>. The
 <code class="docutils literal notranslate"><span class="pre">fit</span></code> method is expected to have <code class="docutils literal notranslate"><span class="pre">X</span></code> and <code class="docutils literal notranslate"><span class="pre">y</span></code> as inputs. Note that
 <code class="docutils literal notranslate"><span class="pre">transform</span></code> takes only <code class="docutils literal notranslate"><span class="pre">X</span></code> as input and is expected to return the
 transformed version of <code class="docutils literal notranslate"><span class="pre">X</span></code>:</p>
@@ -462,15 +462,15 @@ method. The use case is the following:</p>
 learned during <code class="docutils literal notranslate"><span class="pre">fit</span></code>.</p></li>
 </ul>
 <p>In addition, scikit-learn provides a <a class="reference external" href="https://en.wikipedia.org/wiki/Mixin">mixin</a>, i.e.
-<a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.base.RegressorMixin.html#sklearn.base.RegressorMixin" title="(in scikit-learn v1.4)"><code class="xref py py-class docutils literal notranslate"><span class="pre">sklearn.base.RegressorMixin</span></code></a>, which implements the <code class="docutils literal notranslate"><span class="pre">score</span></code> method
+<a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.base.RegressorMixin.html#sklearn.base.RegressorMixin" title="(in scikit-learn v1.5)"><code class="xref py py-class docutils literal notranslate"><span class="pre">sklearn.base.RegressorMixin</span></code></a>, which implements the <code class="docutils literal notranslate"><span class="pre">score</span></code> method
 which computes the <span class="math notranslate nohighlight">\(R^2\)</span> score of the predictions.</p>
 <p>One can import the mixin as:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sklearn.base</span> <span class="kn">import</span> <span class="n">RegressorMixin</span>
 </pre></div>
 </div>
 <p>Therefore, we create a regressor, <code class="xref py py-class docutils literal notranslate"><span class="pre">MyOwnRegressor</span></code> which inherits from
-both <a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.base.BaseEstimator.html#sklearn.base.BaseEstimator" title="(in scikit-learn v1.4)"><code class="xref py py-class docutils literal notranslate"><span class="pre">sklearn.base.BaseEstimator</span></code></a> and
-<a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.base.RegressorMixin.html#sklearn.base.RegressorMixin" title="(in scikit-learn v1.4)"><code class="xref py py-class docutils literal notranslate"><span class="pre">sklearn.base.RegressorMixin</span></code></a>. The method <code class="docutils literal notranslate"><span class="pre">fit</span></code> gets <code class="docutils literal notranslate"><span class="pre">X</span></code> and <code class="docutils literal notranslate"><span class="pre">y</span></code>
+both <a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.base.BaseEstimator.html#sklearn.base.BaseEstimator" title="(in scikit-learn v1.5)"><code class="xref py py-class docutils literal notranslate"><span class="pre">sklearn.base.BaseEstimator</span></code></a> and
+<a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.base.RegressorMixin.html#sklearn.base.RegressorMixin" title="(in scikit-learn v1.5)"><code class="xref py py-class docutils literal notranslate"><span class="pre">sklearn.base.RegressorMixin</span></code></a>. The method <code class="docutils literal notranslate"><span class="pre">fit</span></code> gets <code class="docutils literal notranslate"><span class="pre">X</span></code> and <code class="docutils literal notranslate"><span class="pre">y</span></code>
 as input and should return <code class="docutils literal notranslate"><span class="pre">self</span></code>. It should implement the <code class="docutils literal notranslate"><span class="pre">predict</span></code>
 function which should output the predictions of your regressor:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -491,7 +491,7 @@ function which should output the predictions of your regressor:</p>
 <span class="go">array([...])</span>
 </pre></div>
 </div>
-<p>Since we inherit from the <a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.base.RegressorMixin.html#sklearn.base.RegressorMixin" title="(in scikit-learn v1.4)"><code class="xref py py-class docutils literal notranslate"><span class="pre">sklearn.base.RegressorMixin</span></code></a>, we can call
+<p>Since we inherit from the <a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.base.RegressorMixin.html#sklearn.base.RegressorMixin" title="(in scikit-learn v1.5)"><code class="xref py py-class docutils literal notranslate"><span class="pre">sklearn.base.RegressorMixin</span></code></a>, we can call
 the <code class="docutils literal notranslate"><span class="pre">score</span></code> method which will return the <span class="math notranslate nohighlight">\(R^2\)</span> score:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">pipe</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>  
 <span class="go">-3.9...</span>
@@ -510,7 +510,7 @@ learned during <code class="docutils literal notranslate"><span class="pre">fit<
 class and each entry will be the probability of the associated class.</p></li>
 </ul>
 <p>In addition, scikit-learn provides a mixin, i.e.
-<a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.base.ClassifierMixin.html#sklearn.base.ClassifierMixin" title="(in scikit-learn v1.4)"><code class="xref py py-class docutils literal notranslate"><span class="pre">sklearn.base.ClassifierMixin</span></code></a>, which implements the <code class="docutils literal notranslate"><span class="pre">score</span></code> method
+<a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.base.ClassifierMixin.html#sklearn.base.ClassifierMixin" title="(in scikit-learn v1.5)"><code class="xref py py-class docutils literal notranslate"><span class="pre">sklearn.base.ClassifierMixin</span></code></a>, which implements the <code class="docutils literal notranslate"><span class="pre">score</span></code> method
 which computes the accuracy score of the predictions.</p>
 <p>One can import this mixin as:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sklearn.base</span> <span class="kn">import</span> <span class="n">ClassifierMixin</span>
@@ -518,7 +518,7 @@ which computes the accuracy score of the predictions.</p>
 </div>
 <p>Therefore, we create a classifier, <code class="xref py py-class docutils literal notranslate"><span class="pre">MyOwnClassifier</span></code> which inherits
 from both <code class="xref py py-class docutils literal notranslate"><span class="pre">slearn.base.BaseEstimator</span></code> and
-<a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.base.ClassifierMixin.html#sklearn.base.ClassifierMixin" title="(in scikit-learn v1.4)"><code class="xref py py-class docutils literal notranslate"><span class="pre">sklearn.base.ClassifierMixin</span></code></a>. The method <code class="docutils literal notranslate"><span class="pre">fit</span></code> gets <code class="docutils literal notranslate"><span class="pre">X</span></code> and <code class="docutils literal notranslate"><span class="pre">y</span></code>
+<a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.base.ClassifierMixin.html#sklearn.base.ClassifierMixin" title="(in scikit-learn v1.5)"><code class="xref py py-class docutils literal notranslate"><span class="pre">sklearn.base.ClassifierMixin</span></code></a>. The method <code class="docutils literal notranslate"><span class="pre">fit</span></code> gets <code class="docutils literal notranslate"><span class="pre">X</span></code> and <code class="docutils literal notranslate"><span class="pre">y</span></code>
 as input and should return <code class="docutils literal notranslate"><span class="pre">self</span></code>. It should implement the <code class="docutils literal notranslate"><span class="pre">predict</span></code>
 function which should output the class inferred by the classifier.
 <code class="docutils literal notranslate"><span class="pre">predict_proba</span></code> will output some probabilities instead:</p>
@@ -548,7 +548,7 @@ function which should output the class inferred by the classifier.
 <span class="go">array([...])</span>
 </pre></div>
 </div>
-<p>Since our classifier inherits from <a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.base.ClassifierMixin.html#sklearn.base.ClassifierMixin" title="(in scikit-learn v1.4)"><code class="xref py py-class docutils literal notranslate"><span class="pre">sklearn.base.ClassifierMixin</span></code></a>, we
+<p>Since our classifier inherits from <a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.base.ClassifierMixin.html#sklearn.base.ClassifierMixin" title="(in scikit-learn v1.5)"><code class="xref py py-class docutils literal notranslate"><span class="pre">sklearn.base.ClassifierMixin</span></code></a>, we
 can compute the accuracy by calling the <code class="docutils literal notranslate"><span class="pre">score</span></code> method:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">pipe</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>  
 <span class="go">0...</span>
