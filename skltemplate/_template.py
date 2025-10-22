@@ -4,12 +4,13 @@ This is a module to be used as a reference for building other modules
 
 # Authors: scikit-learn-contrib developers
 # License: BSD 3 clause
+# mypy: ignore-errors
 
 import numpy as np
 from sklearn.base import BaseEstimator, ClassifierMixin, TransformerMixin, _fit_context
 from sklearn.metrics import euclidean_distances
 from sklearn.utils.multiclass import check_classification_targets
-from sklearn.utils.validation import check_is_fitted
+from sklearn.utils.validation import check_is_fitted, validate_data
 
 
 class TemplateEstimator(BaseEstimator):
@@ -73,12 +74,14 @@ class TemplateEstimator(BaseEstimator):
         self : object
             Returns self.
         """
-        # `_validate_data` is defined in the `BaseEstimator` class.
+        # `_validate_data` is defined in the sklearn.utils.validation module.
         # It allows to:
         # - run different checks on the input data;
         # - define some attributes associated to the input data: `n_features_in_` and
         #   `feature_names_in_`.
-        X, y = self._validate_data(X, y, accept_sparse=True)
+
+        X, y = validate_data(self, X, y, accept_sparse=True)
+
         self.is_fitted_ = True
         # `fit` should always return `self`
         return self
@@ -100,7 +103,7 @@ class TemplateEstimator(BaseEstimator):
         check_is_fitted(self)
         # We need to set reset=False because we don't want to overwrite `n_features_in_`
         # `feature_names_in_` but only check that the shape is consistent.
-        X = self._validate_data(X, accept_sparse=True, reset=False)
+        X = validate_data(self, X, accept_sparse=True, reset=False)
         return np.ones(X.shape[0], dtype=np.int64)
 
 
@@ -182,7 +185,7 @@ class TemplateClassifier(ClassifierMixin, BaseEstimator):
         # - run different checks on the input data;
         # - define some attributes associated to the input data: `n_features_in_` and
         #   `feature_names_in_`.
-        X, y = self._validate_data(X, y)
+        X, y = validate_data(self, X, y)
         # We need to make sure that we have a classification task
         check_classification_targets(y)
 
@@ -216,7 +219,7 @@ class TemplateClassifier(ClassifierMixin, BaseEstimator):
         # Input validation
         # We need to set reset=False because we don't want to overwrite `n_features_in_`
         # `feature_names_in_` but only check that the shape is consistent.
-        X = self._validate_data(X, reset=False)
+        X = validate_data(self, X, reset=False)
 
         closest = np.argmin(euclidean_distances(X, self.X_), axis=1)
         return self.y_[closest]
@@ -272,7 +275,7 @@ class TemplateTransformer(TransformerMixin, BaseEstimator):
         self : object
             Returns self.
         """
-        X = self._validate_data(X, accept_sparse=True)
+        X = validate_data(self, X, accept_sparse=True)
 
         # Return the transformer
         return self
@@ -297,7 +300,7 @@ class TemplateTransformer(TransformerMixin, BaseEstimator):
         # Input validation
         # We need to set reset=False because we don't want to overwrite `n_features_in_`
         # `feature_names_in_` but only check that the shape is consistent.
-        X = self._validate_data(X, accept_sparse=True, reset=False)
+        X = validate_data(self, X, accept_sparse=True, reset=False)
         return np.sqrt(X)
 
     def _more_tags(self):

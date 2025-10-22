@@ -76,3 +76,9 @@ target/
 
 # auto-generated files
 skltemplate/_version.py
+
+# linters and formatters
+.vscode/
+.idea/
+.mypy_cache/
+.ruff_cache/
