@@ -20,14 +20,13 @@ To create your package, you need to clone the ``project-template`` repository:
   git clone https://github.com/scikit-learn-contrib/project-template.git
 
 Before to reinitialize your git repository, you need to make the following
-changes. Replace all occurrences of ``skltemplate``, ``sklearn-template``, or
+changes. Replace all occurrences of ``skltemplate`` or
 ``project-template`` with the name of you own project. You can find all the
 occurrences using the following command:
 
 .. prompt:: bash $
 
   git grep skltemplate
-  git grep sklearn-template
   git grep project-template
 
 To remove the history of the template package, you need to remove the `.git`
